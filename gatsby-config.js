@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-portfolio',
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `Knochenmark`,
+    title: 'Gatsby Portfolio Starter',
+    description: 'Gatsby portfolio for kickstarting your portfolio project.',
+    author: 'Knochenmark',
   },
   plugins: [
     `gatsby-plugin-stylus`,
@@ -15,8 +15,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/content/posts`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
