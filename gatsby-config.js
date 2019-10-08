@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-portfolio',
   siteMetadata: {
-    title: `Gatsby Portfolio`,
-    description: `Gatsby portfolio for kickstarting your portfolio project.`,
-    author: `@mark`,
+    title: 'Gatsby Portfolio Starter',
+    description: 'Gatsby portfolio for kickstarting your portfolio project.',
+    author: 'Knochenmark',
   },
   plugins: [
     `gatsby-plugin-stylus`,

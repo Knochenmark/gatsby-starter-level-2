@@ -8,9 +8,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Codepen from '../assets/codepen.svg';
-import Github from '../assets/github.svg';
 import '../styles/index.styl';
+import Footer from './footer';
 import Header from './header';
 import './layout.css';
 
@@ -20,6 +19,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          author
         }
       }
     }
@@ -37,13 +37,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-          <Github />
-          <Codepen />
-        </footer>
+        <Footer author={data.site.siteMetadata.author} />
       </div>
     </>
   );
