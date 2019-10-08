@@ -11,7 +11,6 @@ import React from 'react';
 import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
-import './layout.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

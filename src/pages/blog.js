@@ -1,9 +1,8 @@
-import React from 'react';
 import { graphql, Link } from 'gatsby';
-
+import React from 'react';
 import Layout from '../components/layout';
+
 export default ({ data }) => {
-  const post = data.markdownRemark;
   return (
     <Layout>
       <div>{JSON.stringify(data.allMarkdownRemark.edges)}</div>
