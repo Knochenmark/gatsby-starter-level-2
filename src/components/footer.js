@@ -28,10 +28,11 @@ const Footer = ({ author }) => {
       </div>
       <div className={style.siteFooterRotator}>
         <CodeIcon />
-        <span>with</span>
-        {/* <Rotator /> */}
-        <span className={style.byText}>
-          by <b>{author}</b>
+        <span>
+          with{' '}
+          <span role="img" aria-label="heart emoji">
+            💖
+          </span>
         </span>
       </div>
     </footer>
