@@ -1,17 +1,20 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
+import PostCard from '../components/post-card';
 
 export default ({ data }) => {
+  console.log(data.allMarkdownRemark.edges);
   return (
     <Layout>
-      <div>{JSON.stringify(data.allMarkdownRemark.edges)}</div>
       <div>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           return (
-            <Link to={`blog${node.fields.slug}`}>
-              <h2>{node.frontmatter.title}</h2>
-            </Link>
+            <PostCard
+              title={node.frontmatter.title}
+              description={node.frontmatter.description}
+              link={`blog${node.fields.slug}`}
+            />
           );
         })}
       </div>
@@ -27,6 +30,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            description
           }
           excerpt
           fields {
