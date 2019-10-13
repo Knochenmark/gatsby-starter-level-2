@@ -1,9 +1,10 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
-import { notDeepEqual } from 'assert';
+import PostCard from '../components/post-card';
 
 export default ({ data }) => {
+  console.log(data.allMarkdownRemark.edges);
   return (
     <Layout>
       <div>
@@ -29,6 +30,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             published
+            description
           }
           excerpt
           fields {
