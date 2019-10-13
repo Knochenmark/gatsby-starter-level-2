@@ -9,11 +9,16 @@ export default ({ data }) => {
     <Layout>
       <div>
         {data.allMarkdownRemark.edges.map(({ node }) => {
-          console.log(node.frontmatter);
+          let fluidFeaturedImage = node.frontmatter.featuredImage
+            ? node.frontmatter.featuredImage.childImageSharp.fluid
+            : null;
           return node.frontmatter.published ? (
-            <Link to={`blog${node.fields.slug}`}>
-              <h2>{node.frontmatter.title}</h2>
-            </Link>
+            <PostCard
+              fluidFeaturedImage={fluidFeaturedImage}
+              title={node.frontmatter.title}
+              description={node.frontmatter.description}
+              link={`blog${node.fields.slug}`}
+            />
           ) : null;
         })}
       </div>
@@ -31,6 +36,13 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             published
             description
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           excerpt
           fields {

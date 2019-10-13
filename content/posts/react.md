@@ -5,11 +5,12 @@ published: true
 canonical_url: false
 tags: ['Markdown', 'React']
 description: 'Another placeholder post'
+featuredImage: ./images/grass.jpg
 ---
 
 I just launched a new bla bla!
 
-![Grass](./grass.jpg)
+![Grass](./images/grass.jpg)
 
 ## Topics Covered
 

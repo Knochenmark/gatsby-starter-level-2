@@ -2,8 +2,8 @@ import React from 'react';
 
 export default ({ tag }) => {
   return (
-    <div className="tag">
+    <span className="tag">
       <p>{tag}</p>
-    </div>
+    </span>
   );
 };
