@@ -1,22 +1,22 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import Tag from '../components/tag';
 import Img from 'gatsby-image';
+import React from 'react';
+import Layout from '../components/layout';
+import PostTag from '../components/post-tag';
 
 export default ({ data }) => {
   const post = data.markdownRemark;
-  let featuredImgFluid = post.frontmatter.featuredImage ? post.frontmatter.featuredImage.childImageSharp.fluid : null;
+  const coverImage = post.frontmatter.cover_image ? post.frontmatter.cover_image.childImageSharp.fluid : null;
 
   return (
     <Layout>
       {post.frontmatter.published ? (
         <div>
-          {featuredImgFluid && <Img fluid={featuredImgFluid} />}
+          {coverImage && <Img fluid={coverImage} />}
           <h1>{post.frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
           {post.frontmatter.tags.map(tag => (
-            <Tag tag={tag} key={tag} />
+            <PostTag tag={tag} key={tag} />
           ))}
         </div>
       ) : null}
@@ -31,8 +31,7 @@ export const query = graphql`
         title
         tags
         published
-
-        featuredImage {
+        cover_image {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid

@@ -3,7 +3,11 @@ import style from './social-icons.module.styl';
 
 const SocialIcons = ({ icons }) => {
   const socialIcons = icons.map(({ icon, link }) => {
-    return <a href={link}>{icon}</a>;
+    return (
+      <a href={link} key={link}>
+        {icon}
+      </a>
+    );
   });
 
   return (
