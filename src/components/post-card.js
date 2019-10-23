@@ -8,16 +8,18 @@ const PostCard = ({ title, description, link, coverImage, tags }) => {
   const tagsList = tags.map(tag => <PostTag tag={tag} />);
 
   return (
-    <div className={`${style.postCard} content-box`}>
-      {coverImage && <Img fluid={coverImage} />}
-      <div>
-        <h2 className="post-card__title">{title}</h2>
-        <p className="post-card__description">{description}</p>
+    <Link to={link} className={style.postCardLink}>
+      <div className={`${style.postCard} content-box`}>
+        {coverImage && <Img fluid={coverImage} />}
+        <div>
+          <h2 className="post-card__title">{title}</h2>
+          <p className="post-card__description">{description}</p>
 
-        <Link to={link}>{title}</Link>
-        <div className={style.postTags}>{tagsList}</div>
+          <Link to={link}>{title}</Link>
+          <div className={style.postTags}>{tagsList}</div>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
