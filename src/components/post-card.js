@@ -5,21 +5,23 @@ import style from './post-card.module.styl';
 import PostTag from './post-tag';
 
 const PostCard = ({ title, description, link, coverImage, tags }) => {
-  const tagsList = tags.map(tag => <PostTag tag={tag} />);
+  const tagsList = tags.map(tag => <PostTag key={tag} tag={tag} />);
 
   return (
-    <Link to={link} className={style.postCardLink}>
-      <div className={`${style.postCard} content-box`}>
-        {coverImage && <Img fluid={coverImage} />}
-        <div>
+    <div className={`${style.postCard} content-box`}>
+      {coverImage && (
+        <Link to={link}>
+          <Img fluid={coverImage} />
+        </Link>
+      )}
+      <div>
+        <Link className={style.postCardTitleLink} to={link}>
           <h2 className="post-card__title">{title}</h2>
-          <p className="post-card__description">{description}</p>
-
-          <Link to={link}>{title}</Link>
-          <div className={style.postTags}>{tagsList}</div>
-        </div>
+        </Link>
+        <p className="post-card__description">{description}</p>
+        <div className={style.postTags}>{tagsList}</div>
       </div>
-    </Link>
+    </div>
   );
 };
 
