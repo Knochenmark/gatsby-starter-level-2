@@ -22,7 +22,7 @@ const Footer = ({ author }) => {
     <footer className={style.siteFooter}>
       <div className={style.siteFooterSocial}>
         <SocialIcons icons={socialIcons} />
-        <span class={style.copyright}>
+        <span className={style.copyright}>
           © {new Date().getFullYear()} {author}
         </span>
       </div>
