@@ -2,12 +2,23 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
+import { Pagination, Row, Col } from 'antd';
 
 export default ({ data }) => {
+  let [currentPage, setCurrentPage] = React.useState(1);
+
+  const onPaginationChange = page => {
+    setCurrentPage(page);
+  };
+
+  let paginationSize = data.site.siteMetadata.paginationPageSize;
+
+  let leftCursor = (currentPage - 1) * paginationSize;
+  let rightCursor = leftCursor + paginationSize;
   return (
     <Layout>
       <div>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
+        {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
             <PostCard
@@ -20,6 +31,16 @@ export default ({ data }) => {
             />
           ) : null;
         })}
+        <Row type="flex" justify="center">
+          <Col>
+            <Pagination
+              pageSize={paginationSize}
+              current={currentPage}
+              onChange={onPaginationChange}
+              total={data.allMarkdownRemark.edges.length}
+            />
+          </Col>
+        </Row>
       </div>
     </Layout>
   );
@@ -49,6 +70,12 @@ export const query = graphql`
             slug
           }
         }
+      }
+    }
+
+    site {
+      siteMetadata {
+        paginationPageSize
       }
     }
   }
