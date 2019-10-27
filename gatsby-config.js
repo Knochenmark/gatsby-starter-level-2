@@ -4,6 +4,7 @@ module.exports = {
     title: 'Gatsby Portfolio Starter',
     description: 'Gatsby portfolio for kickstarting your portfolio project.',
     author: 'Knochenmark',
+    paginationPageSize: 4,
   },
   plugins: [
     `gatsby-plugin-stylus`,
