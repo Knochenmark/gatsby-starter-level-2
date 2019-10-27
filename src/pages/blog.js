@@ -7,7 +7,7 @@ import { Pagination, Row, Col } from 'antd';
 export default ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
-  const onPaginaitonChange = page => {
+  const onPaginationChange = page => {
     setCurrentPage(page);
   };
 
@@ -36,7 +36,7 @@ export default ({ data }) => {
             <Pagination
               pageSize={paginationSize}
               current={currentPage}
-              onChange={onPaginaitonChange}
+              onChange={onPaginationChange}
               total={data.allMarkdownRemark.edges.length}
             />
           </Col>
