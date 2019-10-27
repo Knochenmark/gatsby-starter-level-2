@@ -4,6 +4,20 @@ module.exports = {
     title: 'Gatsby Portfolio Starter',
     description: 'Gatsby portfolio for kickstarting your portfolio project.',
     author: 'Knochenmark',
+    menuLinks: [
+      {
+        name: 'Projects',
+        link: '/projects',
+      },
+      {
+        name: 'Blog',
+        link: '/blog',
+      },
+      {
+        name: 'About',
+        link: '/about',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-stylus`,
