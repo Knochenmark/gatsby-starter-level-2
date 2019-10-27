@@ -15,7 +15,6 @@ export default ({ data }) => {
 
   let leftCursor = (currentPage - 1) * paginationSize;
   let rightCursor = leftCursor + paginationSize;
-
   return (
     <Layout>
       <div>
@@ -23,6 +22,7 @@ export default ({ data }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
             <PostCard
+              key={node.frontmatter.title}
               coverImage={coverImage}
               title={node.frontmatter.title}
               description={node.frontmatter.description}

@@ -5,6 +5,24 @@ module.exports = {
     description: 'Gatsby portfolio for kickstarting your portfolio project.',
     author: 'Knochenmark',
     paginationPageSize: 4,
+    menuLinks: [
+      {
+        name: 'Projects',
+        link: '/projects',
+      },
+      {
+        name: 'Page 2',
+        link: '/page-2',
+      },
+      {
+        name: 'Blog',
+        link: '/blog',
+      },
+      {
+        name: 'About',
+        link: '/about',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-stylus`,
