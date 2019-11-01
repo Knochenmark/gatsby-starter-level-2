@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <React.Fragment>
       <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       </div>
       <Footer author={data.site.siteMetadata.author} />
-    </>
+    </React.Fragment>
   );
 };
 
