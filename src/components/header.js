@@ -20,7 +20,13 @@ const Header = ({ menuLinks, siteTitle }) => (
   </header>
 );
 
+const menuLinksPropTypeShape = PropTypes.shape({
+  name: PropTypes.string,
+  link: PropTypes.string
+});
+
 Header.propTypes = {
+  menuLinks: PropTypes.arrayOf(menuLinksPropTypeShape).isRequired,
   siteTitle: PropTypes.string,
 };
 

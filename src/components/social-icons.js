@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import style from './social-icons.module.styl';
 
 const SocialIcons = ({ icons }) => {
@@ -15,6 +16,15 @@ const SocialIcons = ({ icons }) => {
       <div className={style.socialIcons}>{socialIcons}</div>
     </div>
   );
+};
+
+const iconShape = PropTypes.shape({
+  link: PropTypes.string,
+  icon: PropTypes.element
+});
+
+SocialIcons.propTypes = {
+  icons: PropTypes.arrayOf(iconShape)
 };
 
 export default SocialIcons;

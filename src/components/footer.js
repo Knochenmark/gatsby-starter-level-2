@@ -40,7 +40,7 @@ const Footer = ({ author }) => {
 };
 
 Footer.propTypes = {
-  siteTitle: PropTypes.string,
+  author: PropTypes.string,
 };
 
 Footer.defaultProps = {
