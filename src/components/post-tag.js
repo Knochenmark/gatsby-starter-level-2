@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import PropTypes from 'prop-types';
 import style from './post-tag.module.styl';
+import PropTypes from 'prop-types';
 
 const PostTag = ({ tag }) => (
   <Link className={style.postTag} to="/">
