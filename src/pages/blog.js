@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const Blog = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
-  const onPaginaitonChange = page => {
+  const onPaginationChange = page => {
     setCurrentPage(page);
   };
 
@@ -17,7 +17,6 @@ const Blog = ({ data }) => {
 
   let leftCursor = (currentPage - 1) * paginationSize;
   let rightCursor = leftCursor + paginationSize;
-
   return (
     <Layout>
       <div>
@@ -25,6 +24,7 @@ const Blog = ({ data }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
             <PostCard
+              key={node.frontmatter.title}
               coverImage={coverImage}
               title={node.frontmatter.title}
               description={node.frontmatter.description}
@@ -38,7 +38,7 @@ const Blog = ({ data }) => {
             <Pagination
               pageSize={paginationSize}
               current={currentPage}
-              onChange={onPaginaitonChange}
+              onChange={onPaginationChange}
               total={data.allMarkdownRemark.edges.length}
             />
           </Col>
