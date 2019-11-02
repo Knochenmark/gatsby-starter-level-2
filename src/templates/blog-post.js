@@ -3,8 +3,9 @@ import Img from 'gatsby-image';
 import React from 'react';
 import Layout from '../components/layout';
 import PostTag from '../components/post-tag';
+import PropTypes from 'prop-types';
 
-export default ({ data }) => {
+const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
   const coverImage = post.frontmatter.cover_image ? post.frontmatter.cover_image.childImageSharp.fluid : null;
 
@@ -23,6 +24,13 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+BlogPost.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default BlogPost;
+
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

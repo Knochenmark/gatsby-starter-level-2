@@ -3,9 +3,10 @@ import Img from 'gatsby-image';
 import React from 'react';
 import style from './post-card.module.styl';
 import PostTag from './post-tag';
+import PropTypes from 'prop-types';
 
 const PostCard = ({ title, description, link, coverImage, tags }) => {
-  const tagsList = tags.map(tag => <PostTag tag={tag} />);
+  const tagsList = tags.map((tag, i) => <PostTag key={i} tag={tag} />);
 
   return (
     <Link to={link} className={style.postCardLink}>
@@ -21,6 +22,14 @@ const PostCard = ({ title, description, link, coverImage, tags }) => {
       </div>
     </Link>
   );
+};
+
+PostCard.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  link: PropTypes.string,
+  coverImage: PropTypes.string,
+  tags: PropTypes.string,
 };
 
 export default PostCard;

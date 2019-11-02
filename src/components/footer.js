@@ -40,11 +40,7 @@ const Footer = ({ author }) => {
 };
 
 Footer.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Footer.defaultProps = {
-  siteTitle: '',
+  author: PropTypes.string,
 };
 
 export default Footer;
