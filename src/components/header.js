@@ -13,7 +13,7 @@ const Header = ({ menuLinks, siteTitle }) => (
       </Link>
       <nav className={style.navigation}>
         {menuLinks.map(link => (
-          <Link className={style.navigationLink} key={link.name} to={link.link}>
+          <Link className={style.navigationLink} key={link.name} to={link.link} activeClassName="active">
             {link.name}
           </Link>
         ))}
