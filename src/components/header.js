@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import style from './header.module.styl';
+import SocialIcons from './social-icons';
+import { socialIconList } from './social-icons-list';
 
 const Header = ({ menuLinks, siteTitle }) => (
   <header className={style.siteHeader}>
@@ -16,13 +18,14 @@ const Header = ({ menuLinks, siteTitle }) => (
           </Link>
         ))}
       </nav>
+      <SocialIcons icons={socialIconList} />
     </div>
   </header>
 );
 
 const menuLinksPropTypeShape = PropTypes.shape({
   name: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
 });
 
 Header.propTypes = {
