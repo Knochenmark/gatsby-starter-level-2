@@ -1,73 +1,35 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import style from './header.module.styl';
+import SocialIcons from './social-icons';
+import { socialIconList } from './social-icons-list';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-
-      fontSize: '0.4em',
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-            marginRight: '20px',
-          }}
-        >
-          {siteTitle}
-        </Link>
-
-        <Link
-          to="/projects"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-            marginRight: '20px',
-          }}
-        >
-          Projects
-        </Link>
-
-        <Link
-          to="/about"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-            marginRight: '20px',
-          }}
-        >
-          About
-        </Link>
-
-        <Link
-          to="/blog"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-            marginRight: '20px',
-          }}
-        >
-          Blog
-        </Link>
-      </h1>
+const Header = ({ menuLinks, siteTitle }) => (
+  <header className={style.siteHeader}>
+    <div className={style.siteHeaderContainer}>
+      <Link to="/" className={style.siteTitle}>
+        {siteTitle}
+      </Link>
+      <nav className={style.navigation}>
+        {menuLinks.map(link => (
+          <Link className={style.navigationLink} key={link.name} to={link.link}>
+            {link.name}
+          </Link>
+        ))}
+      </nav>
+      <SocialIcons icons={socialIconList} />
     </div>
   </header>
 );
 
+const menuLinksPropTypeShape = PropTypes.shape({
+  name: PropTypes.string,
+  link: PropTypes.string,
+});
+
 Header.propTypes = {
+  menuLinks: PropTypes.arrayOf(menuLinksPropTypeShape).isRequired,
   siteTitle: PropTypes.string,
 };
 

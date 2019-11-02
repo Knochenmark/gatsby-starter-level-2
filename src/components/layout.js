@@ -19,14 +19,18 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
           author
+          menuLinks {
+            name
+            link
+          }
         }
       }
     }
   `);
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <React.Fragment>
+      <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           flex: 1,
@@ -36,7 +40,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       </div>
       <Footer author={data.site.siteMetadata.author} />
-    </>
+    </React.Fragment>
   );
 };
 

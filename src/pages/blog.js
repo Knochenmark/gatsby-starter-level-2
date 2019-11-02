@@ -3,13 +3,11 @@ import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import { Pagination, Row, Col } from 'antd';
-import BlogPost from '../templates/blog-post';
-import PropTypes from 'prop-types';
 
-const Blog = ({ data }) => {
+export default ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
-  const onPaginaitonChange = page => {
+  const onPaginationChange = page => {
     setCurrentPage(page);
   };
 
@@ -17,7 +15,6 @@ const Blog = ({ data }) => {
 
   let leftCursor = (currentPage - 1) * paginationSize;
   let rightCursor = leftCursor + paginationSize;
-
   return (
     <Layout>
       <div>
@@ -25,6 +22,7 @@ const Blog = ({ data }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
             <PostCard
+              key={node.frontmatter.title}
               coverImage={coverImage}
               title={node.frontmatter.title}
               description={node.frontmatter.description}
@@ -38,7 +36,7 @@ const Blog = ({ data }) => {
             <Pagination
               pageSize={paginationSize}
               current={currentPage}
-              onChange={onPaginaitonChange}
+              onChange={onPaginationChange}
               total={data.allMarkdownRemark.edges.length}
             />
           </Col>
@@ -47,12 +45,6 @@ const Blog = ({ data }) => {
     </Layout>
   );
 };
-
-Blog.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export default BlogPost;
 
 export const query = graphql`
   query {

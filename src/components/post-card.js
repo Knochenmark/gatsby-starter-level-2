@@ -6,7 +6,7 @@ import style from './post-card.module.styl';
 import PostTag from './post-tag';
 
 const PostCard = ({ title, description, link, coverImage, tags }) => {
-  const tagsList = tags.map(tag => <PostTag key={tag} tag={tag} />);
+  const tagsList = tags.map((tag, i) => <PostTag key={i} tag={tag} />);
 
   return (
     <div className={`${style.postCard} content-box`}>

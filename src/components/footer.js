@@ -1,27 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import CodeIcon from '../assets/code.svg';
-import Codepen from '../assets/codepen.svg';
-import Github from '../assets/github.svg';
 import style from './footer.module.styl';
 import SocialIcons from './social-icons';
+import { socialIconList } from './social-icons-list';
 
 const Footer = ({ author }) => {
-  const socialIcons = [
-    {
-      icon: <Github />,
-      link: 'https://github.com/Knochenmark',
-    },
-    {
-      icon: <Codepen />,
-      link: 'https://codepen.io/Knochenmark',
-    },
-  ];
-
   return (
     <footer className={style.siteFooter}>
       <div className={style.siteFooterSocial}>
-        <SocialIcons icons={socialIcons} />
+        <SocialIcons icons={socialIconList} />
         <span className={style.copyright}>
           © {new Date().getFullYear()} {author}
         </span>
@@ -41,6 +29,10 @@ const Footer = ({ author }) => {
 
 Footer.propTypes = {
   author: PropTypes.string,
+};
+
+Footer.defaultProps = {
+  siteTitle: '',
 };
 
 export default Footer;
