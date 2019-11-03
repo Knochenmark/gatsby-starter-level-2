@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 
-export default () => {
+const Projects = () => {
   return (
     <Layout>
       <h2>Projects</h2>
@@ -9,3 +9,5 @@ export default () => {
     </Layout>
   );
 };
+
+export default Projects;

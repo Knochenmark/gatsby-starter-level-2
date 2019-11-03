@@ -4,8 +4,9 @@ import Image from '../components/image';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import SEO from '../components/seo';
+import PropTypes from 'prop-types';
 
-export default ({ data }) => {
+const Index = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -35,6 +36,12 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+Index.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default Index;
 
 export const query = graphql`
   query {
