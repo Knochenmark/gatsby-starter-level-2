@@ -3,8 +3,9 @@ import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import { Pagination, Row, Col } from 'antd';
+import PropTypes from 'prop-types';
 
-export default ({ data }) => {
+const Blog = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
   const onPaginationChange = page => {
@@ -45,6 +46,12 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+Blog.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default Blog;
 
 export const query = graphql`
   query {
