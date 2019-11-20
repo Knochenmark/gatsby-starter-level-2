@@ -5,19 +5,25 @@ import React from 'react';
 import style from './post-card.module.styl';
 import PostTag from './post-tag';
 
-const PostCard = ({ title, description, link, coverImage, tags }) => {
+const PostCard = ({ title, date, description, link, coverImage, tags }) => {
   const tagsList = tags.map(tag => <PostTag key={tag} tag={tag} />);
 
   return (
     <article className={`${style.postCard} content-box`}>
       <Link to={link}>
+        <div className={style.postCardCoverImage}>{coverImage && <Img fluid={coverImage} />}</div>
+      </Link>
+      <div className={style.postTags}>{tagsList}</div>
+      <Link to={link}>
         <div className={style.postCardContent}>
-          {coverImage && <Img fluid={coverImage} />}
           <h2 className="post-card__title">{title}</h2>
+          <div className={style.postCardContentPublished}>published on {date}</div>
           <p className="post-card__description">{description}</p>
         </div>
       </Link>
-      <div className={style.postTags}>{tagsList}</div>
+      <Link className={style.readMore} to={link}>
+        <span>Read more</span>
+      </Link>
     </article>
   );
 };
