@@ -1,9 +1,9 @@
+import { Col, Pagination, Row } from 'antd';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
-import { Pagination, Row, Col } from 'antd';
-import PropTypes from 'prop-types';
 
 const Blog = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
@@ -26,6 +26,7 @@ const Blog = ({ data }) => {
               key={node.frontmatter.title}
               coverImage={coverImage}
               title={node.frontmatter.title}
+              date={node.frontmatter.date}
               description={node.frontmatter.description}
               link={`blog${node.fields.slug}`}
               tags={node.frontmatter.tags}
@@ -61,7 +62,7 @@ export const query = graphql`
           frontmatter {
             title
             tags
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "D MMMM, YYYY")
             published
             description
             cover_image {

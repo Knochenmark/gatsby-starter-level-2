@@ -1,5 +1,5 @@
 ---
-date: '2019-05-04'
+date: 2019-05-04
 title: 'Blood alone'
 tags: ['Markdown', 'Blood', 'alone', 'history']
 published: true
