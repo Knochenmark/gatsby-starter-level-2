@@ -2,16 +2,59 @@
   text-decoration none
 
 .postCard
+  display flex
+  flex-direction column
   position relative
   color var(--title-color)
   margin-bottom var(--space)
+  padding 0
+  padding-bottom calc(3rem * 2)
 
-  &TitleLink
+  >a
     text-decoration none
+
+  &CoverImage
+    padding var(--space) var(--space) 0
+
+  &Content
+    padding 0 var(--space)
 
     h2
       color var(--link-color)
       margin 1rem 0
 
+    &Published
+      margin-bottom 1rem
+      color var(--title-color)
+      font-size 0.8rem
+      font-weight 500
+
+    p
+      color var(--title-color)
+
 .postTags
   margin 1rem 0 0
+  padding 0 var(--space)
+  position relative
+  z-index 2
+
+.readMore
+  color var(--link-color)
+  background transparent
+  display flex
+  align-items flex-end
+  flex-grow 1
+  padding 0 var(--space) var(--space)
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  z-index 0
+
+  &:hover
+    color var(--link-color) !important
+    opacity 1 !important
+
+    span
+      text-decoration underline

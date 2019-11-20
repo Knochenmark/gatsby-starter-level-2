@@ -1,5 +1,5 @@
 ---
-date: '2019-05-04'
+date: 2019-05-04
 title: 'Lululu'
 tags: ['Markdown', 'Lululu', 'Apples']
 published: true

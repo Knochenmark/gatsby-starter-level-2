@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import style from './post-tag.module.styl';
 
 const PostTag = ({ tag }) => (
@@ -10,7 +10,7 @@ const PostTag = ({ tag }) => (
 );
 
 PostTag.propTypes = {
-  tag: PropTypes.string.isRequired
+  tag: PropTypes.string.isRequired,
 };
 
 export default PostTag;
