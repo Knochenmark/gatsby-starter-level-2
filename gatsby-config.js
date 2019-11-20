@@ -7,12 +7,12 @@ module.exports = {
     paginationPageSize: 4,
     menuLinks: [
       {
-        name: 'Projects',
-        link: '/projects',
+        name: 'Home',
+        link: '/',
       },
       {
-        name: 'Page 2',
-        link: '/page-2',
+        name: 'Projects',
+        link: '/projects',
       },
       {
         name: 'Blog',
@@ -21,6 +21,10 @@ module.exports = {
       {
         name: 'About',
         link: '/about',
+      },
+      {
+        name: 'Contact',
+        link: '/contact',
       },
     ],
   },
