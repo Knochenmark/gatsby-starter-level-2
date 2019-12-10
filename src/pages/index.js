@@ -30,7 +30,7 @@ const Index = ({ data }) => {
               title={node.frontmatter.title}
               date={node.frontmatter.date}
               description={node.frontmatter.description}
-              link={`blog${node.fields.slug}`}
+              link={`/blog${node.fields.slug}`}
               tags={node.frontmatter.tags}
             />
           ) : null;
