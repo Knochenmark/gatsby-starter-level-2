@@ -3,7 +3,12 @@ module.exports = {
   siteMetadata: {
     title: 'Gatsby Portfolio Starter',
     description: 'Gatsby portfolio for kickstarting your portfolio project.',
-    author: 'Knochenmark',
+    author: 'Max Mustermann',
+    tagline: 'Design. Create. Develop',
+    heroIntroduction: "hey it's me",
+    heroDescription: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      sed diam nonumy eirmod tempor invidunt ut labore
+      et dolore magna aliquyam erat, sed diam voluptua.`,
     paginationPageSize: 4,
     menuLinks: [
       {
