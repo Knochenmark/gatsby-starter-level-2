@@ -30,6 +30,7 @@ const StyledTagline = styled.h2`
 `;
 const StyledDescription = styled.p`
   margin-top: 25px;
+  margin-left: 3px;
   width: 50%;
   max-width: 500px;
 `;
