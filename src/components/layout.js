@@ -31,14 +31,7 @@ const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          flex: 1,
-          padding: 'calc((var(--space) / 2))',
-        }}
-      >
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
       <Footer author={data.site.siteMetadata.author} />
     </React.Fragment>
   );

@@ -4,7 +4,7 @@ module.exports = {
     title: 'Gatsby Portfolio Starter',
     description: 'Gatsby portfolio for kickstarting your portfolio project.',
     author: 'Max Mustermann',
-    tagline: 'Design. Create. Develop',
+    tagline: 'Design. Code. Experiment',
     heroIntroduction: "hey it's me",
     heroDescription: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
       sed diam nonumy eirmod tempor invidunt ut labore
