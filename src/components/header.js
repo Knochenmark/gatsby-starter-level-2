@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import style from './header.module.styl';
 import SocialIcons from './social-icons';
 import { socialIconList } from './social-icons-list';
 
@@ -37,7 +36,7 @@ const StyledNavLink = styled(Link)`
 `;
 
 const Header = ({ menuLinks, siteTitle }) => (
-  <StyledHeader className={style.siteHeader}>
+  <StyledHeader>
     <StyledContainer>
       <StyledHomeLink to="/">{siteTitle}</StyledHomeLink>
       <StyledNav>
