@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import style from './tags.module.styl';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import StyledSpanNumber from './StyledSpanNumber';
