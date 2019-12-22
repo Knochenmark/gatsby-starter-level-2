@@ -13,7 +13,7 @@ const StyledPostTag = styled(Link)`
   border-radius: var(--radius);
 `;
 
-const PostTag = ({ tag }) => <StyledPostTag to="/tags/${tag}">{tag}</StyledPostTag>;
+const PostTag = ({ tag }) => <StyledPostTag to={`/tags/${tag}`}>{tag}</StyledPostTag>;
 
 PostTag.propTypes = {
   tag: PropTypes.string.isRequired,
