@@ -1,5 +1,6 @@
 const { createFilePath } = require(`gatsby-source-filesystem`);
 const path = require('path');
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   //called when node created/updated
   const { createNodeField } = actions;
@@ -29,9 +30,16 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+
+        tagsGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___tags) {
+            fieldValue
+          }
+        }
       }
     `
   );
+
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: `blog${node.fields.slug}`,
@@ -40,6 +48,19 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available in page queries as GraphQL vars.
         // (when we query data it will set $slug var auto)
         slug: node.fields.slug,
+      },
+    });
+  });
+
+  const tags = result.data.tagsGroup.group;
+  const tagTemplate = path.resolve('src/templates/tags.js');
+
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${tag.fieldValue}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
       },
     });
   });
