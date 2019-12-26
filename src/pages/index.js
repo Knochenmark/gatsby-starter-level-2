@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
@@ -18,6 +19,7 @@ const Index = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <Hero data={heroData} />
+      <FeaturedProjects data={data.featuredProjects.nodes}></FeaturedProjects>
       <section>
         <h3>Latest Blog Posts</h3>
         <Link to="/blog">View All Posts</Link>
@@ -54,6 +56,28 @@ export const query = graphql`
         tagline
         heroDescription
         heroIntroduction
+      }
+    }
+    featuredProjects: allMarkdownRemark(
+      limit: 3
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { fileAbsolutePath: { regex: "/content/projects/" }, frontmatter: { featured: { eq: true } } }
+    ) {
+      nodes {
+        frontmatter {
+          date(formatString: "D MMMM, YYYY")
+          title
+          repo_link
+          demo_link
+          techs
+          cover_image {
+            childImageSharp {
+              fluid(maxWidth: 800) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
     blog: allMarkdownRemark(

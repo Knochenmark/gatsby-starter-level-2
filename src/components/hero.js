@@ -1,17 +1,8 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { StyledSection } from './_shared/styled-section';
 
-const StyledSection = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  min-height: calc(100vh - var(--header-height));
-  margin: 0 auto;
-  padding: 150px 0;
-  max-width: 1000px;
-`;
 const StyledIntroduction = styled.div`
   color: var(--link-color);
   margin-left: 3px;
