@@ -1,18 +1,17 @@
-import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const StyledSpan = styled.span`
   padding: 0 10px;
 `;
 
-const StyledSpanNumber = ({ number }) => {
+const Tag = ({ number }) => {
   return <StyledSpan>({number})</StyledSpan>;
 };
 
-StyledSpanNumber.propTypes = {
+Tag.propTypes = {
   number: PropTypes.number.isRequired,
 };
 
-export default StyledSpanNumber;
+export default Tag;

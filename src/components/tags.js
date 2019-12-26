@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
-import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-
-import StyledSpanNumber from './StyledSpanNumber';
+import React from 'react';
+import Tag from './tag';
 
 const Tags = () => {
   const data = useStaticQuery(graphql`
@@ -19,12 +17,10 @@ const Tags = () => {
     }
   `);
 
-  let [alphabet] = React.useState('abcdefghijklmnopqrstuvwxyz'.split(''));
-  console.log(data);
-  let tagAmount = {};
+  const [alphabet] = React.useState('abcdefghijklmnopqrstuvwxyz'.split(''));
+  const tagAmount = {};
   const tags = data.allMarkdownRemark
     ? data.allMarkdownRemark.edges.reduce((acc, curr) => {
-        console.log(curr);
         curr.node.frontmatter.tags.map(tag => {
           if (!acc.includes(tag)) {
             acc.push(tag);
@@ -52,7 +48,6 @@ const Tags = () => {
       }
     });
 
-    console.log(findExistingTags);
     setExistingTags(findExistingTags);
   }, []);
 
@@ -64,7 +59,7 @@ const Tags = () => {
         {existingTags[key].map(tag => (
           <span key={tag}>
             {tag}
-            <StyledSpanNumber number={tagAmount[tag]} />
+            <Tag number={tagAmount[tag]} />
           </span>
         ))}
       </React.Fragment>
