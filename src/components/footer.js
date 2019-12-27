@@ -5,10 +5,11 @@ import React from 'react';
 import CodeIcon from '../assets/code.svg';
 import SocialIcons from './social-icons';
 import { socialIconList } from './social-icons-list';
+import { mq } from './_shared/media';
 import { flexCenter } from './_shared/styled-mixins';
 
 const marginMediaQuery = css`
-  @media (min-width: 768px) {
+  ${mq.gt.xs} {
     margin-top: 0;
   }
 `;
@@ -20,7 +21,7 @@ const StyledFooter = styled.footer`
   text-align: center;
   font-size: 0.8rem;
 
-  @media (min-width: 768px) {
+  ${mq.gt.xs} {
     flex-direction: row-reverse;
     justify-content: space-between;
   }
@@ -31,7 +32,7 @@ const StyledSocialContainer = styled.div`
   margin-top: 1rem;
   ${marginMediaQuery};
 
-  @media (min-width: 768px) {
+  ${mq.gt.xs} {
     flex-direction: row;
     align-items: center;
   }

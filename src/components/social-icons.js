@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { mq } from './_shared/media';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -9,14 +10,14 @@ const StyledContainer = styled.div`
   margin-top: 1rem;
   flex-direction: column;
 
-  @media (min-width: 768px) {
+  ${mq.gt.xs} {
     margin-top: 0;
   }
 `;
 const StyledSocialIcons = styled.div`
   display: flex;
 
-  @media (min-width: 768px) {
+  ${mq.gt.xs} {
     margin-right: 0.5rem;
   }
 
