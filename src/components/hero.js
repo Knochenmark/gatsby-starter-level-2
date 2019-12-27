@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { StyledSection } from './_shared/styled-section';
 
+const StyledHeroSection = styled(StyledSection)`
+  min-height: calc(100vh - var(--header-height));
+`;
 const StyledIntroduction = styled.div`
   color: var(--link-color);
   margin-left: 3px;
@@ -29,12 +32,12 @@ const StyledDescription = styled.p`
 const Hero = ({ data }) => {
   const { introduction, author, tagline, description } = data;
   return (
-    <StyledSection>
+    <StyledHeroSection>
       <StyledIntroduction>{introduction}</StyledIntroduction>
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
       <StyledDescription>{description}</StyledDescription>
-    </StyledSection>
+    </StyledHeroSection>
   );
 };
 

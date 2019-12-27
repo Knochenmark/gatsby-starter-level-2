@@ -7,7 +7,11 @@ const FeaturedProjects = ({ data }) => {
   console.log(data);
 
   const featuredProjects = data.map((project, i) => {
-    return <div key={project.frontmatter.title}>{project.frontmatter.title}</div>;
+    return (
+      <div key={project.frontmatter.title}>
+        {project.frontmatter.title} - {project.frontmatter.date}
+      </div>
+    );
   });
 
   return (

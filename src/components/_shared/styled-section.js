@@ -8,5 +8,4 @@ export const StyledSection = styled.section`
   margin: 0 auto;
   padding: 150px 0;
   max-width: 1000px;
-  min-height: calc(100vh - var(--header-height));
 `;
