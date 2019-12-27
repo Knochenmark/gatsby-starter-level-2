@@ -1,9 +1,18 @@
+import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import style from './post-card.module.styl';
 import PostTag from './post-tag';
+
+const StyledPostTags = styled.div`
+  pointer-events: none;
+  margin: 1rem 0 0;
+  padding: 0 var(--space);
+  position: relative;
+  z-index: 2;
+`;
 
 const PostCard = ({ title, date, description, link, coverImage, tags }) => {
   const tagsList = tags.map(tag => <PostTag key={tag} tag={tag} />);
@@ -13,7 +22,7 @@ const PostCard = ({ title, date, description, link, coverImage, tags }) => {
       <Link to={link}>
         <div className={style.postCardCoverImage}>{coverImage && <Img fluid={coverImage} />}</div>
       </Link>
-      <div className={style.postTags}>{tagsList}</div>
+      <StyledPostTags>{tagsList}</StyledPostTags>
       <Link to={link}>
         <div className={style.postCardContent}>
           <h2 className="post-card__title">{title}</h2>

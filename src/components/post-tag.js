@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const StyledPostTag = styled(Link)`
+  pointer-events: auto;
   margin-right: 0.7em;
   font-size: 0.8em;
   text-decoration: none;
