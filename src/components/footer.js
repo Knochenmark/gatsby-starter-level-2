@@ -33,6 +33,9 @@ const StyledSocialContainer = styled.div`
   ${marginMediaQuery};
 
   ${mq.gt.xs} {
+    > div {
+      margin-right: 0.5rem;
+    }
     flex-direction: row;
     align-items: center;
   }

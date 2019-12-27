@@ -1,25 +1,15 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { mq } from './_shared/media';
 
 const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
   flex-direction: column;
-
-  ${mq.gt.xs} {
-    margin-top: 0;
-  }
 `;
 const StyledSocialIcons = styled.div`
   display: flex;
-
-  ${mq.gt.xs} {
-    margin-right: 0.5rem;
-  }
 
   & > a {
     display: flex;
