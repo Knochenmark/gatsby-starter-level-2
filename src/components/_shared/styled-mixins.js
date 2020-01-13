@@ -6,6 +6,12 @@ export const flexCenter = css`
   align-items: center;
 `;
 
+export const flexEnd = css`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 export const contentBox = css`
   background-color: var(--bg-content-color);
   max-width: var(--content-width);
