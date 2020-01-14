@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { StyledSection } from './_shared/styled-section';
+import ScrollIndicator from './scroll-indicator';
 
 const StyledHeroSection = styled(StyledSection)`
   min-height: calc(100vh - var(--header-height));
+  position: relative;
 `;
 const StyledIntroduction = styled.div`
   color: var(--link-color);
@@ -37,6 +39,7 @@ const Hero = ({ data }) => {
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
       <StyledDescription>{description}</StyledDescription>
+      <ScrollIndicator></ScrollIndicator>
     </StyledHeroSection>
   );
 };
