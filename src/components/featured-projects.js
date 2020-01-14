@@ -14,11 +14,17 @@ const StyledFeaturedProject = styled.div`
   grid-gap: 70px;
   padding: 70px 0;
 `;
-const StyledProjectTitle = styled(StyledHeading)`
-  color: var(--title-color);
+const StyledProjectTitle = styled.a`
+  color: var(--title-color) !important;
+  text-decoration: none;
   font-weight: 800;
   margin: 20px 0;
   position: relative;
+
+  &:hover {
+    color: var(--link-color) !important;
+    opacity: 1 !important;
+  }
 
   &:after {
     background-color: var(--link-color);
@@ -131,13 +137,15 @@ const FeaturedProjects = ({ data }) => {
 
     return (
       <StyledFeaturedProject key={project.frontmatter.title}>
-        {coverImage && (
+        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>{coverImage && (
           <StyledImageContainer>
             <Img fluid={coverImage} />
           </StyledImageContainer>
-        )}
+        )}</a>
         <StyledProjectInfoContainer>
-          <StyledProjectTitle>{project.frontmatter.title}</StyledProjectTitle>
+          <StyledProjectTitle href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
+            {project.frontmatter.title}
+          </StyledProjectTitle>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
           <StyledTechContainer>{techs}</StyledTechContainer>
           <StyledLinkContainer>
