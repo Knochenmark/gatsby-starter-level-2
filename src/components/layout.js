@@ -12,6 +12,10 @@ import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
 
+if (typeof window !== "undefined") {
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
