@@ -7,7 +7,7 @@ const StyledSpan = styled.span`
 `;
 
 const Tag = ({ number }) => {
-  return <StyledSpan>({number})</StyledSpan>;
+  return <StyledSpan>({number}) aaa</StyledSpan>;
 };
 
 Tag.propTypes = {
