@@ -6,6 +6,15 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import SEO from '../components/seo';
+import styled from '@emotion/styled';
+
+const StyledSection = styled.section`
+  text-align: center;
+`;
+
+const StyledHeader = styled.h3`
+  padding: 20px;
+`;
 
 const Index = ({ data }) => {
   const heroData = {
@@ -20,9 +29,11 @@ const Index = ({ data }) => {
       <SEO title="Home" />
       <Hero data={heroData} />
       <FeaturedProjects data={data.featuredProjects.nodes}></FeaturedProjects>
-      <section>
-        <h3>Latest Blog Posts</h3>
-        <Link to="/blog">View All Posts</Link>
+      <>
+        <StyledHeader>
+          <h3>Latest Blog Posts</h3>
+          <Link to="/blog">View All Posts</Link>
+        </StyledHeader>
         {data.blog.edges.map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
@@ -37,7 +48,7 @@ const Index = ({ data }) => {
             />
           ) : null;
         })}
-      </section>
+      </>
     </Layout>
   );
 };

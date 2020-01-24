@@ -31,21 +31,25 @@ const StyledScroller = styled.div`
   border-radius: 25%;
   animation-name: ${scroll};
   animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+  animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
 `;
-const StyledScrollText =  styled.span`
+const StyledScrollText = styled.span`
   font-size: 0.7rem;
   margin-bottom: 10px;
 `;
 
 const ScrollIndicator = () => {
-  return <StyledContainer>
-    <StyledScrollText>Scroll down</StyledScrollText>
-    <StyledMouse>
-      <StyledScroller></StyledScroller>
-    </StyledMouse>
-  </StyledContainer>
+  return (
+    <StyledContainer>
+      <StyledScrollText>Scroll down</StyledScrollText>
+      <StyledMouse>
+        <StyledScroller></StyledScroller>
+      </StyledMouse>
+    </StyledContainer>
+  );
 };
+
+ScrollIndicator.propTypes = {};
 
 export default ScrollIndicator;

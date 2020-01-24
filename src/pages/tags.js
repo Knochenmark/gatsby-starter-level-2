@@ -15,8 +15,6 @@ const TagsPage = ({
   const [alphabet] = React.useState('abcdefghijklmnopqrstuvwxyz'.split(''));
   const [existingTagsWithAlphabet, setExistingTagsWithAlphabet] = React.useState({});
 
-  let tags = group.map(tag => tag.fieldValue);
-
   React.useEffect(() => {
     let findExistingTags = {};
     alphabet.forEach(char => {

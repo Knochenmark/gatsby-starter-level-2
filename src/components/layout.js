@@ -12,8 +12,10 @@ import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
 
-if (typeof window !== "undefined") {
-  require("smooth-scroll")('a[href*="#"]')
+import { StyledSection } from './_shared/styled-section';
+
+if (typeof window !== 'undefined') {
+  require('smooth-scroll')('a[href*="#"]');
 }
 
 const Layout = ({ children }) => {
@@ -35,7 +37,9 @@ const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <StyledSection>
+        <main>{children}</main>
+      </StyledSection>
       <Footer author={data.site.siteMetadata.author} />
     </React.Fragment>
   );
