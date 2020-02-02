@@ -12,8 +12,6 @@ import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
 
-import { StyledSection } from './_shared/styled-section';
-
 if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
@@ -34,13 +32,12 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const { menuLinks, title, author } = data.site.siteMetadata;
   return (
     <React.Fragment>
-      <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
-      <StyledSection>
-        <main>{children}</main>
-      </StyledSection>
-      <Footer author={data.site.siteMetadata.author} />
+      <Header menuLinks={menuLinks} siteTitle={title} />
+      <main>{children}</main>
+      <Footer author={author} />
     </React.Fragment>
   );
 };

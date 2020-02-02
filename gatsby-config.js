@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         name: 'Blog',
-        link: '/blog',
+        link: '/#blog',
       },
       {
         name: 'About',

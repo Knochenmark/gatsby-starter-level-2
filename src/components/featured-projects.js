@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Github from '../assets/github.svg';
 import External from '../assets/external.svg';
+import Github from '../assets/github.svg';
 import { StyledHeading } from './_shared/styled-heading';
-import { flexCenter, flexEnd, contentBox } from './_shared/styled-mixins';
+import { contentBox, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
-const StyledFeaturedProject = styled.div`
+const StyledFeaturedProject = styled.article`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 70px;
@@ -41,7 +41,7 @@ const StyledImageContainer = styled.div`
   min-height: 200px;
   position: relative;
 
-  &:after{
+  &:after {
     content: '';
     position: absolute;
     width: 50px;
@@ -62,7 +62,7 @@ const StyledImageContainer = styled.div`
     height: 50%;
   }
 `;
-const StyledProjectInfoContainer = styled.div`
+const StyledProjectInfoContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,34 +79,34 @@ const StyledProjectInfoContainer = styled.div`
     border-right: 1px solid var(--link-color);
   }
 `;
-const StyledDescription = styled.div`
+const StyledDescription = styled.section`
   ${contentBox}
   max-height: 140px;
   position: relative;
   padding: 10px;
 
-  >p {
+  > p {
     height: 100%;
     margin: 0;
     font-size: 0.8rem;
     overflow: hidden;
   }
 `;
-const StyledTechContainer = styled.div`
+const StyledTechContainer = styled.section`
   padding: 0 10px;
 
-  >span {
+  > span {
     font-size: 0.8rem;
     color: var(--body-color);
     margin-bottom: 7px;
     white-space: nowrap;
   }
-  >i {
+  > i {
     cursor: default;
     margin: 0 10px;
   }
 `;
-const StyledLinkContainer = styled.div`
+const StyledLinkContainer = styled.section`
   ${flexEnd};
   margin-bottom: 10px;
 
@@ -124,24 +124,29 @@ const StyledLinkContainer = styled.div`
 `;
 
 const FeaturedProjects = ({ data }) => {
-  console.log(data);
-
   const featuredProjects = data.map(project => {
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
 
-    const techs =  project.frontmatter.techs.map((tech, i)=>{
-      return <React.Fragment key={tech}>{i ? <i>|</i> : null}<span key={tech}>{tech}</span></React.Fragment>
-    })
+    const techs = project.frontmatter.techs.map((tech, i) => {
+      return (
+        <React.Fragment key={tech}>
+          {i ? <i>+</i> : null}
+          <span key={tech}>{tech}</span>
+        </React.Fragment>
+      );
+    });
 
     return (
       <StyledFeaturedProject key={project.frontmatter.title}>
-        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>{coverImage && (
-          <StyledImageContainer>
-            <Img fluid={coverImage} />
-          </StyledImageContainer>
-        )}</a>
+        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
+          {coverImage && (
+            <StyledImageContainer>
+              <Img fluid={coverImage} />
+            </StyledImageContainer>
+          )}
+        </a>
         <StyledProjectInfoContainer>
           <StyledProjectTitle href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
             {project.frontmatter.title}
