@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import SocialIcons from './social-icons';
 import { socialIconList } from './social-icons-list';
+import { mq } from './_shared/media';
 
 const StyledHeader = styled.header`
   height: var(--header-height);
@@ -11,6 +12,11 @@ const StyledHeader = styled.header`
   background-color: var(--bg-content-color);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-left);
+  display: none;
+
+  ${mq.gt.sm} {
+    display: block;
+  }
 `;
 const StyledContainer = styled.div`
   display: flex;
