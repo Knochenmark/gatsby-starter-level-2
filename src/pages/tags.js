@@ -1,8 +1,15 @@
-import { Link, graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import { graphql, Link } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import PropTypes from 'prop-types';
+
+const StyledTagLink = styled(Link)`
+  margin: 1rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--link-color);
+`;
 
 const TagsPage = ({
   data: {
@@ -14,8 +21,6 @@ const TagsPage = ({
 }) => {
   const [alphabet] = React.useState('abcdefghijklmnopqrstuvwxyz'.split(''));
   const [existingTagsWithAlphabet, setExistingTagsWithAlphabet] = React.useState({});
-
-  let tags = group.map(tag => tag.fieldValue);
 
   React.useEffect(() => {
     let findExistingTags = {};
@@ -41,11 +46,9 @@ const TagsPage = ({
         <h2>{char.toUpperCase()}</h2>
         {data.tags.map((tag, i) => {
           return (
-            <>
-              <Link to={`/tags/${tag}/`}>
-                {tag} ({data.count[i]})
-              </Link>
-            </>
+            <StyledTagLink to={`/tags/${tag}/`}>
+              {tag} ({data.count[i]})
+            </StyledTagLink>
           );
         })}
       </div>
@@ -56,7 +59,7 @@ const TagsPage = ({
     <Layout>
       <SEO title={title} />
       <div>
-        <h1>Tags</h1>
+        <h1>All Tags</h1>
         {Object.values(existingTagsWithAlphabet).length && elems}
       </div>
     </Layout>

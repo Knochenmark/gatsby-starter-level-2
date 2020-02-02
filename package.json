@@ -15,30 +15,31 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
-    "antd": "^3.24.2",
-    "gatsby": "^2.15.29",
-    "gatsby-image": "^2.2.24",
-    "gatsby-plugin-manifest": "^2.2.20",
-    "gatsby-plugin-offline": "^3.0.11",
-    "gatsby-plugin-react-helmet": "^3.1.10",
+    "@emotion/core": "^10.0.27",
+    "@emotion/styled": "^10.0.27",
+    "antd": "^3.26.7",
+    "gatsby": "^2.18.22",
+    "gatsby-image": "^2.2.38",
+    "gatsby-plugin-manifest": "^2.2.37",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-react-svg": "^2.1.2",
-    "gatsby-plugin-sharp": "^2.2.28",
-    "gatsby-plugin-stylus": "^2.1.11",
-    "gatsby-remark-images": "^3.1.26",
-    "gatsby-source-filesystem": "^2.1.29",
-    "gatsby-transformer-remark": "^2.6.27",
-    "gatsby-transformer-sharp": "^2.2.20",
+    "gatsby-plugin-sharp": "^2.3.13",
+    "gatsby-plugin-stylus": "^2.1.20",
+    "gatsby-remark-images": "^3.1.42",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-remark": "^2.6.48",
+    "gatsby-transformer-sharp": "^2.3.12",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "smooth-scroll": "^16.1.1"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-plugin-react": "^7.16.0",
-    "prettier": "^1.18.2"
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^1.19.1"
   },
   "keywords": [
     "gatsby"

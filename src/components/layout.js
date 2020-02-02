@@ -11,6 +11,11 @@ import React from 'react';
 import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
+import { StyledSection } from './_shared/styled-section';
+
+if (typeof window !== 'undefined') {
+  require('smooth-scroll')('a[href*="#"]');
+}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,11 +33,13 @@ const Layout = ({ children }) => {
     }
   `);
 
-  const {menuLinks, title, author} = data.site.siteMetadata;
+  const { menuLinks, title, author } = data.site.siteMetadata;
   return (
     <React.Fragment>
       <Header menuLinks={menuLinks} siteTitle={title} />
-      <main>{children}</main>
+      <StyledSection>
+        <main>{children}</main>
+      </StyledSection>
       <Footer author={author} />
     </React.Fragment>
   );
