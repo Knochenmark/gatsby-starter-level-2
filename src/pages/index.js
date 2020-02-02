@@ -1,10 +1,10 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
-import PostCard from '../components/post-card';
+import RecentPosts from '../components/recent-posts';
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
@@ -20,24 +20,7 @@ const Index = ({ data }) => {
       <SEO title="Home" />
       <Hero data={heroData} />
       <FeaturedProjects data={data.featuredProjects.nodes}></FeaturedProjects>
-      <section>
-        <h3>Latest Blog Posts</h3>
-        <Link to="/blog">View All Posts</Link>
-        {data.blog.edges.map(({ node }) => {
-          const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
-          return node.frontmatter.published ? (
-            <PostCard
-              key={node.frontmatter.title}
-              coverImage={coverImage}
-              title={node.frontmatter.title}
-              date={node.frontmatter.date}
-              description={node.frontmatter.description}
-              link={`/blog${node.fields.slug}`}
-              tags={node.frontmatter.tags}
-            />
-          ) : null;
-        })}
-      </section>
+      <RecentPosts data={data.blog.edges}></RecentPosts>
     </Layout>
   );
 };

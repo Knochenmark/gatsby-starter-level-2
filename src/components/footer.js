@@ -63,10 +63,10 @@ const Footer = ({ author }) => {
   return (
     <StyledFooter>
       <StyledSocialContainer>
-        <SocialIcons icons={socialIconList} />
         <StyledCopyright>
           © {new Date().getFullYear()} {author}
         </StyledCopyright>
+        <SocialIcons icons={socialIconList} />
       </StyledSocialContainer>
       <StyledRotator>
         <CodeIcon />

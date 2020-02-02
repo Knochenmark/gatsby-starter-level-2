@@ -28,11 +28,12 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const {menuLinks, title, author} = data.site.siteMetadata;
   return (
     <React.Fragment>
-      <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
+      <Header menuLinks={menuLinks} siteTitle={title} />
       <main>{children}</main>
-      <Footer author={data.site.siteMetadata.author} />
+      <Footer author={author} />
     </React.Fragment>
   );
 };
