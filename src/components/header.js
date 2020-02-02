@@ -12,15 +12,11 @@ const StyledHeader = styled.header`
   background-color: var(--bg-content-color);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-left);
-  display: none;
-
-  ${mq.gt.sm} {
-    display: block;
-  }
 `;
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   padding: 0 calc((var(--space) / 2));
@@ -34,6 +30,11 @@ const StyledNav = styled.nav`
   display: flex;
   flex: 1;
   align-items: center;
+  display: none;
+
+  ${mq.gt.sm} {
+    display: block;
+  }
 `;
 const StyledNavLink = styled(Link)`
   margin: 0 0.5rem;
