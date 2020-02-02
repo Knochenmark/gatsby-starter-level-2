@@ -25,6 +25,9 @@ const StyledFooter = styled.footer`
     flex-direction: row-reverse;
     justify-content: space-between;
   }
+  ${mq.lt.md} {
+    margin-bottom: var(--header-height);
+  }
 `;
 const StyledSocialContainer = styled.div`
   ${flexCenter};
