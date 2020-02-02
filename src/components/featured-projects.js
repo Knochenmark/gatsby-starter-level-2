@@ -132,7 +132,7 @@ const FeaturedProjects = ({ data }) => {
     const techs = project.frontmatter.techs.map((tech, i) => {
       return (
         <React.Fragment key={tech}>
-          {i ? <i>|</i> : null}
+          {i ? <i>+</i> : null}
           <span key={tech}>{tech}</span>
         </React.Fragment>
       );
