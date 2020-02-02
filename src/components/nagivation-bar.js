@@ -29,17 +29,26 @@ const StyledNavLink = styled(Link)`
   flex-shrink: 1;
   text-decoration: none;
   color: var(--title-color) !important;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   line-height: 1;
   position: relative;
   width: var(--header-height);
   height: var(--header-height);
 
   > svg {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     fill: var(--title-color);
   }
 
+  &.active {
+    font-weight: 700;
+    border-bottom: none !important;
+    border-top: 2px solid var(--link-color);
+
+    & > svg {
+      fill: var(--link-color);
+    }
+  }
   &:hover {
     color: var(--link-color) !important;
 
