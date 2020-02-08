@@ -7,6 +7,7 @@ import Envelope from '../assets/envelope.svg';
 import Feather from '../assets/feather.svg';
 import Git from '../assets/git.svg';
 import { mq } from './_shared/media';
+import { StyledIndexNumber } from './_shared/styled-index-number';
 import { flexCenter } from './_shared/styled-mixins';
 
 const StyledNav = styled.nav`
@@ -72,10 +73,13 @@ const iconMap = {
 const NavigationBar = ({ menuLinks }) => {
   return (
     <StyledNav>
-      {menuLinks.map(link => (
+      {menuLinks.map((link, index) => (
         <StyledNavLink key={link.name} to={link.link} activeClassName="active">
           {iconMap[link.name.toLowerCase()]}
-          <div>{link.name}</div>
+          <div>
+            <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
+            {link.name}
+          </div>
         </StyledNavLink>
       ))}
     </StyledNav>
