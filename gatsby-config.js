@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-portfolio',
   siteMetadata: {
-    title: 'Gatsby Portfolio Starter',
-    description: 'Gatsby portfolio for kickstarting your portfolio project.',
+    title: 'Level 2',
+    description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
     author: 'Max Mustermann',
     tagline: 'Design. Code. Experiment',
     heroIntroduction: "hey it's me",
