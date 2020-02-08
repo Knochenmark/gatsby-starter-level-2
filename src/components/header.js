@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Logo from '../assets/logo.svg';
 import SocialIcons from './social-icons';
 import { socialIconList } from './social-icons-list';
 import { mq } from './_shared/media';
@@ -23,7 +24,11 @@ const StyledContainer = styled.div`
 `;
 const StyledHomeLink = styled(Link)`
   text-decoration: none;
-  color: var(--title-color) !important;
+`;
+const StyledLogo = styled(Logo)`
+  width: var(--header-height);
+  height: var(--header-height);
+  fill: var(--title-color);
 `;
 const StyledNav = styled.nav`
   margin-left: 0.75rem;
@@ -45,7 +50,9 @@ const StyledNavLink = styled(Link)`
 const Header = ({ menuLinks, siteTitle }) => (
   <StyledHeader>
     <StyledContainer>
-      <StyledHomeLink to="/">{siteTitle}</StyledHomeLink>
+      <StyledHomeLink to="/">
+        <StyledLogo />
+      </StyledHomeLink>
       <StyledNav>
         {menuLinks.map(link => (
           <StyledNavLink key={link.name} to={link.link} activeClassName="active">

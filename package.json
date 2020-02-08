@@ -1,8 +1,8 @@
 {
   "homepage": "https://knochenmark.github.io/gatsby-starter-portfolio/",
-  "name": "gatsby-starter-portfolio",
+  "name": "gatsby-starter-level-2",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple starter to quickly set up your portfolio with Gatsby",
   "version": "0.1.0",
   "author": "Knochenmark",
   "scripts": {
