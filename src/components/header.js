@@ -6,6 +6,7 @@ import Logo from '../assets/logo.svg';
 import SocialIcons from './social-icons';
 import { socialIconList } from './social-icons-list';
 import { mq } from './_shared/media';
+import { StyledIndexNumber } from './_shared/styled-index-number';
 
 const StyledHeader = styled.header`
   height: var(--header-height);
@@ -47,15 +48,16 @@ const StyledNavLink = styled(Link)`
   color: var(--title-color) !important;
 `;
 
-const Header = ({ menuLinks, siteTitle }) => (
+const Header = ({ menuLinks }) => (
   <StyledHeader>
     <StyledContainer>
       <StyledHomeLink to="/">
         <StyledLogo />
       </StyledHomeLink>
       <StyledNav>
-        {menuLinks.map(link => (
+        {menuLinks.map((link, index) => (
           <StyledNavLink key={link.name} to={link.link} activeClassName="active">
+            <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
             {link.name}
           </StyledNavLink>
         ))}
