@@ -12,10 +12,6 @@ module.exports = {
     paginationPageSize: 4,
     menuLinks: [
       {
-        name: 'Home',
-        link: '/',
-      },
-      {
         name: 'Projects',
         link: '/#featured',
       },
@@ -31,10 +27,11 @@ module.exports = {
         name: 'Contact',
         link: '/contact',
       },
-      {
-        name: 'Tags',
-        link: '/tags',
-      },
+      // Uncomment for development purposes
+      // {
+      //   name: 'Tags',
+      //   link: '/tags',
+      // },
     ],
   },
   plugins: [

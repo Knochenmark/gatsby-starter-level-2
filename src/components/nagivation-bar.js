@@ -2,7 +2,10 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Github from '../assets/github.svg';
+import About from '../assets/about.svg';
+import Envelope from '../assets/envelope.svg';
+import Feather from '../assets/feather.svg';
+import Git from '../assets/git.svg';
 import { mq } from './_shared/media';
 import { flexCenter } from './_shared/styled-mixins';
 
@@ -58,14 +61,20 @@ const StyledNavLink = styled(Link)`
   }
 `;
 
+const iconMap = {
+  about: <About />,
+  projects: <Git />,
+  blog: <Feather />,
+  contact: <Envelope />,
+};
+
 // Note: The NavigationBar component should only be used for up to 5 menu links
 const NavigationBar = ({ menuLinks }) => {
   return (
     <StyledNav>
       {menuLinks.map(link => (
         <StyledNavLink key={link.name} to={link.link} activeClassName="active">
-          {/* TODO: The Github Icon is only temporarily */}
-          <Github />
+          {iconMap[link.name.toLowerCase()]}
           <div>{link.name}</div>
         </StyledNavLink>
       ))}
