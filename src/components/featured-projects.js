@@ -180,7 +180,7 @@ const FeaturedProjects = ({ data }) => {
 
   return (
     <StyledSection id="featured">
-      <StyledHeading>Featured Projects</StyledHeading>
+      <StyledHeading title="Featured Projects" />
       {featuredProjects}
     </StyledSection>
   );
