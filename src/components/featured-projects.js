@@ -39,7 +39,6 @@ const StyledProjectTitle = styled.a`
 `;
 const StyledImageContainer = styled.div`
   min-width: 300px;
-  max-width: 800px;
   min-height: 200px;
   position: relative;
   margin-bottom: 40px;
