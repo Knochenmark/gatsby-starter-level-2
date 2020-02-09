@@ -9,10 +9,11 @@ import { flexCenter, flexEnd, contentBox } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledFeaturedProject = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 70px;
-  padding: 70px 0;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 60px;
 `;
 const StyledProjectTitle = styled.a`
   color: var(--title-color) !important;
@@ -37,11 +38,14 @@ const StyledProjectTitle = styled.a`
   }
 `;
 const StyledImageContainer = styled.div`
-  min-width: 400px;
+  min-width: 300px;
+  max-width: 800px;
   min-height: 200px;
   position: relative;
+  margin-bottom: 40px;
+  flex: 1;
 
-  &:after{
+  &:after {
     content: '';
     position: absolute;
     width: 50px;
@@ -53,13 +57,14 @@ const StyledImageContainer = styled.div`
   }
 
   &:before {
-    background-color: var(--link-color);
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: -10px;
+    bottom: -20px;
+    left: -20px;
     width: 50%;
     height: 50%;
+    border-bottom: 1px solid var(--link-color);
+    border-left: 1px solid var(--link-color);
   }
 `;
 const StyledProjectInfoContainer = styled.div`
@@ -67,6 +72,10 @@ const StyledProjectInfoContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  margin-left: 40px;
+  min-width: 350px;
+  flex: 1;
+  flex-wrap: wrap;
 
   &:before {
     content: '';
@@ -81,11 +90,13 @@ const StyledProjectInfoContainer = styled.div`
 `;
 const StyledDescription = styled.div`
   ${contentBox}
-  max-height: 140px;
+  max-height: 200px;
+  flex-wrap: wrap;
+  display: flex;
   position: relative;
   padding: 10px;
 
-  >p {
+  > p {
     height: 100%;
     margin: 0;
     font-size: 0.8rem;
@@ -95,13 +106,13 @@ const StyledDescription = styled.div`
 const StyledTechContainer = styled.div`
   padding: 0 10px;
 
-  >span {
+  > span {
     font-size: 0.8rem;
     color: var(--body-color);
     margin-bottom: 7px;
     white-space: nowrap;
   }
-  >i {
+  > i {
     cursor: default;
     margin: 0 10px;
   }
@@ -131,17 +142,20 @@ const FeaturedProjects = ({ data }) => {
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
 
-    const techs =  project.frontmatter.techs.map((tech, i)=>{
-      return <React.Fragment key={tech}>{i ? <i>|</i> : null}<span key={tech}>{tech}</span></React.Fragment>
-    })
+    const techs = project.frontmatter.techs.map((tech, i) => {
+      return (
+        <React.Fragment key={tech}>
+          {i ? <i>|</i> : null}
+          <span key={tech}>{tech}</span>
+        </React.Fragment>
+      );
+    });
 
     return (
       <StyledFeaturedProject key={project.frontmatter.title}>
-        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>{coverImage && (
-          <StyledImageContainer>
-            <Img fluid={coverImage} />
-          </StyledImageContainer>
-        )}</a>
+        <StyledImageContainer>
+          <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>{coverImage && <Img fluid={coverImage} />}</a>
+        </StyledImageContainer>
         <StyledProjectInfoContainer>
           <StyledProjectTitle href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
             {project.frontmatter.title}
