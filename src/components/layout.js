@@ -1,18 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
-
-import { StyledSection } from './_shared/styled-section';
+import NavigationBar from './nagivation-bar';
 
 if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
@@ -34,13 +26,13 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const { menuLinks, title, author } = data.site.siteMetadata;
   return (
     <React.Fragment>
-      <Header menuLinks={data.site.siteMetadata.menuLinks} siteTitle={data.site.siteMetadata.title} />
-      <StyledSection>
-        <main>{children}</main>
-      </StyledSection>
-      <Footer author={data.site.siteMetadata.author} />
+      <Header menuLinks={menuLinks} siteTitle={title} />
+      <main>{children}</main>
+      <Footer author={author} />
+      <NavigationBar menuLinks={menuLinks} />
     </React.Fragment>
   );
 };

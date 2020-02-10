@@ -1,8 +1,8 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-portfolio',
   siteMetadata: {
-    title: 'Gatsby Portfolio Starter',
-    description: 'Gatsby portfolio for kickstarting your portfolio project.',
+    title: 'Level 2',
+    description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
     author: 'Max Mustermann',
     tagline: 'Design. Code. Experiment',
     heroIntroduction: "hey it's me",
@@ -12,16 +12,12 @@ module.exports = {
     paginationPageSize: 4,
     menuLinks: [
       {
-        name: 'Home',
-        link: '/',
-      },
-      {
         name: 'Projects',
         link: '/#featured',
       },
       {
         name: 'Blog',
-        link: '/blog',
+        link: '/#blog',
       },
       {
         name: 'About',
@@ -31,10 +27,11 @@ module.exports = {
         name: 'Contact',
         link: '/contact',
       },
-      {
-        name: 'Tags',
-        link: '/tags',
-      },
+      // Uncomment for development purposes
+      // {
+      //   name: 'Tags',
+      //   link: '/tags',
+      // },
     ],
   },
   plugins: [

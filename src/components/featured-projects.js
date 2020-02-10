@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Github from '../assets/github.svg';
 import External from '../assets/external.svg';
+import Github from '../assets/github.svg';
 import { StyledHeading } from './_shared/styled-heading';
-import { flexCenter, flexEnd, contentBox } from './_shared/styled-mixins';
+import { contentBox, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledFeaturedProject = styled.div`
@@ -15,6 +15,7 @@ const StyledFeaturedProject = styled.div`
   flex-direction: row;
   margin-bottom: 60px;
 `;
+
 const StyledProjectTitle = styled.a`
   color: var(--title-color) !important;
   text-decoration: none;
@@ -66,7 +67,7 @@ const StyledImageContainer = styled.div`
     border-left: 1px solid var(--link-color);
   }
 `;
-const StyledProjectInfoContainer = styled.div`
+const StyledProjectInfoContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -87,7 +88,7 @@ const StyledProjectInfoContainer = styled.div`
     border-right: 1px solid var(--link-color);
   }
 `;
-const StyledDescription = styled.div`
+const StyledDescription = styled.section`
   ${contentBox}
   max-height: 200px;
   flex-wrap: wrap;
@@ -102,7 +103,7 @@ const StyledDescription = styled.div`
     overflow: hidden;
   }
 `;
-const StyledTechContainer = styled.div`
+const StyledTechContainer = styled.section`
   padding: 0 10px;
 
   > span {
@@ -116,7 +117,7 @@ const StyledTechContainer = styled.div`
     margin: 0 10px;
   }
 `;
-const StyledLinkContainer = styled.div`
+const StyledLinkContainer = styled.section`
   ${flexEnd};
   margin-bottom: 10px;
 
@@ -134,8 +135,6 @@ const StyledLinkContainer = styled.div`
 `;
 
 const FeaturedProjects = ({ data }) => {
-  console.log(data);
-
   const featuredProjects = data.map(project => {
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
     const demoLink = project.frontmatter.demo_link;
@@ -144,7 +143,8 @@ const FeaturedProjects = ({ data }) => {
     const techs = project.frontmatter.techs.map((tech, i) => {
       return (
         <React.Fragment key={tech}>
-          {i ? <i>|</i> : null}
+
+          {i ? <i>+</i> : null}
           <span key={tech}>{tech}</span>
         </React.Fragment>
       );
@@ -155,6 +155,13 @@ const FeaturedProjects = ({ data }) => {
         <StyledImageContainer>
           <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>{coverImage && <Img fluid={coverImage} />}</a>
         </StyledImageContainer>
+        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
+          {coverImage && (
+            <StyledImageContainer>
+              <Img fluid={coverImage} />
+            </StyledImageContainer>
+          )}
+        </a>
         <StyledProjectInfoContainer>
           <StyledProjectTitle href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
             {project.frontmatter.title}
