@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { StyledSection } from './_shared/styled-section';
 import ScrollIndicator from './scroll-indicator';
+import { StyledSection } from './_shared/styled-section';
 
 const StyledHeroSection = styled(StyledSection)`
   min-height: calc(100vh - var(--header-height));
@@ -17,12 +17,14 @@ const StyledAuthor = styled.h1`
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
+  word-break: break-word;
 `;
 const StyledTagline = styled.h2`
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
   color: var(--link-color);
+  word-break: break-word;
 `;
 const StyledDescription = styled.p`
   margin-top: 25px;
