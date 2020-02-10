@@ -42,7 +42,7 @@ const RecentPosts = ({ data }) => {
   return (
     <StyledSection id="blog">
       <Link to="/blog">View All Posts</Link>
-      <StyledHeading>Latest Blog Posts</StyledHeading>
+      <StyledHeading title="Latest Blog Posts" />
       <StyledPostsContainer>{recentPosts}</StyledPostsContainer>
     </StyledSection>
   );
