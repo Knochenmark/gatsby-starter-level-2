@@ -51,7 +51,7 @@ const StyledNavLink = styled(Link)`
 const Header = ({ menuLinks }) => (
   <StyledHeader>
     <StyledContainer>
-      <StyledHomeLink to="/">
+      <StyledHomeLink title="logo" to="/">
         <StyledLogo />
       </StyledHomeLink>
       <StyledNav>
