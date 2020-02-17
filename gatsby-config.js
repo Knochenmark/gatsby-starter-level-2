@@ -10,6 +10,14 @@ module.exports = {
       sed diam nonumy eirmod tempor invidunt ut labore
       et dolore magna aliquyam erat, sed diam voluptua.`,
     paginationPageSize: 4,
+    contact: {
+      phone: '+49 1234 5678910',
+      email: 'maxmustermann@gmail.com',
+      address: 'Friesenstr. 123, Berlin, Germany',
+      text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+      sed diam nonumy eirmod tempor invidunt ut labore
+      et dolore magna aliquyam erat, sed diam voluptua.`,
+    },
     menuLinks: [
       {
         name: 'Projects',
@@ -25,7 +33,7 @@ module.exports = {
       },
       {
         name: 'Contact',
-        link: '/contact',
+        link: '/#contact',
       },
       // Uncomment for development purposes
       // {

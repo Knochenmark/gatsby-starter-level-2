@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Contact from '../components/contact';
 import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
@@ -19,8 +20,9 @@ const Index = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <Hero data={heroData} />
-      <FeaturedProjects data={data.featuredProjects.nodes}></FeaturedProjects>
-      <RecentPosts data={data.blog.edges}></RecentPosts>
+      <FeaturedProjects data={data.featuredProjects.nodes} />
+      <RecentPosts data={data.blog.edges} />
+      <Contact data={data.contact} />
     </Layout>
   );
 };
@@ -39,6 +41,16 @@ export const query = graphql`
         tagline
         heroDescription
         heroIntroduction
+      }
+    }
+    contact: site {
+      siteMetadata {
+        contact {
+          phone
+          email
+          address
+          text
+        }
       }
     }
     featuredProjects: allMarkdownRemark(
