@@ -4,15 +4,26 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
+import { mq } from './_shared/media';
 import { StyledHeading } from './_shared/styled-heading';
 import { contentBox, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledFeaturedProject = styled.article`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 70px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 50px;
   padding: 70px 0;
+
+  ${mq.gt.sm} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &:nth-child(odd) {
+    direction: rtl;
+  }
+  &:nth-child(odd) * {
+    direction: ltr;
+  }
 `;
 const StyledProjectTitle = styled.a`
   color: var(--title-color) !important;
@@ -37,20 +48,9 @@ const StyledProjectTitle = styled.a`
   }
 `;
 const StyledImageContainer = styled.div`
-  min-width: 400px;
+  min-width: 300px;
   min-height: 200px;
   position: relative;
-
-  &:after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: -25px;
-    border-top: 1px solid var(--link-color);
-    border-left: 1px solid var(--link-color);
-  }
 
   &:before {
     background-color: var(--link-color);
@@ -67,21 +67,10 @@ const StyledProjectInfoContainer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    top: -25px;
-    right: -25px;
-    border-top: 1px solid var(--link-color);
-    border-right: 1px solid var(--link-color);
-  }
 `;
 const StyledDescription = styled.section`
   ${contentBox}
-  max-height: 140px;
+  max-height: 180px;
   position: relative;
   padding: 10px;
 
@@ -108,7 +97,7 @@ const StyledTechContainer = styled.section`
 `;
 const StyledLinkContainer = styled.section`
   ${flexEnd};
-  margin-bottom: 10px;
+  margin: 10px 0;
 
   & > a {
     display: flex;
