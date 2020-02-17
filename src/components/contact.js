@@ -6,6 +6,9 @@ import Phone from '../assets/phone.svg';
 import { StyledHeading } from './_shared/styled-heading';
 import { StyledSection } from './_shared/styled-section';
 
+const StyledContactSection = styled(StyledSection)`
+  margin-bottom: 70px;
+`;
 const StyledContainer = styled.section`
   margin-top: 2rem;
   display: flex;
@@ -41,9 +44,16 @@ const StyledSeparator = styled.div`
   background-color: var(--body-color);
 `;
 const StyledContacts = styled.div`
-  display: flex;
-  justify-content: space-around;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  & > section {
+    margin-right: 3rem;
+  }
+  & > section:last-child() {
+    margin-right: 0;
+  }
 `;
 
 const Contact = ({ data }) => {
@@ -51,7 +61,7 @@ const Contact = ({ data }) => {
 
   return (
     <React.Fragment>
-      <StyledSection id="contact">
+      <StyledContactSection id="contact">
         <StyledHeading>Contact Details</StyledHeading>
         {text && <StyledText>{text}</StyledText>}
         <StyledSeparator />
@@ -84,7 +94,7 @@ const Contact = ({ data }) => {
             </StyledContainer>
           )}
         </StyledContacts>
-      </StyledSection>
+      </StyledContactSection>
     </React.Fragment>
   );
 };
