@@ -18,10 +18,10 @@ const StyledFeaturedProject = styled.article`
   ${mq.gt.sm} {
     grid-template-columns: repeat(2, 1fr);
   }
-  &:nth-child(odd) {
+  &:nth-of-type(even) {
     direction: rtl;
   }
-  &:nth-child(odd) * {
+  &:nth-of-type(even) * {
     direction: ltr;
   }
 `;
