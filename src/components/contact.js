@@ -50,6 +50,8 @@ const StyledContacts = styled.div`
 
   & > section {
     margin-right: 3rem;
+    flex-basis: 270px;
+    flex-shrink: 0;
   }
   & > section:last-child() {
     margin-right: 0;
