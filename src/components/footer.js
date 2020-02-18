@@ -2,7 +2,6 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
-import CodeIcon from '../assets/code.svg';
 import SocialIcons from './social-icons';
 import { socialIconList } from './social-icons-list';
 import { mq } from './_shared/media';
@@ -45,20 +44,23 @@ const StyledSocialContainer = styled.div`
 `;
 const StyledCopyright = styled.span`
   font-weight: 500;
-  margin-top: 0.5rem;
-  ${marginMediaQuery};
+  margin-bottom: 0.8rem;
+  ${mq.gt.xs} {
+    margin-right: 0.8rem;
+    margin-bottom: 0;
+  }
 `;
 const StyledRotator = styled.div`
   ${flexCenter};
-  margin-top: 1rem;
-  font-size: 1rem;
-  ${marginMediaQuery};
+  margin: 0.8rem 0;
+  font-size: 0.8rem;
 
-  & > svg {
-    fill: currentColor;
-    margin-right: 0.5rem;
-    height: 1.6rem;
-    width: 1.6rem;
+  & > span {
+    margin-left: 0.25rem;
+  }
+
+  ${mq.gt.xs} {
+    margin: 0;
   }
 `;
 
@@ -72,12 +74,9 @@ const Footer = ({ author }) => {
         <SocialIcons icons={socialIconList} />
       </StyledSocialContainer>
       <StyledRotator>
-        <CodeIcon />
-        <span>
-          with{' '}
-          <span role="img" aria-label="heart emoji">
-            💖
-          </span>
+        Made with
+        <span role="img" aria-label="heart emoji">
+          💖
         </span>
       </StyledRotator>
     </StyledFooter>
