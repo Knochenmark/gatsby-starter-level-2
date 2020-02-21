@@ -1,12 +1,14 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Hero from '../components/hero';
 import Contact from '../components/contact';
 import FeaturedProjects from '../components/featured-projects';
-import Hero from '../components/hero';
-import Layout from '../components/layout';
+import About from '../components/about';
 import RecentPosts from '../components/recent-posts';
-import SEO from '../components/seo';
 
 const Index = ({ data }) => {
   const heroData = {
@@ -23,6 +25,7 @@ const Index = ({ data }) => {
       <FeaturedProjects data={data.featuredProjects.nodes} />
       <RecentPosts data={data.blog.edges} />
       <Contact data={data.contact} />
+      <About data={data.about} />
     </Layout>
   );
 };
@@ -43,6 +46,7 @@ export const query = graphql`
         heroIntroduction
       }
     }
+
     contact: site {
       siteMetadata {
         contact {
@@ -53,6 +57,7 @@ export const query = graphql`
         }
       }
     }
+
     featuredProjects: allMarkdownRemark(
       limit: 3
       sort: { order: DESC, fields: frontmatter___date }
@@ -76,6 +81,23 @@ export const query = graphql`
         html
       }
     }
+
+    about: markdownRemark(fileAbsolutePath: { regex: "/content/about/" }) {
+      frontmatter {
+        title
+        link
+        techs
+        about_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+      rawMarkdownBody
+    }
+
     blog: allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
       limit: 3
@@ -89,7 +111,7 @@ export const query = graphql`
             date(formatString: "D MMMM, YYYY")
             published
             description
-            cover_image {
+            about_image {
               childImageSharp {
                 fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid

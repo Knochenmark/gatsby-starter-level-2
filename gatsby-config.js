@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         name: 'About',
-        link: '/about',
+        link: '/#about',
       },
       {
         name: 'Contact',
@@ -64,6 +64,13 @@ module.exports = {
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'about',
+        path: `${__dirname}/content/about`,
       },
     },
     `gatsby-transformer-sharp`,
