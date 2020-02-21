@@ -3,7 +3,7 @@ import React from 'react';
 import Address from '../assets/address.svg';
 import Email from '../assets/email.svg';
 import Phone from '../assets/phone.svg';
-import { StyledHeading } from './_shared/styled-heading';
+import { StyledH1 } from './_shared/styled-headings';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledContactSection = styled(StyledSection)`
@@ -64,7 +64,7 @@ const Contact = ({ data }) => {
   return (
     <React.Fragment>
       <StyledContactSection id="contact">
-        <StyledHeading>Contact Details</StyledHeading>
+        <StyledH1>Contact Details</StyledH1>
         {text && <StyledText>{text}</StyledText>}
         <StyledSeparator />
         <StyledContacts>

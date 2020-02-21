@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mq } from './_shared/media';
-import { StyledHeading } from './_shared/styled-heading';
+import { StyledH1 } from './_shared/styled-heading';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledPostsContainer = styled.section`
@@ -42,7 +42,7 @@ const RecentPosts = ({ data }) => {
   return (
     <StyledSection id="blog">
       <Link to="/blog">View All Posts</Link>
-      <StyledHeading>Latest Blog Posts</StyledHeading>
+      <StyledH1>Latest Blog Posts</StyledH1>
       <StyledPostsContainer>{recentPosts}</StyledPostsContainer>
     </StyledSection>
   );

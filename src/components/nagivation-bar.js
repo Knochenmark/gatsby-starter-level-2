@@ -36,7 +36,6 @@ const StyledNavLink = styled(Link)`
   font-size: 0.8rem;
   line-height: 1;
   position: relative;
-  width: var(--header-height);
   height: var(--header-height);
 
   > svg {

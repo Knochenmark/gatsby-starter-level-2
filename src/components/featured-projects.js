@@ -5,7 +5,8 @@ import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
 import { mq } from './_shared/media';
-import { StyledHeading } from './_shared/styled-heading';
+import { StyledH1 } from './_shared/styled-headings';
+import { StyledImageContainer } from './_shared/styled-image-container';
 import { contentBox, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
@@ -45,21 +46,6 @@ const StyledProjectTitle = styled.a`
     left: 0;
     width: 30px;
     height: 2px;
-  }
-`;
-const StyledImageContainer = styled.div`
-  min-width: 300px;
-  min-height: 200px;
-  position: relative;
-
-  &:before {
-    background-color: var(--link-color);
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: -10px;
-    width: 50%;
-    height: 50%;
   }
 `;
 const StyledProjectInfoContainer = styled.section`
@@ -161,7 +147,7 @@ const FeaturedProjects = ({ data }) => {
 
   return (
     <StyledSection id="featured">
-      <StyledHeading>Featured Projects</StyledHeading>
+      <StyledH1>Featured Projects</StyledH1>
       {featuredProjects}
     </StyledSection>
   );

@@ -9,4 +9,5 @@ export const StyledSection = styled.section`
   width: 95%;
   padding: 30px 0;
   max-width: 1000px;
+  margin-bottom: 60px;
 `;
