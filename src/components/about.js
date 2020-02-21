@@ -39,6 +39,44 @@ const StyledAboutContainer = styled.section`
   flex-wrap: wrap;
 `;
 
+const StyledTechContainer = styled.section`
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  > span {
+    font-size: 0.8rem;
+    color: var(--body-color);
+    margin-bottom: 7px;
+    white-space: nowrap;
+  }
+  > i {
+    cursor: default;
+    margin: 0 10px;
+  }
+`;
+
+const StyledTag = styled.span`
+  position: relative;
+  font-size: 12px;
+  margin-right: 30px;
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 7px;
+    left: -14px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+
+    border-left: 6px solid var(--link-color);
+  }
+`;
+
 const Blog = ({ data }) => {
   const {
     frontmatter: { title, link, techs, about_image },
@@ -57,6 +95,11 @@ const Blog = ({ data }) => {
         </StyledImageContainer>
         <StyledTextSection>
           <p>{rawMarkdownBody}</p>
+          <StyledTechContainer>
+            {techs.map((tech, i) => (
+              <StyledTag key={tech}>{tech}</StyledTag>
+            ))}
+          </StyledTechContainer>
         </StyledTextSection>
       </StyledAboutContainer>
     </StyledSection>
