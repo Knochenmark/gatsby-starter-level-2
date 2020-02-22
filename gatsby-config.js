@@ -20,17 +20,18 @@ module.exports = {
     },
     menuLinks: [
       {
-        name: 'Projects',
-        link: '/#featured',
-      },
-      {
-        name: 'Blog',
-        link: '/#blog',
-      },
-      {
         name: 'About',
         link: '/#about',
       },
+      {
+        name: 'Projects',
+        link: '/#featured',
+      },
+      // TODO: Uncomment once done or for development
+      // {
+      //   name: 'Blog',
+      //   link: '/#blog',
+      // },
       {
         name: 'Contact',
         link: '/#contact',

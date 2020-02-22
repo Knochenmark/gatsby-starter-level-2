@@ -1,14 +1,12 @@
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Hero from '../components/hero';
+import About from '../components/about';
 import Contact from '../components/contact';
 import FeaturedProjects from '../components/featured-projects';
-import About from '../components/about';
-import RecentPosts from '../components/recent-posts';
+import Hero from '../components/hero';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const Index = ({ data }) => {
   const heroData = {
@@ -22,10 +20,10 @@ const Index = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <Hero data={heroData} />
-      <FeaturedProjects data={data.featuredProjects.nodes} />
-      <RecentPosts data={data.blog.edges} />
-      <Contact data={data.contact} />
       <About data={data.about} />
+      <FeaturedProjects data={data.featuredProjects.nodes} />
+      {/* <RecentPosts data={data.blog.edges} /> */}
+      <Contact data={data.contact} />
     </Layout>
   );
 };
