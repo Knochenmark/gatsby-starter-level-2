@@ -93,7 +93,7 @@ const FeaturedProjects = ({ data }) => {
 
     return (
       <StyledFeaturedProject key={project.frontmatter.title}>
-        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
+        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank">
           {coverImage && (
             <StyledImageContainer>
               <Img fluid={coverImage} />
@@ -106,12 +106,12 @@ const FeaturedProjects = ({ data }) => {
           <StyledTechContainer>{techs}</StyledTechContainer>
           <StyledLinkContainer>
             {repoLink && (
-              <a href={repoLink} title="Repository Link">
+              <a href={repoLink} target="_blank" title="Repository Link">
                 <Github />
               </a>
             )}
             {demoLink && (
-              <a href={demoLink} title="Demo Link">
+              <a href={demoLink} target="_blank" title="Demo Link">
                 <External />
               </a>
             )}
