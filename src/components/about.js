@@ -11,7 +11,7 @@ const StyledAboutContainer = styled.article`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 50px;
-  padding: 70px 0;
+  padding: 50px 0;
 
   ${mq.gt.sm} {
     grid-template-columns: repeat(2, 1fr);
@@ -43,7 +43,7 @@ const StyledTag = styled.span`
 
 const About = ({ data }) => {
   const {
-    frontmatter: { title, link, techs, about_image },
+    frontmatter: { title, techs, about_image },
     rawMarkdownBody,
   } = data;
 
@@ -53,18 +53,16 @@ const About = ({ data }) => {
     <StyledSection id="about">
       <StyledH1>About Me</StyledH1>
       <StyledAboutContainer>
-        <a href={link ? link : '#'}>
-          {image && (
-            <StyledImageContainer>
-              <Img fluid={image} objectFit="contain" />
-            </StyledImageContainer>
-          )}
-        </a>
+        {image && (
+          <StyledImageContainer>
+            <Img fluid={image} objectFit="contain" />
+          </StyledImageContainer>
+        )}
         <div>
           <StyledH2>{title}</StyledH2>
           <StyledTextSection dangerouslySetInnerHTML={{ __html: rawMarkdownBody }} />
           <StyledTechContainer>
-            {techs.map((tech, i) => (
+            {techs.map(tech => (
               <StyledTag key={tech}>
                 <Arrow />
                 {tech}

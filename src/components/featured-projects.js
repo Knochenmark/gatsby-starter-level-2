@@ -5,7 +5,7 @@ import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
 import { mq } from './_shared/media';
-import { StyledH1 } from './_shared/styled-headings';
+import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
 import { contentBox, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
@@ -14,7 +14,7 @@ const StyledFeaturedProject = styled.article`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 50px;
-  padding: 70px 0;
+  padding: 50px 0;
 
   ${mq.gt.sm} {
     grid-template-columns: repeat(2, 1fr);
@@ -24,28 +24,6 @@ const StyledFeaturedProject = styled.article`
   }
   &:nth-of-type(even) * {
     direction: ltr;
-  }
-`;
-const StyledProjectTitle = styled.a`
-  color: var(--title-color) !important;
-  text-decoration: none;
-  font-weight: 800;
-  margin: 20px 0;
-  position: relative;
-
-  &:hover {
-    color: var(--link-color) !important;
-    opacity: 1 !important;
-  }
-
-  &:after {
-    background-color: var(--link-color);
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 0;
-    width: 30px;
-    height: 2px;
   }
 `;
 const StyledProjectInfoContainer = styled.section`
@@ -123,9 +101,7 @@ const FeaturedProjects = ({ data }) => {
           )}
         </a>
         <StyledProjectInfoContainer>
-          <StyledProjectTitle href={demoLink ? demoLink : repoLink ? repoLink : '#'}>
-            {project.frontmatter.title}
-          </StyledProjectTitle>
+          <StyledH2>{project.frontmatter.title}</StyledH2>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
           <StyledTechContainer>{techs}</StyledTechContainer>
           <StyledLinkContainer>
