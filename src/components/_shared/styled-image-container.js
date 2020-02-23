@@ -5,13 +5,23 @@ export const StyledImageContainer = styled.div`
   min-height: 200px;
   position: relative;
 
-  &:before {
-    background-color: var(--link-color);
+  .gatsby-image-wrapper {
+    overflow: unset !important;
+  }
+
+  .gatsby-image-wrapper:before {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: -10px;
-    width: 50%;
-    height: 50%;
+    right: -10px;
+    width: 98%;
+    height: 98%;
+    border: 2px solid var(--link-color);
+    transition: all ease 0.4s;
+  }
+
+  .gatsby-image-wrapper:hover:before {
+    bottom: -13px;
+    right: -13px;
   }
 `;
