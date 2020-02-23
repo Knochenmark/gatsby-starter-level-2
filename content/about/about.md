@@ -1,7 +1,6 @@
 ---
 title: 'The Gatsby starter that makes developer dreams come true!'
 about_image: './me.jpg'
-link: 'https://knochenmark.github.io/gatsby-starter-portfolio/'
 techs: ['Gatsby', 'Javascript', 'React', 'GraphQL', 'Emotion', 'Stylus']
 ---
 

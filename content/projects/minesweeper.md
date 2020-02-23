@@ -2,7 +2,7 @@
 featured: true
 date: '2019-12-22'
 title: 'Minesweeper'
-cover_image: './images/alexandr-podvalny-220262-unsplash.jpg'
+cover_image: './images/motherboard.jpg'
 repo_link: 'https://github.com/Knochenmark/minesweeper'
 techs: ['Typescript', 'React']
 ---
