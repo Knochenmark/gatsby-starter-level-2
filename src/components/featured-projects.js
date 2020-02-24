@@ -29,7 +29,6 @@ const StyledFeaturedProject = styled.article`
 const StyledProjectInfoContainer = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   position: relative;
 `;
 const StyledDescription = styled.section`
@@ -47,6 +46,7 @@ const StyledDescription = styled.section`
 `;
 const StyledTechContainer = styled.section`
   padding: 0 10px;
+  margin-top: 10px;
 
   > span {
     font-size: 0.8rem;
@@ -122,7 +122,7 @@ const FeaturedProjects = ({ data }) => {
   });
 
   return (
-    <StyledSection id="featured">
+    <StyledSection id="projects">
       <StyledH1>Featured Projects</StyledH1>
       {featuredProjects}
     </StyledSection>
