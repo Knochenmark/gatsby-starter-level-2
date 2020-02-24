@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import About from '../assets/about.svg';
+import Arrow from '../assets/arrow.svg';
 import Envelope from '../assets/envelope.svg';
 import Feather from '../assets/feather.svg';
 import Git from '../assets/git.svg';
@@ -74,7 +75,7 @@ const NavigationBar = ({ menuLinks }) => {
     <StyledNav>
       {menuLinks.map((link, index) => (
         <StyledNavLink key={link.name} to={link.link} activeClassName="active">
-          {iconMap[link.name.toLowerCase()]}
+          {iconMap[link.name.toLowerCase()] || <Arrow />}
           <div>
             <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
             {link.name}
