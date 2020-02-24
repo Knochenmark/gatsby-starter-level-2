@@ -25,7 +25,7 @@ module.exports = {
       },
       {
         name: 'Projects',
-        link: '/#featured',
+        link: '/#projects',
       },
       // TODO: Uncomment once done or for development
       // {
