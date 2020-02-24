@@ -7,4 +7,4 @@ repo_link: 'https://github.com/Knochenmark/minesweeper'
 techs: ['Typescript', 'React']
 ---
 
-Destroy couch with tail in the air and sit on human they not getting up ever. Why must they do that fall over dead (not really but gets sypathy) jump up to edge of bath, fall in then scramble in a mad panic to get out.
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
