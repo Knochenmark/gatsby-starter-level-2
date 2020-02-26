@@ -31,6 +31,13 @@ const StyledProjectInfoContainer = styled.section`
   flex-direction: column;
   position: relative;
 `;
+const StyledTitleLink = styled.a`
+  text-decoration: none;
+
+  &:hover h2 {
+    color: var(--link-color);
+  }
+`;
 const StyledDescription = styled.section`
   ${contentBox}
   max-height: 180px;
@@ -101,7 +108,9 @@ const FeaturedProjects = ({ data }) => {
           )}
         </a>
         <StyledProjectInfoContainer>
-          <StyledH2>{project.frontmatter.title}</StyledH2>
+          <StyledTitleLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank">
+            <StyledH2>{project.frontmatter.title}</StyledH2>
+          </StyledTitleLink>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
           <StyledTechContainer>{techs}</StyledTechContainer>
           <StyledLinkContainer>
