@@ -3,6 +3,7 @@ import React from 'react';
 import Address from '../assets/address.svg';
 import Email from '../assets/email.svg';
 import Phone from '../assets/phone.svg';
+import { mq } from './_shared/media';
 import { StyledH1 } from './_shared/styled-headings';
 import { StyledSection } from './_shared/styled-section';
 
@@ -44,17 +45,17 @@ const StyledSeparator = styled.div`
   background-color: var(--body-color);
 `;
 const StyledContacts = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 2rem;
 
-  & > section {
-    margin-right: 3rem;
-    flex-basis: 270px;
-    flex-shrink: 0;
+  ${mq.gt.xs} {
+    grid-template-columns: repeat(2, 1fr);
   }
-  & > section:last-child() {
-    margin-right: 0;
+  ${mq.gt.sm} {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -68,12 +69,12 @@ const Contact = ({ data }) => {
         {text && <StyledText>{text}</StyledText>}
         <StyledSeparator />
         <StyledContacts>
-          {phone && (
+          {address && (
             <StyledContainer>
-              <Phone />
+              <Address />
               <StyledFormContainer>
-                <StyledForm>Phone Number</StyledForm>
-                <span>{phone}</span>
+                <StyledForm>Office Location</StyledForm>
+                <span>{address}</span>
               </StyledFormContainer>
             </StyledContainer>
           )}
@@ -86,12 +87,12 @@ const Contact = ({ data }) => {
               </StyledFormContainer>
             </StyledContainer>
           )}
-          {address && (
+          {phone && (
             <StyledContainer>
-              <Address />
+              <Phone />
               <StyledFormContainer>
-                <StyledForm>Office Location</StyledForm>
-                <span>{address}</span>
+                <StyledForm>Phone Number</StyledForm>
+                <span>{phone}</span>
               </StyledFormContainer>
             </StyledContainer>
           )}
