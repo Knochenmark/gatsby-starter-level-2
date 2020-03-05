@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
+import TechList from './tech-list';
 import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
@@ -51,21 +52,6 @@ const StyledDescription = styled.section`
     overflow: hidden;
   }
 `;
-const StyledTechContainer = styled.section`
-  padding: 0 10px;
-  margin-top: 10px;
-
-  > span {
-    font-size: 0.8rem;
-    color: var(--body-color);
-    margin-bottom: 7px;
-    white-space: nowrap;
-  }
-  > i {
-    cursor: default;
-    margin: 0 10px;
-  }
-`;
 const StyledLinkContainer = styled.section`
   ${flexEnd};
   margin: 10px 0;
@@ -89,15 +75,6 @@ const FeaturedProjects = ({ data }) => {
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
 
-    const techs = project.frontmatter.techs.map((tech, i) => {
-      return (
-        <React.Fragment key={tech}>
-          {i ? <i>+</i> : null}
-          <span key={tech}>{tech}</span>
-        </React.Fragment>
-      );
-    });
-
     return (
       <StyledFeaturedProject key={project.frontmatter.title}>
         <a href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank">
@@ -112,7 +89,7 @@ const FeaturedProjects = ({ data }) => {
             <StyledH2>{project.frontmatter.title}</StyledH2>
           </StyledTitleLink>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
-          <StyledTechContainer>{techs}</StyledTechContainer>
+          <TechList techs={project.frontmatter.techs} />
           <StyledLinkContainer>
             {repoLink && (
               <a href={repoLink} target="_blank" title="Repository Link">

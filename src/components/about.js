@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import React from 'react';
-import Arrow from '../assets/arrow.svg';
+import TechList from './tech-list';
 import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
@@ -20,27 +20,6 @@ const StyledAboutContainer = styled.article`
 const StyledTextSection = styled.section`
   white-space: pre-line;
 `;
-const StyledTechContainer = styled.section`
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-`;
-const StyledTag = styled.span`
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  font-size: 0.8rem;
-
-  color: var(--body-color);
-  margin: 0 1rem 0.5rem 0;
-
-  & > svg {
-    fill: var(--link-color);
-    height: 0.8rem;
-    margin-right: 0.25rem;
-  }
-`;
-
 const About = ({ data }) => {
   const {
     frontmatter: { title, techs, about_image },
@@ -61,14 +40,7 @@ const About = ({ data }) => {
         <div>
           <StyledH2>{title}</StyledH2>
           <StyledTextSection dangerouslySetInnerHTML={{ __html: rawMarkdownBody }} />
-          <StyledTechContainer>
-            {techs.map(tech => (
-              <StyledTag key={tech}>
-                <Arrow />
-                {tech}
-              </StyledTag>
-            ))}
-          </StyledTechContainer>
+          <TechList techs={techs} />
         </div>
       </StyledAboutContainer>
     </StyledSection>
