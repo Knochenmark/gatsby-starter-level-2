@@ -17,14 +17,15 @@ const StyledIntroduction = styled.div`
   margin-left: 3px;
   font-weight: normal;
 `;
+
 const StyledAuthor = styled.h1`
-  font-size: 80px;
+  font-size: 75px;
   line-height: 1.1;
   margin: 0;
   word-break: break-word;
 `;
 const StyledTagline = styled.h2`
-  font-size: 80px;
+  font-size: 70px;
   line-height: 1.1;
   margin: 0;
   color: var(--link-color);
@@ -33,8 +34,8 @@ const StyledTagline = styled.h2`
 const StyledDescription = styled.p`
   margin-top: 25px;
   margin-left: 3px;
-  width: 50%;
-  max-width: 500px;
+  width: 70%;
+  max-width: 800px;
 `;
 
 const Hero = ({ data }) => {
