@@ -40,7 +40,7 @@ const StyledNavLink = styled(Link)`
   height: var(--header-height);
 
   > svg {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     fill: var(--title-color);
   }
 
