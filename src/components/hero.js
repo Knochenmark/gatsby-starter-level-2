@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ScrollIndicator from './scroll-indicator';
 import { StyledSection } from './_shared/styled-section';
+import StyledButton from './_shared/styled-button';
 
 const StyledHeroSection = styled(StyledSection)`
   min-height: calc(100vh - var(--header-height));
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const StyledIntroduction = styled.div`
   color: var(--link-color);
@@ -41,7 +45,9 @@ const Hero = ({ data }) => {
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
       <StyledDescription>{description}</StyledDescription>
-      <ScrollIndicator></ScrollIndicator>
+
+      <StyledButton label="CALL TO ACTION" rightArrow link="https://github.com/theeko" />
+      <ScrollIndicator />
     </StyledHeroSection>
   );
 };

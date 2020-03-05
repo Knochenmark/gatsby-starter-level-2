@@ -5,7 +5,6 @@ import { scroll } from './_shared/animation';
 import { flexCenter } from './_shared/styled-mixins';
 
 const StyledContainer = styled.div`
-  position: absolute;
   bottom: 20px;
   left: 0;
   right: 0;
@@ -36,7 +35,7 @@ const StyledScroller = styled.div`
 `;
 const StyledScrollText = styled.span`
   font-size: 0.7rem;
-  margin-bottom: 10px;
+  margin: 20px 0;
 `;
 
 const ScrollIndicator = () => {
@@ -44,7 +43,7 @@ const ScrollIndicator = () => {
     <StyledContainer>
       <StyledScrollText>Scroll down</StyledScrollText>
       <StyledMouse>
-        <StyledScroller></StyledScroller>
+        <StyledScroller />
       </StyledMouse>
     </StyledContainer>
   );
