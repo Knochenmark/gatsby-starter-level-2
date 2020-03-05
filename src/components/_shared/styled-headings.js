@@ -8,15 +8,15 @@ export const StyledH1 = styled.h1`
     color: var(--link-color);
   }
 
-  // &:after {
-  //   background-color: var(--link-color);
-  //   content: '';
-  //   position: absolute;
-  //   top: -30px;
-  //   left: 0;
-  //   width: 30px;
-  //   height: 2px;
-  // }
+  &:after {
+    background-color: var(--link-color);
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+  }
 `;
 
 export const StyledH2 = styled.h2`
