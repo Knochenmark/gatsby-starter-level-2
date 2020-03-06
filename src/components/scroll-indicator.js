@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { scroll } from './_shared/animation';
 import { flexCenter } from './_shared/styled-mixins';
@@ -36,7 +35,7 @@ const StyledScroller = styled.div`
 `;
 const StyledScrollText = styled.span`
   font-size: 0.7rem;
-  margin-bottom: 10px;
+  margin: 20px 0;
 `;
 
 const ScrollIndicator = () => {
@@ -44,7 +43,7 @@ const ScrollIndicator = () => {
     <StyledContainer>
       <StyledScrollText>Scroll down</StyledScrollText>
       <StyledMouse>
-        <StyledScroller></StyledScroller>
+        <StyledScroller />
       </StyledMouse>
     </StyledContainer>
   );

@@ -14,6 +14,7 @@ const Index = ({ data }) => {
     tagline: data.hero.siteMetadata.tagline,
     description: data.hero.siteMetadata.heroDescription,
     introduction: data.hero.siteMetadata.heroIntroduction,
+    ctaLink: data.hero.siteMetadata.ctaLink,
   };
 
   return (
@@ -42,6 +43,10 @@ export const query = graphql`
         tagline
         heroDescription
         heroIntroduction
+        ctaLink {
+          label
+          link
+        }
       }
     }
 
