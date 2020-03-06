@@ -1,16 +1,11 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
+  <img alt="Level 2" src="./src/assets/logo.svg" width="80" />
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Gatsby Starter Portfolio: Level 2
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Bring your portfolio to the _next level_ with this blazing fast Gatsby starter template. That's why we like to call our starter _Level 2_ or short _LvL2_. It comes with several prepared info sections for your portfolio that can be easy configured with the main Gatsby configuration files. All content can be edited/created via _Markdown_ files.
 
 ## 🚀 Quick start
 
@@ -93,5 +88,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 ## 💫 Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default) [![Greenkeeper badge](https://badges.greenkeeper.io/Knochenmark/gatsby-starter-portfolio.svg)](https://greenkeeper.io/)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
