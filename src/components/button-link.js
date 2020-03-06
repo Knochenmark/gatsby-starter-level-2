@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 
@@ -30,7 +31,7 @@ export const StyledButtonLink = styled.a`
     width: 100%;
     height: 100%;
     z-index: -3;
-    transition: all ease 0.4s;
+    transition: all ease var(--transition-fast);
   }
 
   &:hover:before {
@@ -59,6 +60,11 @@ const ButtonLink = ({ label, link }) => {
       )}
     </React.Fragment>
   );
+};
+
+ButtonLink.propTypes = {
+  label: PropTypes.string.required,
+  link: PropTypes.string.required,
 };
 
 export default ButtonLink;
