@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import Arrow from '../assets/arrow.svg';
+import External from '../assets/external.svg';
 
 export const StyledButtonLink = styled.a`
   text-decoration: none;
@@ -54,7 +54,7 @@ const ButtonLink = ({ label, link }) => {
       {label && link && (
         <StyledButtonLink href={link ? link : '#'} target="_blank">
           {label}
-          <Arrow />
+          <External />
         </StyledButtonLink>
       )}
     </React.Fragment>
