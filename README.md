@@ -1,3 +1,9 @@
+![Travis (.com) branch](https://travis-ci.com/Knochenmark/gatsby-starter-portfolio.svg?branch=master)
+[![GitHub issues](https://img.shields.io/github/issues/knochenmark/gatsby-starter-portfolio.svg)](https://github.com/Knochenmark/gatsby-starter-portfolio/issues)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/knochenmark/gatsby-starter-portfolio.svg)](https://github.com/Knochenmark/gatsby-starter-portfolio/pulls)
+![GitHub contributors](https://img.shields.io/github/contributors/knochenmark/gatsby-starter-portfolio.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/knochenmark/gatsby-starter-portfolio.svg)
+
 <p align="center">
   <img alt="Level 2" src="./src/assets/logo.svg" width="140" />
 </p>
@@ -8,14 +14,6 @@
 <h4 align="center">
   A minimalistic, responsive and easily configurable <a href="https://github.com/gatsbyjs/gatsby" target="_blank">Gatsby</a> starter that will help to bring your portfolio to the next level.
 </h4>
-
-<p align="center">
-![Travis (.com) branch](https://travis-ci.com/Knochenmark/gatsby-starter-portfolio.svg?branch=master)
-[![GitHub issues](https://img.shields.io/github/issues/knochenmark/gatsby-starter-portfolio.svg)](https://github.com/Knochenmark/gatsby-starter-portfolio/issues)
-[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/knochenmark/gatsby-starter-portfolio.svg)](https://github.com/Knochenmark/gatsby-starter-portfolio/pulls)
-![GitHub contributors](https://img.shields.io/github/contributors/knochenmark/gatsby-starter-portfolio.svg)
-![GitHub top language](https://img.shields.io/github/languages/top/knochenmark/gatsby-starter-portfolio.svg)
-</p>
 
 That's why we like to call our starter **Level 2** or short **LvL2**. The starter comes with several prepared info sections for your portfolio that can be easily configured with the main Gatsby configuration files. For content creation we are using **Markdown** files with Frontmatter attributes that can be easily edited or created.
 
