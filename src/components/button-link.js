@@ -22,20 +22,22 @@ export const StyledButtonLink = styled.a`
     color: var(--link-color) !important;
   }
 
-  &:before {
+  &:after {
     content: '';
+    z-index: -1;
     border: 1px solid var(--title-color);
     position: absolute;
-    top: 1px;
-    left: 1px;
+    bottom: -3px;
+    right: -3px;
     width: 100%;
     height: 100%;
-    z-index: -3;
     transition: all ease var(--transition-fast);
   }
 
-  &:hover:before {
+  &:hover:after {
     border: 1px solid var(--link-color);
+    bottom: -5px;
+    right: -5px;
   }
 
   & > svg {
