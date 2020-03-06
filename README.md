@@ -1,11 +1,15 @@
 <p align="center">
-  <img alt="Level 2" src="./src/assets/logo.svg" width="80" />
+  <img alt="Level 2" src="./src/assets/logo.svg" width="140" />
 </p>
 <h1 align="center">
   Gatsby Starter Portfolio: Level 2
 </h1>
 
-Bring your portfolio to the _next level_ with this blazing fast Gatsby starter template. That's why we like to call our starter _Level 2_ or short _LvL2_. It comes with several prepared info sections for your portfolio that can be easy configured with the main Gatsby configuration files. All content can be edited/created via _Markdown_ files.
+<h4 align="center">
+  A minimalistic, responsive and easily configurable <a href="https://github.com/gatsbyjs/gatsby" target="_blank">Gatsby</a> starter that will help to bring your portfolio to the __next level__.
+</h4>
+
+That's why we like to call our starter **Level 2** or short **LvL2**. The starter comes with several prepared info sections for your portfolio that can be easily configured with the main Gatsby configuration files. For content creation we are using **Markdown** files with Frontmatter attributes that can be easily edited or created.
 
 ## 🚀 Quick start
 
