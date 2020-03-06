@@ -1,6 +1,9 @@
 import styled from '@emotion/styled';
 
 export const StyledH1 = styled.h1`
+  width: 100%;
+  white-space: nowrap;
+  position: relative;
   font-weight: 800;
   margin: 20px 0;
 

@@ -9,6 +9,10 @@ module.exports = {
     heroDescription: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
       sed diam nonumy eirmod tempor invidunt ut labore
       et dolore magna aliquyam erat, sed diam voluptua.`,
+    ctaLink: {
+      label: 'View Documentation',
+      link: 'https://github.com/Knochenmark/gatsby-starter-portfolio/blob/master/README.md',
+    },
     paginationPageSize: 4,
     contact: {
       phone: '+49 1234 5678910',

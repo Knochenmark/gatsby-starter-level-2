@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
 import React from 'react';
 import { scroll } from './_shared/animation';
 import { flexCenter } from './_shared/styled-mixins';
 
 const StyledContainer = styled.div`
+  position: absolute;
   bottom: 20px;
   left: 0;
   right: 0;
