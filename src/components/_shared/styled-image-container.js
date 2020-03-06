@@ -17,7 +17,7 @@ export const StyledImageContainer = styled.div`
     width: 98%;
     height: 98%;
     border: 2px solid var(--link-color);
-    transition: all ease 0.4s;
+    transition: all ease var(--transition-fast);
   }
 
   .gatsby-image-wrapper:hover:before {
