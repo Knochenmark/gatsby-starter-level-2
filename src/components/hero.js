@@ -44,7 +44,7 @@ const Hero = ({ data }) => {
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
       <StyledDescription>{description}</StyledDescription>
-      <ButtonLink label={ctaLink.label} link={ctaLink.link} />
+      <ButtonLink {...ctaLink} />
       <ScrollIndicator />
     </StyledHeroSection>
   );
