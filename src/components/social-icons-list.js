@@ -10,7 +10,7 @@ export const socialIconList = [
   },
   {
     icon: <Github />,
-    link: 'https://github.com/knochenmark/gatsby-starter-portfolio',
+    link: 'https://github.com/knochenmark/gatsby-starter-level-2',
   },
   {
     icon: <Codepen />,

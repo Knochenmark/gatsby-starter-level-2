@@ -40,9 +40,9 @@ Follow these steps in order to contribute:
 
 #### Forking
 
-1. Go to the top level of the repository: <https://github.com/Knochenmark/gatsby-starter-portfolio>
+1. Go to the top level of the repository: <https://github.com/Knochenmark/gatsby-starter-level-2>
 2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. After the repository (repo) has been forked, you will be taken to your copy of the repo at <https://github.com/yourUsername/gatsby-starter-portfolio>
+3. After the repository (repo) has been forked, you will be taken to your copy of the repo at <https://github.com/yourUsername/gatsby-starter-level-2>
 
 #### Cloning Your Fork
 
@@ -50,7 +50,7 @@ Follow these steps in order to contribute:
 2. Clone your fork
 
 ```shell
-$ git clone https://github.com/yourUsername/gatsby-starter-portfolio.git
+$ git clone https://github.com/yourUsername/gatsby-starter-level-2.git
 ```
 
 **(make sure to replace `yourUsername` with your GitHub username)**
@@ -59,11 +59,11 @@ This will download the entire repo to your projects directory.
 
 #### Setup Your Upstream
 
-1. Change directory to the new directory (`cd gatsby-starter-portfolio`)
-2. Add a remote to the original gatsby-starter-portfolio repo:
+1. Change directory to the new directory (`cd gatsby-starter-level-2`)
+2. Add a remote to the original gatsby-starter-level-2 repo:
 
 ```shell
-$ git remote add upstream https://github.com/Knochenmark/gatsby-starter-portfolio.git
+$ git remote add upstream https://github.com/Knochenmark/gatsby-starter-level-2.git
 ```
 
 ##### To start the project
