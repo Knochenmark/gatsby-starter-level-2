@@ -21,8 +21,13 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
 
 - [Quick Start](#quick-start)
 - [Features](#features)
-- [Content Creation](#content-creation)
 - [Customize](#customize)
+  - [Gatsby Configuration](#gatsby-configuration)
+  - [Change the Theme](#change-the-theme)
+  - [Icons](#icons)
+    - [Navigation](#navigation)
+    - [Social](#social)
+- [Content Creation](#content-creation)
 
 # Quick start
 
@@ -64,10 +69,6 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
 - Organized Projects by techs and Blog Posts by tags
 - Pagination support
 - More to come!
-
-# Content Creation
-
-To be added
 
 # Customize
 
@@ -118,3 +119,42 @@ siteMetadata: {
   ],
 },
 ```
+
+## Icons
+
+Under `src/components/_config` you will find further files that allow for configuration of _social_ and _navigation_ icons.
+
+### Navigation
+
+In `src/components/_config/get-menu-icon.js` you have to adjust the map in case you've added further navigation links, when
+you want to use different icons or to change the default icon being used.
+
+If you just want to change the icons being used, you could just replace the svgs under `src/assets` but retain the naming.
+
+### Social
+
+In `src/components/_config/social-icon-list.js` you are able to add further social links or edit the link property to point to your social profiles. Those social links are currently displayed in the _header_ and _footer_. Feel free to reuse them where ever
+you like.
+
+## Change the Theme
+
+In order to change the colors of the theme you can just change the values of the css variables in the `src/styles/variables.styl` file. Every color in the _CSS_ is based on those css variables. This allows you to quickly apply a different theme of your choice.
+
+```styl
+body
+  --bg-color #252839
+  --bg-content-color #1b1d2a
+  --bg-code rgba(0, 0, 0, 0.3)
+  --border-color rgba(255, 255, 255, 0.1)
+  --body-color #ced8de
+  --title-color #fff
+  --link-color #F1B631
+  --space 3.5rem
+  --content-width 860px
+  --header-height 80px
+  --radius 6px
+```
+
+# Content Creation
+
+To be added...

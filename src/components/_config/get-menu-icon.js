@@ -11,4 +11,5 @@ export const getMenuIcon = icon =>
     projects: <Git />,
     blog: <Feather />,
     contact: <Envelope />,
+    // Add further navigation links with the icon of choice here
   }[icon.toLowerCase()] || <Arrow />);

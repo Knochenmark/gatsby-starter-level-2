@@ -16,4 +16,5 @@ export const socialIconList = [
     icon: <Codepen />,
     link: 'https://codepen.io/',
   },
+  // Add further social links with the icon of choice and link here
 ];
