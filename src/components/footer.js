@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
 import SocialIcons from './social-icons';
-import { socialIconList } from './social-icons-list';
+import { socialIconList } from './_config/social-icon-list';
 import { mq } from './_shared/media';
 import { flexCenter } from './_shared/styled-mixins';
 

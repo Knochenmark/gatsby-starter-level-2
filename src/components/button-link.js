@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 
@@ -62,11 +61,6 @@ const ButtonLink = ({ label, link }) => {
       )}
     </React.Fragment>
   );
-};
-
-ButtonLink.propTypes = {
-  label: PropTypes.string.required,
-  link: PropTypes.string.required,
 };
 
 export default ButtonLink;

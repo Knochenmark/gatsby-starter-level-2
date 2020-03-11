@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Logo from '../assets/logo.svg';
 import SocialIcons from './social-icons';
-import { socialIconList } from './social-icons-list';
+import { socialIconList } from './_config/social-icon-list';
 import { mq } from './_shared/media';
 import { StyledIndexNumber } from './_shared/styled-index-number';
 

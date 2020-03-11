@@ -2,18 +2,20 @@ module.exports = {
   pathPrefix: '/gatsby-starter-level-2',
   siteMetadata: {
     title: 'Level 2',
-    description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
     author: 'Max Mustermann',
-    tagline: 'Design. Code. Experiment',
-    heroIntroduction: "hey it's me",
-    heroDescription: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
+    paginationPageSize: 4, // Amount of posts displayed per listing page.
+    // Config for the hero section
+    hero: {
+      introduction: "hey it's me",
+      tagline: 'Design. Code. Experiment',
+      description: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
       sed diam nonumy eirmod tempor invidunt ut labore
       et dolore magna aliquyam erat, sed diam voluptua.`,
-    ctaLink: {
-      label: 'View Documentation',
-      link: 'https://github.com/Knochenmark/gatsby-starter-level-2/blob/master/README.md',
+      // Config for the Call to Action button (both props must be truthy strings)
+      ctaLabel: 'View Documentation',
+      ctaLink: 'https://github.com/Knochenmark/gatsby-starter-level-2/blob/master/README.md',
     },
-    paginationPageSize: 4,
     contact: {
       phone: '+49 1234 5678910',
       email: 'maxmustermann@gmail.com',
@@ -22,6 +24,7 @@ module.exports = {
       sed diam nonumy eirmod tempor invidunt ut labore
       et dolore magna aliquyam erat, sed diam voluptua.`,
     },
+    // Config for the navigation links
     menuLinks: [
       {
         name: 'About',
