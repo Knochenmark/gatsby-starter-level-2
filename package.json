@@ -1,8 +1,8 @@
 {
-  "homepage": "https://knochenmark.github.io/gatsby-starter-portfolio/",
+  "homepage": "https://knochenmark.github.io/gatsby-starter-level-2/",
   "name": "gatsby-starter-level-2",
   "private": true,
-  "description": "A simple starter to quickly set up your portfolio with Gatsby",
+  "description": "A minimalistic starter to quickly set up and configure your portfolio with Gatsby",
   "version": "0.1.0",
   "author": "Knochenmark",
   "scripts": {
@@ -42,14 +42,17 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "starter",
+    "portfolio",
+    "blog"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/knochenmark/gatsby-starter-portfolio"
+    "url": "https://github.com/knochenmark/gatsby-starter-level-2"
   },
   "bugs": {
-    "url": "https://github.com/knochenmark/gatsby-starter-portfolio/issues"
+    "url": "https://github.com/knochenmark/gatsby-starter-level-2/issues"
   }
 }

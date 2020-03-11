@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/gatsby-starter-portfolio',
+  pathPrefix: '/gatsby-starter-level-2',
   siteMetadata: {
     title: 'Level 2',
     description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
@@ -11,7 +11,7 @@ module.exports = {
       et dolore magna aliquyam erat, sed diam voluptua.`,
     ctaLink: {
       label: 'View Documentation',
-      link: 'https://github.com/Knochenmark/gatsby-starter-portfolio/blob/master/README.md',
+      link: 'https://github.com/Knochenmark/gatsby-starter-level-2/blob/master/README.md',
     },
     paginationPageSize: 4,
     contact: {
