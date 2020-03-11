@@ -60,13 +60,17 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
 # Features
 
 - Responsive Layout
+- High configurability
 - Configurable Sections
   - Hero
   - About
   - Featured Projects
   - Contact
-- Syntax highlighting in code blocks
+- Social Links
+- Styled Components with Emotion
 - Organized Projects by techs and Blog Posts by tags
+- Posts in Markdown
+  - Syntax highlighting in code blocks
 - Pagination support
 - More to come!
 
