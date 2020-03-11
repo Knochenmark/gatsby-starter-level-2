@@ -1,4 +1,4 @@
-![Travis (.com) branch](https://travis-ci.com/Knochenmark/gatsby-starter-level-2.svg?branch=master)
+[![Build Status](https://travis-ci.com/Knochenmark/gatsby-starter-level-2.svg?branch=master)](https://travis-ci.com/Knochenmark/gatsby-starter-level-2)
 [![GitHub issues](https://img.shields.io/github/issues/knochenmark/gatsby-starter-level-2.svg)](https://github.com/Knochenmark/gatsby-starter-level-2/issues)
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/knochenmark/gatsby-starter-level-2.svg)](https://github.com/Knochenmark/gatsby-starter-level-2/pulls)
 ![GitHub contributors](https://img.shields.io/github/contributors/knochenmark/gatsby-starter-level-2.svg)
@@ -17,14 +17,14 @@
 
 That's why we like to call our starter **Level 2** or short **LvL2**. The starter comes with several prepared info sections for your portfolio that can be easily configured with the main Gatsby configuration files. For content creation we are using **Markdown** files with Frontmatter attributes that can be easily edited or created.
 
-## Table of Contents
+# Table of Contents
 
 - [Quick Start](#quick-start)
 - [Features](#features)
 - [Content Creation](#content-creation)
 - [Customize](#customize)
 
-## Quick start
+# Quick start
 
 1.  **Create a Gatsby site.**
 
@@ -52,7 +52,7 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
 
     Open the `my-portfolio` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## Features
+# Features
 
 - Responsive Layout
 - Configurable Sections
@@ -65,10 +65,56 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
 - Pagination support
 - More to come!
 
-## Content Creation
+# Content Creation
 
 To be added
 
-## Customize
+# Customize
 
-To be added
+## Gatsby Configuration
+
+To make it easy for you we made sure you can configure as much as possible with the `gatsby-config.js` already.
+All you have to do is change the relevant values. For reference you can find an overview of the config below:
+
+```js
+siteMetadata: {
+  title: 'Level 2',
+  author: 'Max Mustermann',
+  description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
+  paginationPageSize: 4, // Amount of posts displayed per listing page.
+  // Config for the hero section
+  hero: {
+    introduction: "hey it's me",
+    tagline: 'Design. Code. Experiment',
+    description: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    sed diam nonumy eirmod tempor invidunt ut labore
+    et dolore magna aliquyam erat, sed diam voluptua.`,
+    // Config for the Call to Action button (both props must be truthy strings)
+    ctaLabel: 'View Documentation',
+    ctaLink: 'https://github.com/Knochenmark/gatsby-starter-level-2/blob/master/README.md',
+  },
+  contact: {
+    phone: '+49 1234 5678910',
+    email: 'maxmustermann@gmail.com',
+    address: 'Friesenstr. 123, Berlin, Germany',
+    text: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+    sed diam nonumy eirmod tempor invidunt ut labore
+    et dolore magna aliquyam erat, sed diam voluptua.`,
+  },
+  // Config for the navigation links
+  menuLinks: [
+    {
+      name: 'About',
+      link: '/#about',
+    },
+    {
+      name: 'Projects',
+      link: '/#projects',
+    },
+    {
+      name: 'Contact',
+      link: '/#contact',
+    },
+  ],
+},
+```

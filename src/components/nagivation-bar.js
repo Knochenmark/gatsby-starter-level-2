@@ -2,11 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import About from '../assets/about.svg';
-import Arrow from '../assets/arrow.svg';
-import Envelope from '../assets/envelope.svg';
-import Feather from '../assets/feather.svg';
-import Git from '../assets/git.svg';
+import { getMenuIcon } from './_config/get-menu-icon';
 import { mq } from './_shared/media';
 import { StyledIndexNumber } from './_shared/styled-index-number';
 import { flexCenter } from './_shared/styled-mixins';
@@ -62,20 +58,13 @@ const StyledNavLink = styled(Link)`
   }
 `;
 
-const iconMap = {
-  about: <About />,
-  projects: <Git />,
-  blog: <Feather />,
-  contact: <Envelope />,
-};
-
 // Note: The NavigationBar component should only be used for up to 5 menu links
 const NavigationBar = ({ menuLinks }) => {
   return (
     <StyledNav>
       {menuLinks.map((link, index) => (
         <StyledNavLink key={link.name} to={link.link} activeClassName="active">
-          {iconMap[link.name.toLowerCase()] || <Arrow />}
+          {getMenuIcon(link.name)}
           <div>
             <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
             {link.name}

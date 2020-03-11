@@ -1,7 +1,7 @@
 import React from 'react';
-import Codepen from '../assets/codepen.svg';
-import Github from '../assets/github.svg';
-import Twitter from '../assets/twitter.svg';
+import Codepen from '../../assets/codepen.svg';
+import Github from '../../assets/github.svg';
+import Twitter from '../../assets/twitter.svg';
 
 export const socialIconList = [
   {

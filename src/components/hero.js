@@ -36,7 +36,7 @@ const StyledDescription = styled.p`
 `;
 
 const Hero = ({ data }) => {
-  const { introduction, author, tagline, description, ctaLink } = data;
+  const { introduction, author, tagline, description, ctaLink, ctaLabel } = data;
 
   return (
     <StyledHeroSection>
@@ -44,7 +44,7 @@ const Hero = ({ data }) => {
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
       <StyledDescription>{description}</StyledDescription>
-      <ButtonLink {...ctaLink} />
+      <ButtonLink label={ctaLabel} link={ctaLink} />
       <ScrollIndicator />
     </StyledHeroSection>
   );

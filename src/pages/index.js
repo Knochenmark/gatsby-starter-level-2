@@ -11,10 +11,11 @@ import SEO from '../components/seo';
 const Index = ({ data }) => {
   const heroData = {
     author: data.hero.siteMetadata.author,
-    tagline: data.hero.siteMetadata.tagline,
-    description: data.hero.siteMetadata.heroDescription,
-    introduction: data.hero.siteMetadata.heroIntroduction,
-    ctaLink: data.hero.siteMetadata.ctaLink,
+    tagline: data.hero.siteMetadata.hero.tagline,
+    description: data.hero.siteMetadata.hero.description,
+    introduction: data.hero.siteMetadata.hero.introduction,
+    ctaLabel: data.hero.siteMetadata.hero.ctaLabel,
+    ctaLink: data.hero.siteMetadata.hero.ctaLink,
   };
 
   return (
@@ -40,12 +41,12 @@ export const query = graphql`
     hero: site {
       siteMetadata {
         author
-        tagline
-        heroDescription
-        heroIntroduction
-        ctaLink {
-          label
-          link
+        hero {
+          tagline
+          description
+          introduction
+          ctaLabel
+          ctaLink
         }
       }
     }
