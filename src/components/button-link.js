@@ -54,7 +54,7 @@ const ButtonLink = ({ label, link }) => {
   return (
     <React.Fragment>
       {label && link && (
-        <StyledButtonLink href={link ? link : '#'} target="_blank">
+        <StyledButtonLink href={link ? link : '#'} target="_blank" rel="noopener">
           {label}
           <External />
         </StyledButtonLink>

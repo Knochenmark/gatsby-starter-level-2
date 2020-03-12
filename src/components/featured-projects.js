@@ -77,7 +77,7 @@ const FeaturedProjects = ({ data }) => {
 
     return (
       <StyledFeaturedProject key={project.frontmatter.title}>
-        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank">
+        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
           {coverImage && (
             <StyledImageContainer>
               <Img fluid={coverImage} />
@@ -85,19 +85,19 @@ const FeaturedProjects = ({ data }) => {
           )}
         </a>
         <StyledProjectInfoContainer>
-          <StyledTitleLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank">
+          <StyledTitleLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
             <StyledH2>{project.frontmatter.title}</StyledH2>
           </StyledTitleLink>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
           <TechList techs={project.frontmatter.techs} />
           <StyledLinkContainer>
             {repoLink && (
-              <a href={repoLink} target="_blank" title="Repository Link">
+              <a href={repoLink} target="_blank" rel="noopener" title="Repository Link">
                 <Github />
               </a>
             )}
             {demoLink && (
-              <a href={demoLink} target="_blank" title="Demo Link">
+              <a href={demoLink} target="_blank" rel="noopener" title="Demo Link">
                 <External />
               </a>
             )}
