@@ -5,6 +5,7 @@ import '../styles/index.styl';
 import Footer from './footer';
 import Header from './header';
 import NavigationBar from './nagivation-bar';
+import ScrollToTop from './scroll-to-top';
 
 if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <Footer author={author} />
       <NavigationBar menuLinks={menuLinks} />
+      <ScrollToTop />
     </React.Fragment>
   );
 };
