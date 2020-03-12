@@ -25,11 +25,19 @@ const StyledContainer = styled.div`
 `;
 const StyledHomeLink = styled(Link)`
   text-decoration: none;
+
+  &:hover {
+    opacity: 1 !important;
+  }
 `;
 const StyledLogo = styled(Logo)`
   width: var(--header-height);
   height: var(--header-height);
   fill: var(--title-color);
+
+  &:hover path.level-2 {
+    fill: var(--link-color);
+  }
 `;
 const StyledNav = styled.nav`
   margin-left: 0.75rem;
