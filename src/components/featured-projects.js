@@ -72,12 +72,21 @@ const StyledLinkContainer = styled.section`
 const FeaturedProjects = ({ data }) => {
   const featuredProjects = data.map(project => {
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
+
+    const title = project.frontmatter.title;
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
+    const demoLinkLabel = `featured project ${title} demo`;
+    const repoLinkLabel = `featured project ${title} repo`;
 
     return (
-      <StyledFeaturedProject key={project.frontmatter.title}>
-        <a href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
+      <StyledFeaturedProject key={title}>
+        <a
+          aria-label={demoLink ? demoLinkLabel : repoLink ? repoLinkLabel : `featured project ${title}`}
+          href={demoLink ? demoLink : repoLink ? repoLink : '#'}
+          target="_blank"
+          rel="noopener"
+        >
           {coverImage && (
             <StyledImageContainer>
               <Img fluid={coverImage} />
@@ -86,18 +95,18 @@ const FeaturedProjects = ({ data }) => {
         </a>
         <StyledProjectInfoContainer>
           <StyledTitleLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
-            <StyledH2>{project.frontmatter.title}</StyledH2>
+            <StyledH2>{title}</StyledH2>
           </StyledTitleLink>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
           <TechList techs={project.frontmatter.techs} />
           <StyledLinkContainer>
             {repoLink && (
-              <a href={repoLink} target="_blank" rel="noopener" title="Repository Link">
+              <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>
                 <Github />
               </a>
             )}
             {demoLink && (
-              <a href={demoLink} target="_blank" rel="noopener" title="Demo Link">
+              <a href={demoLink} target="_blank" rel="noopener" title="Demo Link" aria-label={demoLinkLabel}>
                 <External />
               </a>
             )}
