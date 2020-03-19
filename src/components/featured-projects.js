@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
+import ProjectList from './project-list';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
@@ -69,8 +70,8 @@ const StyledLinkContainer = styled.section`
   }
 `;
 
-const FeaturedProjects = ({ data }) => {
-  const featuredProjects = data.map(project => {
+const FeaturedProjects = ({ featured, unfeatured }) => {
+  const featuredProjects = featured.map((project, index) => {
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
 
     const title = project.frontmatter.title;
@@ -80,7 +81,7 @@ const FeaturedProjects = ({ data }) => {
     const repoLinkLabel = `featured project ${title} repo`;
 
     return (
-      <StyledFeaturedProject key={title}>
+      <StyledFeaturedProject key={title + index}>
         <a
           aria-label={demoLink ? demoLinkLabel : repoLink ? repoLinkLabel : `featured project ${title}`}
           href={demoLink ? demoLink : repoLink ? repoLink : '#'}
@@ -120,6 +121,7 @@ const FeaturedProjects = ({ data }) => {
     <StyledSection id="projects">
       <StyledH1>Featured Projects</StyledH1>
       {featuredProjects}
+      <ProjectList projects={unfeatured} />
     </StyledSection>
   );
 };
