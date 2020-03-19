@@ -6,6 +6,7 @@ import Contact from '../components/contact';
 import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
 import Layout from '../components/layout';
+import RecentPosts from '../components/recent-posts';
 import SEO from '../components/seo';
 
 const Index = ({ data }) => {
@@ -23,8 +24,8 @@ const Index = ({ data }) => {
       <SEO title="Home" />
       <Hero data={heroData} />
       <About data={data.about} />
-      <FeaturedProjects data={data.featuredProjects.nodes} />
-      {/* <RecentPosts data={data.blog.edges} /> */}
+      <FeaturedProjects featured={data.featuredProjects.nodes} unfeatured={data.projects.nodes} />
+      <RecentPosts data={data.blog.edges} />
       <Contact data={data.contact} />
     </Layout>
   );
@@ -81,6 +82,23 @@ export const query = graphql`
               }
             }
           }
+        }
+        html
+      }
+    }
+
+    projects: allMarkdownRemark(
+      limit: 3
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { fileAbsolutePath: { regex: "/content/projects/" }, frontmatter: { featured: { eq: false } } }
+    ) {
+      nodes {
+        frontmatter {
+          date(formatString: "D MMMM, YYYY")
+          title
+          repo_link
+          demo_link
+          techs
         }
         html
       }
