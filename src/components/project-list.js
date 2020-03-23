@@ -7,8 +7,11 @@ import Github from '../assets/github.svg';
 import TechList from './tech-list';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { contentBox, flexCenter, flexEnd } from './_shared/styled-mixins';
-import { StyledSection } from './_shared/styled-section';
 
+const StyledContainer = styled.section`
+  width: 100%;
+  margin-top: 2.5rem;
+`;
 const StyledProject = styled.article`
   display: flex;
   flex-direction: column;
@@ -50,6 +53,7 @@ const StyledTextSection = styled.section`
   white-space: pre-line;
 
   ${contentBox}
+  max-width: unset;
   max-height: 180px;
   position: relative;
   padding: 10px;
@@ -103,7 +107,7 @@ const ProjectList = ({ projects }) => {
   });
 
   return (
-    <StyledSection>
+    <StyledContainer>
       <StyledHeader>
         <StyledH1>Other Noteworthy Projects</StyledH1>
       </StyledHeader>
@@ -111,7 +115,7 @@ const ProjectList = ({ projects }) => {
       <StyledArchiveContainer>
         <Link to="/projects">View All Projects</Link>
       </StyledArchiveContainer>
-    </StyledSection>
+    </StyledContainer>
   );
 };
 
