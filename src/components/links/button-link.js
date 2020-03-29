@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import External from '../assets/external.svg';
+import External from '../../assets/external.svg';
+import { flexCenter } from './../_shared/styled-mixins';
 
 export const StyledButtonLink = styled.a`
+  ${flexCenter};
   text-decoration: none;
   color: var(--bg-content-color) !important;
   background-color: var(--title-color);
@@ -12,9 +14,6 @@ export const StyledButtonLink = styled.a`
   position: relative;
   border: none;
   padding: 0.4rem 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   &:hover {
     opacity: 1 !important;
