@@ -1,3 +1,4 @@
+import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 export const StyledImageContainer = styled.div`
@@ -21,7 +22,11 @@ export const StyledImageContainer = styled.div`
   }
 
   .gatsby-image-wrapper:hover:before {
-    bottom: -13px;
-    right: -13px;
+    ${props =>
+      props.hasHover &&
+      css`
+        bottom: -13px;
+        right: -13px;
+      `}
   }
 `;

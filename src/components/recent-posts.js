@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import TextLink from './links/text-link';
 import { mq } from './_shared/media';
 import { StyledH1 } from './_shared/styled-headings';
+import { flexCenter } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledPostsContainer = styled.section`
@@ -24,6 +25,11 @@ const StyledPostContainer = styled.article`
   background-color: var(--bg-content-color);
   border-radius: var(--radius);
 `;
+const StyledBlogLinkContainer = styled.div`
+  ${flexCenter};
+  width: 100%;
+  margin-top: 2.5rem;
+`;
 
 const RecentPosts = ({ data }) => {
   console.log(data);
@@ -43,7 +49,9 @@ const RecentPosts = ({ data }) => {
     <StyledSection id="blog">
       <StyledH1>Latest Blog Posts</StyledH1>
       <StyledPostsContainer>{recentPosts}</StyledPostsContainer>
-      <Link to="/blog">View All Posts</Link>
+      <StyledBlogLinkContainer>
+        <TextLink label="View All Posts" link="/blog" />
+      </StyledBlogLinkContainer>
     </StyledSection>
   );
 };

@@ -89,7 +89,7 @@ const FeaturedProjects = ({ featured, unfeatured }) => {
           rel="noopener"
         >
           {coverImage && (
-            <StyledImageContainer>
+            <StyledImageContainer hasHover>
               <Img fluid={coverImage} />
             </StyledImageContainer>
           )}

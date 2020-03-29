@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
+import TextLink from './links/text-link';
 import TechList from './tech-list';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { contentBox, flexCenter, flexEnd } from './_shared/styled-mixins';
@@ -113,7 +113,7 @@ const ProjectList = ({ projects }) => {
       </StyledHeader>
       {projectItems}
       <StyledArchiveContainer>
-        <Link to="/projects">View All Projects</Link>
+        <TextLink label="View All Projects" link="/projects" />
       </StyledArchiveContainer>
     </StyledContainer>
   );
