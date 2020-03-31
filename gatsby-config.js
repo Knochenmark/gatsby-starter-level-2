@@ -34,11 +34,10 @@ module.exports = {
         name: 'Projects',
         link: '/#projects',
       },
-      // TODO: Uncomment once done or for development
-      // {
-      //   name: 'Blog',
-      //   link: '/#blog',
-      // },
+      {
+        name: 'Blog',
+        link: '/#blog',
+      },
       {
         name: 'Contact',
         link: '/#contact',
