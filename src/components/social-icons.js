@@ -20,7 +20,7 @@ const StyledSocialIcons = styled.div`
 
   & svg {
     fill: currentColor;
-    margin: 0 0.5rem;
+    margin: 0.5rem;
   }
 `;
 
