@@ -40,20 +40,22 @@ const StyledLogo = styled(Logo)`
   }
 `;
 const StyledNav = styled.nav`
-  margin-left: 0.75rem;
-  display: flex;
   flex: 1;
-  align-items: center;
+  height: 100%;
   display: none;
 
   ${mq.gt.sm} {
-    display: block;
+    display: flex;
+    align-items: stretch;
+    margin-left: 0.75rem;
   }
 `;
 const StyledNavLink = styled(Link)`
   margin: 0 0.5rem;
   text-decoration: none;
   color: var(--title-color) !important;
+  display: flex;
+  align-items: center;
 `;
 
 const Header = ({ menuLinks }) => (
