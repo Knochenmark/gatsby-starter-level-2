@@ -6,7 +6,8 @@ import Github from '../assets/github.svg';
 import TextLink from './links/text-link';
 import TechList from './tech-list';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
-import { contentBox, flexCenter, flexEnd } from './_shared/styled-mixins';
+import { flexCenter, flexEnd } from './_shared/styled-mixins';
+import { StyledTextSection } from './_shared/styled-text-section';
 
 const StyledContainer = styled.section`
   width: 100%;
@@ -49,22 +50,7 @@ const StyledInfoContainer = styled.section`
   flex-direction: column;
   position: relative;
 `;
-const StyledTextSection = styled.section`
-  white-space: pre-line;
 
-  ${contentBox}
-  max-width: unset;
-  max-height: 180px;
-  position: relative;
-  padding: 10px;
-
-  > p {
-    height: 100%;
-    margin: 0;
-    font-size: 0.8rem;
-    overflow: hidden;
-  }
-`;
 const StyledArchiveContainer = styled.div`
   ${flexCenter};
   width: 100%;
@@ -120,7 +106,7 @@ const ProjectList = ({ projects }) => {
 };
 
 ProjectList.propTypes = {
-  data: PropTypes.array.isRequired,
+  projects: PropTypes.array.isRequired,
 };
 
 export default ProjectList;

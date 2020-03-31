@@ -121,7 +121,7 @@ export const query = graphql`
 
     blog: allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
-      limit: 3
+      limit: 4
       filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { ne: false } } }
     ) {
       edges {
@@ -132,7 +132,7 @@ export const query = graphql`
             date(formatString: "D MMMM, YYYY")
             published
             description
-            about_image {
+            cover_image {
               childImageSharp {
                 fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid

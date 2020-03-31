@@ -127,7 +127,8 @@ const FeaturedProjects = ({ featured, unfeatured }) => {
 };
 
 FeaturedProjects.propTypes = {
-  data: PropTypes.array.isRequired,
+  featured: PropTypes.array.isRequired,
+  unfeatured: PropTypes.array.isRequired,
 };
 
 export default FeaturedProjects;
