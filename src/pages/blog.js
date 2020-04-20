@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
+import { StyledSection } from '../components/_shared/styled-section';
 
 const Blog = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
@@ -13,12 +14,12 @@ const Blog = ({ data }) => {
   };
 
   let paginationSize = data.site.siteMetadata.paginationPageSize;
-
   let leftCursor = (currentPage - 1) * paginationSize;
   let rightCursor = leftCursor + paginationSize;
+
   return (
     <Layout>
-      <div>
+      <StyledSection>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
@@ -43,7 +44,7 @@ const Blog = ({ data }) => {
             />
           </Col>
         </Row>
-      </div>
+      </StyledSection>
     </Layout>
   );
 };
