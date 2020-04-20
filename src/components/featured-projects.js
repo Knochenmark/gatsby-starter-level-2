@@ -7,6 +7,7 @@ import Github from '../assets/github.svg';
 import ProjectList from './project-list';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
+import { StyledContentLink } from './_shared/styled-content-link';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
 import { contentBox, flexEnd } from './_shared/styled-mixins';
@@ -32,13 +33,6 @@ const StyledProjectInfoContainer = styled.section`
   display: flex;
   flex-direction: column;
   position: relative;
-`;
-const StyledTitleLink = styled.a`
-  text-decoration: none;
-
-  &:hover h2 {
-    color: var(--link-color);
-  }
 `;
 const StyledDescription = styled.section`
   ${contentBox}
@@ -95,9 +89,9 @@ const FeaturedProjects = ({ featured, unfeatured }) => {
           )}
         </a>
         <StyledProjectInfoContainer>
-          <StyledTitleLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
+          <StyledContentLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
             <StyledH2>{title}</StyledH2>
-          </StyledTitleLink>
+          </StyledContentLink>
           <StyledDescription dangerouslySetInnerHTML={{ __html: project.html }} />
           <TechList techs={project.frontmatter.techs} />
           <StyledLinkContainer>

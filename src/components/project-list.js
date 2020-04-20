@@ -5,6 +5,7 @@ import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
 import TextLink from './links/text-link';
 import TechList from './tech-list';
+import { StyledContentLink } from './_shared/styled-content-link';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { flexCenter, flexEnd } from './_shared/styled-mixins';
 import { StyledTextSection } from './_shared/styled-text-section';
@@ -21,13 +22,6 @@ const StyledProject = styled.article`
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-`;
-const StyledTitleLink = styled.a`
-  text-decoration: none;
-
-  &:hover h2 {
-    color: var(--link-color);
-  }
 `;
 const StyledLinkContainer = styled.section`
   ${flexEnd};
@@ -50,7 +44,6 @@ const StyledInfoContainer = styled.section`
   flex-direction: column;
   position: relative;
 `;
-
 const StyledArchiveContainer = styled.div`
   ${flexCenter};
   width: 100%;
@@ -68,9 +61,9 @@ const ProjectList = ({ projects }) => {
     return (
       <StyledProject key={title}>
         <StyledHeader>
-          <StyledTitleLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
+          <StyledContentLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
             <StyledH2>{title}</StyledH2>
-          </StyledTitleLink>
+          </StyledContentLink>
           <StyledLinkContainer>
             {repoLink && (
               <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>

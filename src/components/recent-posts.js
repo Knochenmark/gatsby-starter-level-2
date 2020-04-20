@@ -44,7 +44,17 @@ const StyledDateOverlay = styled.div`
   font-weight: 500;
   line-height: 1rem;
 `;
+const StyledTitleLink = styled(Link)`
+  text-decoration: none;
 
+  &:hover {
+    opacity: 1 !important;
+  }
+
+  &:hover h2 {
+    color: var(--link-color);
+  }
+`;
 const StyledBlogLinkContainer = styled.div`
   ${flexCenter};
   width: 100%;
@@ -71,7 +81,9 @@ const RecentPosts = ({ data }) => {
         </StyledDateOverlay>
         <Link to={link}>{coverImage && <Img fluid={coverImage} />}</Link>
         <TagList tags={tags} />
-        <StyledH2>{title}</StyledH2>
+        <StyledTitleLink to={link}>
+          <StyledH2>{title}</StyledH2>
+        </StyledTitleLink>
         <StyledTextSection>
           <p>{description}</p>
         </StyledTextSection>
