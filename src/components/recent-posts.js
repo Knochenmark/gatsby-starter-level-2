@@ -45,6 +45,13 @@ const StyledDateOverlay = styled.div`
   font-weight: 500;
   line-height: 1rem;
 `;
+const StyledImageLink = styled(Link)`
+  border-top: 2px solid var(--primary-color);
+
+  &:hover {
+    border-color: var(--secondary-color);
+  }
+`;
 const StyledTitleLink = styled(Link)`
   text-decoration: none;
 
@@ -76,7 +83,7 @@ const RecentPosts = ({ data }) => {
           <span>{month}</span>
           <span>{day}</span>
         </StyledDateOverlay>
-        <Link to={link}>{coverImage && <Img fluid={coverImage} />}</Link>
+        <StyledImageLink to={link}>{coverImage && <Img fluid={coverImage} />}</StyledImageLink>
         <TagList tags={tags} />
         <StyledTitleLink to={link}>
           <StyledH2>{title}</StyledH2>
