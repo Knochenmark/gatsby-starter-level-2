@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 const StyledTagLink = styled(Link)`
   margin: 1rem;
   text-decoration: none;
-  border-bottom: 1px solid var(--link-color);
+  border-bottom: 1px solid var(--primary-color);
 `;
 
 const TagsPage = ({

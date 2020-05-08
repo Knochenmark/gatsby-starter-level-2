@@ -7,11 +7,11 @@ export const StyledH1 = styled.h1`
   margin: 20px 0;
 
   &:first-letter {
-    color: var(--link-color);
+    color: var(--primary-color);
   }
 
   &:after {
-    background-color: var(--link-color);
+    background-color: var(--primary-color);
     content: '';
     position: absolute;
     top: -30px;
@@ -27,7 +27,7 @@ export const StyledH2 = styled.h2`
   position: relative;
 
   &:after {
-    background-color: var(--link-color);
+    background-color: var(--primary-color);
     content: '';
     position: absolute;
     top: -20px;

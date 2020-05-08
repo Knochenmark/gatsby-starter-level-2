@@ -10,7 +10,7 @@ const StyledHeroSection = styled(StyledSection)`
   position: relative;
 `;
 const StyledIntroduction = styled.div`
-  color: var(--link-color);
+  color: var(--primary-color);
   margin-left: 3px;
   font-weight: normal;
 `;
@@ -25,7 +25,7 @@ const StyledTagline = styled.h2`
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
-  color: var(--link-color);
+  color: var(--primary-color);
   word-break: break-word;
 `;
 const StyledDescription = styled.p`

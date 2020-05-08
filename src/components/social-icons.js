@@ -15,12 +15,15 @@ const StyledSocialIcons = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: unset;
-  }
 
-  & svg {
-    fill: currentColor;
-    margin: 0.5rem;
+    & > svg {
+      margin: 0.5rem;
+      fill: var(--title-color);
+    }
+
+    &:hover > svg {
+      fill: var(--primary-color);
+    }
   }
 `;
 
