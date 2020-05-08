@@ -54,10 +54,26 @@ const StyledNav = styled.nav`
   }
 `;
 const StyledNavLink = styled(Link)`
+  position: relative;
   margin: 0 0.5rem;
   text-decoration: none;
   display: flex;
   align-items: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: var(--primary-color);
+    height: 2px;
+    transition: right var(--transition-fast) ease-out;
+  }
+
+  &:hover:before {
+    right: 0;
+  }
 `;
 
 const Header = ({ menuLinks }) => (
