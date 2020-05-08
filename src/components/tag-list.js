@@ -17,7 +17,7 @@ const StyledTag = styled.span`
   font-weight: 500;
   text-transform: lowercase;
 
-  color: var(--link-color);
+  color: var(--primary-color);
   margin: 0 1rem 0.5rem 0;
 `;
 const StyledTagLink = styled(Link)`

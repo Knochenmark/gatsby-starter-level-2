@@ -29,7 +29,7 @@ const StyledFormContainer = styled.section`
   }
 `;
 const StyledForm = styled.div`
-  color: var(--link-color);
+  color: var(--primary-color);
 
   font-weight: normal;
 `;

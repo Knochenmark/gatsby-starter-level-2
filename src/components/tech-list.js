@@ -18,7 +18,7 @@ const StyledTag = styled.span`
   margin: 0 1rem 0.5rem 0;
 
   & > svg {
-    fill: var(--link-color);
+    fill: var(--primary-color);
     height: 0.8rem;
     margin-right: 0.25rem;
   }

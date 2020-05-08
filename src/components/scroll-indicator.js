@@ -26,7 +26,7 @@ const StyledScroller = styled.div`
   margin-left: -1px;
   width: 2px;
   height: 6px;
-  background: var(--link-color);
+  background: var(--primary-color);
   border-radius: 25%;
   animation-name: ${scroll};
   animation-duration: 2.2s;

@@ -28,6 +28,7 @@ const StyledPostContainer = styled.article`
   border-radius: var(--radius);
 `;
 const StyledDateOverlay = styled.div`
+  pointer-events: none;
   z-index: 1;
   position: absolute;
   top: 0.5rem;
@@ -47,12 +48,8 @@ const StyledDateOverlay = styled.div`
 const StyledTitleLink = styled(Link)`
   text-decoration: none;
 
-  &:hover {
-    opacity: 1 !important;
-  }
-
   &:hover h2 {
-    color: var(--link-color);
+    color: var(--primary-color);
   }
 `;
 const StyledBlogLinkContainer = styled.div`

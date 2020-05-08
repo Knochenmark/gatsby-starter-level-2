@@ -25,10 +25,6 @@ const StyledContainer = styled.div`
 `;
 const StyledHomeLink = styled(Link)`
   text-decoration: none;
-
-  &:hover {
-    opacity: 1 !important;
-  }
 `;
 const StyledLogo = styled(Logo)`
   width: var(--header-height);
@@ -36,7 +32,7 @@ const StyledLogo = styled(Logo)`
   fill: var(--title-color);
 
   &:hover path.level-2 {
-    fill: var(--link-color);
+    fill: var(--primary-color);
   }
 `;
 const StyledNav = styled.nav`
@@ -49,11 +45,17 @@ const StyledNav = styled.nav`
     align-items: stretch;
     margin-left: 0.75rem;
   }
+
+  & > a {
+    color: var(--title-color);
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
 `;
 const StyledNavLink = styled(Link)`
   margin: 0 0.5rem;
   text-decoration: none;
-  color: var(--title-color) !important;
   display: flex;
   align-items: center;
 `;

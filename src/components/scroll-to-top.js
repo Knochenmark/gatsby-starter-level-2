@@ -15,7 +15,7 @@ const StyledContainer = styled.div`
   }
 
   &:hover svg {
-    fill: var(--link-color);
+    fill: var(--primary-color);
   }
 `;
 

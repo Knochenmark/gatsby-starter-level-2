@@ -17,7 +17,7 @@ export const StyledImageContainer = styled.div`
     right: -10px;
     width: 98%;
     height: 98%;
-    border: 2px solid var(--link-color);
+    border: 2px solid var(--primary-color);
     transition: all ease var(--transition-fast);
   }
 

@@ -16,8 +16,7 @@ export const StyledButtonLink = styled.a`
   padding: 0.4rem 0.8rem;
 
   &:hover {
-    opacity: 1 !important;
-    color: var(--link-color) !important;
+    color: var(--primary-color) !important;
   }
 
   &:after {
@@ -33,7 +32,7 @@ export const StyledButtonLink = styled.a`
   }
 
   &:hover:after {
-    border: 1px solid var(--link-color);
+    border: 1px solid var(--primary-color);
     bottom: -5px;
     right: -5px;
   }
@@ -45,7 +44,7 @@ export const StyledButtonLink = styled.a`
   }
 
   &:hover > svg {
-    fill: var(--link-color);
+    fill: var(--primary-color);
   }
 `;
 

@@ -31,7 +31,11 @@ const StyledLinkContainer = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: unset;
+    color: var(--body-color);
+
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 
   & svg {

@@ -43,17 +43,17 @@ const StyledNavLink = styled(Link)`
   &.active {
     font-weight: 700;
     border-bottom: none !important;
-    border-top: 2px solid var(--link-color);
+    border-top: 2px solid var(--primary-color);
 
     & > svg {
-      fill: var(--link-color);
+      fill: var(--primary-color);
     }
   }
   &:hover {
-    color: var(--link-color) !important;
+    color: var(--primary-color) !important;
 
     & > svg {
-      fill: var(--link-color);
+      fill: var(--primary-color);
     }
   }
 `;

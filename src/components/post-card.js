@@ -14,7 +14,7 @@ const StyledPostTags = styled.div`
   z-index: 2;
 `;
 const StyledReadMoreLink = styled(Link)`
-  color: var(--link-color);
+  color: var(--primary-color);
   background: transparent;
   display: flex;
   align-items: flex-end;
@@ -28,8 +28,7 @@ const StyledReadMoreLink = styled(Link)`
   z-index: 0;
 
   &:hover {
-    color: var(--link-color) !important;
-    opacity: 1 !important;
+    color: var(--primary-color) !important;
 
     & > span {
       text-decoration: underline;
@@ -49,7 +48,7 @@ const StyledContent = styled.div`
   padding: 0 var(--space);
 `;
 const StyledTitle = styled.h2`
-  color: var(--link-color);
+  color: var(--primary-color);
   margin: 1rem 0;
 `;
 const StyledDescription = styled.p`

@@ -146,17 +146,25 @@ In order to change the colors of the theme you can just change the values of the
 
 ```styl
 body
+  // Colors
   --bg-color #252839
   --bg-content-color #1b1d2a
+  --title-color #fff
+  --body-color #ced8de
+  --primary-color #F1B631
+  --secondary-color #f18731
+  // Dimensions & Form
+  --radius 6px
+  --space 3.5rem
+  --header-height 80px
+  --content-width 860px
+  // Transition Times
+  --transition-fast 0.2s
+  --transition-normal 0.4s
+  --transition-slow 0.6s
+  // Misc
   --bg-code rgba(0, 0, 0, 0.3)
   --border-color rgba(255, 255, 255, 0.1)
-  --body-color #ced8de
-  --title-color #fff
-  --link-color #F1B631
-  --space 3.5rem
-  --content-width 860px
-  --header-height 80px
-  --radius 6px
 ```
 
 # Content Creation
