@@ -1,15 +1,29 @@
+import styled from '@emotion/styled';
 import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import TextLink from '../components/links/text-link';
+import { flexCenter } from '../components/_shared/styled-mixins';
+import { StyledSection } from '../components/_shared/styled-section';
+
+const StyledTagsLinkContainer = styled.div`
+  ${flexCenter};
+  width: 100%;
+  margin-top: 2.5rem;
+`;
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with "${tag}"`;
+  const tagHeader = `A collection of ${totalCount} post${totalCount === 1 ? '' : 's'}`;
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
+    <StyledSection>
+      <h1>{tag}</h1>
+      <h2>{tagHeader}</h2>
+      <StyledTagsLinkContainer>
+        <TextLink label="View All Tags" link="/tags" />
+      </StyledTagsLinkContainer>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields;
@@ -21,8 +35,7 @@ const Tags = ({ pageContext, data }) => {
           );
         })}
       </ul>
-      <Link to="/tags">All tags</Link>
-    </div>
+    </StyledSection>
   );
 };
 
