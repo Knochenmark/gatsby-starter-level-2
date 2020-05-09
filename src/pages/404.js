@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import SmileyDead from '../assets/smiley-dead.svg';
+import Layout from '../components/layout';
 import TextLink from '../components/links/text-link';
 import SEO from '../components/seo';
 import { flexCenter } from '../components/_shared/styled-mixins';
