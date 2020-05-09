@@ -14,6 +14,7 @@ body
   line-height 1.5
 
 a:not(.button)
+  text-decoration none
   color var(--primary-color)
 
   &.active
@@ -25,6 +26,9 @@ a:not(.button)
 
 :focus
   outline-color var(--primary-color)
+
+::selection
+  background var(--primary-color)
 
 img
   max-width 100%
