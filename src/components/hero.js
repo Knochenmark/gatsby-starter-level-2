@@ -14,7 +14,6 @@ const StyledIntroduction = styled.div`
   margin-left: 3px;
   font-weight: normal;
 `;
-
 const StyledAuthor = styled.h1`
   font-size: 80px;
   line-height: 1.1;

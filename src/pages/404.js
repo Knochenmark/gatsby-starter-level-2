@@ -10,6 +10,11 @@ import { StyledSection } from '../components/_shared/styled-section';
 const Styled404Section = styled(StyledSection)`
   min-height: 100vh;
 `;
+const StyledIntroduction = styled.div`
+  color: var(--primary-color);
+  margin-left: 3px;
+  font-weight: normal;
+`;
 const Styled404Text = styled.h1`
   ${flexCenter};
   font-size: 15vh;
@@ -31,6 +36,7 @@ const NotFoundPage = () => (
   <Layout>
     <Styled404Section>
       <SEO title="404: Not found" />
+      <StyledIntroduction>Oops!...It happened again</StyledIntroduction>
       <Styled404Text>
         4<SmileyDead />4
       </Styled404Text>
