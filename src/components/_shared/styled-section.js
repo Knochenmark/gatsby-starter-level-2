@@ -11,3 +11,7 @@ export const StyledSection = styled.section`
   max-width: 1000px;
   margin-bottom: 60px;
 `;
+
+export const StyledFullHeightSection = styled(StyledSection)`
+  min-height: calc(100vh - var(--header-height));
+`;

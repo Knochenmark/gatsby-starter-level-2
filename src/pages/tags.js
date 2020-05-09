@@ -4,11 +4,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import { StyledH1, StyledH2 } from '../components/_shared/styled-headings';
+import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
+const StyledTagsH1 = styled(StyledH1)`
+  margin-top: 3rem;
+`;
+const StyledSeparator = styled.div`
+  height: 1px;
+  width: 100%;
+  margin-bottom: 3rem;
+  background-color: var(--body-color);
+`;
 const StyledTagLink = styled(Link)`
-  margin: 1rem;
-  text-decoration: none;
-  border-bottom: 1px solid var(--primary-color);
+  margin: 0.8rem;
 `;
 
 const TagsPage = ({
@@ -21,6 +30,8 @@ const TagsPage = ({
 }) => {
   const [alphabet] = React.useState('abcdefghijklmnopqrstuvwxyz'.split(''));
   const [existingTagsWithAlphabet, setExistingTagsWithAlphabet] = React.useState({});
+
+  const tagCount = Object.values(existingTagsWithAlphabet).length;
 
   React.useEffect(() => {
     let findExistingTags = {};
@@ -40,10 +51,9 @@ const TagsPage = ({
   }, []);
 
   let elems = Object.entries(existingTagsWithAlphabet).map(([char, data]) => {
-    console.log(char, data);
     return (
       <div key={char}>
-        <h2>{char.toUpperCase()}</h2>
+        <h3>{char.toUpperCase()}</h3>
         {data.tags.map((tag, i) => {
           return (
             <StyledTagLink to={`/tags/${tag}/`}>
@@ -58,10 +68,12 @@ const TagsPage = ({
   return (
     <Layout>
       <SEO title={title} />
-      <div>
-        <h1>All Tags</h1>
-        {Object.values(existingTagsWithAlphabet).length && elems}
-      </div>
+      <StyledFullHeightSection>
+        <StyledTagsH1>Tags ({tagCount})</StyledTagsH1>
+        <StyledSeparator />
+        <StyledH2>All Tags</StyledH2>
+        {tagCount && elems}
+      </StyledFullHeightSection>
     </Layout>
   );
 };
