@@ -27,14 +27,16 @@ const StyledDescription = styled.p`
 `;
 
 const NotFoundPage = () => (
-  <Styled404Section>
-    <SEO title="404: Not found" />
-    <Styled404Text>
-      4<SmileyDead />4
-    </Styled404Text>
-    <StyledDescription>Sorry, we couldn't find the page you were looking for.</StyledDescription>
-    <TextLink label="Take me home" link="/" />
-  </Styled404Section>
+  <Layout>
+    <Styled404Section>
+      <SEO title="404: Not found" />
+      <Styled404Text>
+        4<SmileyDead />4
+      </Styled404Text>
+      <StyledDescription>Sorry, we couldn't find the page you were looking for.</StyledDescription>
+      <TextLink label="Take me home" link="/" />
+    </Styled404Section>
+  </Layout>
 );
 
 export default NotFoundPage;
