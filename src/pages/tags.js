@@ -3,8 +3,10 @@ import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
+import TextLink from '../components/links/text-link';
 import SEO from '../components/seo';
-import { StyledH1, StyledH2 } from '../components/_shared/styled-headings';
+import { StyledH1 } from '../components/_shared/styled-headings';
+import { flexWrap } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
 const StyledTagsH1 = styled(StyledH1)`
@@ -13,8 +15,11 @@ const StyledTagsH1 = styled(StyledH1)`
 const StyledSeparator = styled.div`
   height: 1px;
   width: 100%;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
   background-color: var(--body-color);
+`;
+const StyledTagLinkContainer = styled.div`
+  ${flexWrap};
 `;
 const StyledTagLink = styled(Link)`
   margin: 0.8rem;
@@ -35,16 +40,16 @@ const TagsPage = ({
 
   React.useEffect(() => {
     let findExistingTags = {};
-    alphabet.forEach(char => {
+    alphabet.forEach((char) => {
       let regex = new RegExp(`^${char}`, 'i');
-      let filtered = group.filter(tag => {
+      let filtered = group.filter((tag) => {
         return regex.test(tag.fieldValue);
       });
 
       if (filtered.length > 0) {
         findExistingTags[char] = {};
-        findExistingTags[char]['tags'] = filtered.map(tags => tags.fieldValue);
-        findExistingTags[char]['count'] = filtered.map(tags => tags.totalCount);
+        findExistingTags[char]['tags'] = filtered.map((tags) => tags.fieldValue);
+        findExistingTags[char]['count'] = filtered.map((tags) => tags.totalCount);
       }
     });
     setExistingTagsWithAlphabet(findExistingTags);
@@ -54,13 +59,16 @@ const TagsPage = ({
     return (
       <div key={char}>
         <h3>{char.toUpperCase()}</h3>
-        {data.tags.map((tag, i) => {
-          return (
-            <StyledTagLink to={`/tags/${tag}/`}>
-              {tag} ({data.count[i]})
-            </StyledTagLink>
-          );
-        })}
+        <StyledTagLinkContainer>
+          {data.tags.map((tag, i) => {
+            return (
+              <StyledTagLink to={`/tags/${tag}/`}>
+                {tag}
+                {'\u00a0'}({data.count[i]})
+              </StyledTagLink>
+            );
+          })}
+        </StyledTagLinkContainer>
       </div>
     );
   });
@@ -71,8 +79,9 @@ const TagsPage = ({
       <StyledFullHeightSection>
         <StyledTagsH1>Tags ({tagCount})</StyledTagsH1>
         <StyledSeparator />
-        <StyledH2>All Tags</StyledH2>
         {tagCount && elems}
+        <StyledSeparator />
+        <TextLink label="Take me home" link="/" />
       </StyledFullHeightSection>
     </Layout>
   );

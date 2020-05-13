@@ -12,6 +12,11 @@ export const flexEnd = css`
   align-items: center;
 `;
 
+export const flexWrap = css`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
 export const contentBox = css`
   background-color: var(--bg-content-color);
   max-width: var(--content-width);
