@@ -7,6 +7,7 @@ import TextLink from './links/text-link';
 import TagList from './tag-list';
 import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
+import { StyledImageContainer } from './_shared/styled-image-container';
 import { flexCenter } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 import { StyledTextSection } from './_shared/styled-text-section';
@@ -45,13 +46,6 @@ const StyledDateOverlay = styled.div`
   font-weight: 500;
   line-height: 1rem;
 `;
-const StyledImageLink = styled(Link)`
-  border-top: 2px solid var(--primary-color);
-
-  &:hover {
-    border-color: var(--secondary-color);
-  }
-`;
 const StyledTitleLink = styled(Link)`
   text-decoration: none;
 
@@ -66,7 +60,7 @@ const StyledBlogLinkContainer = styled.div`
 `;
 
 const RecentPosts = ({ data }) => {
-  const recentPosts = data.map(post => {
+  const recentPosts = data.map((post) => {
     const { title, tags, description, date } = post.node.frontmatter;
     const coverImage = post.node.frontmatter.cover_image
       ? post.node.frontmatter.cover_image.childImageSharp.fluid
@@ -83,7 +77,9 @@ const RecentPosts = ({ data }) => {
           <span>{month}</span>
           <span>{day}</span>
         </StyledDateOverlay>
-        <StyledImageLink to={link}>{coverImage && <Img fluid={coverImage} />}</StyledImageLink>
+        <Link to={link}>
+          <StyledImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledImageContainer>
+        </Link>
         <TagList tags={tags} />
         <StyledTitleLink to={link}>
           <StyledH2>{title}</StyledH2>

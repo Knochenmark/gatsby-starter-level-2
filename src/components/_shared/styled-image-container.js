@@ -1,7 +1,17 @@
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 export const StyledImageContainer = styled.div`
+  min-width: 300px;
+  min-height: 200px;
+  position: relative;
+
+  &:hover .gatsby-image-wrapper * {
+    transition: all var(--transition-fast) ease-in-out 0s;
+    transform: scale(1.025);
+  }
+`;
+
+export const StyledStaticImageContainer = styled.div`
   min-width: 300px;
   min-height: 200px;
   position: relative;
@@ -19,14 +29,5 @@ export const StyledImageContainer = styled.div`
     height: 98%;
     border: 2px solid var(--primary-color);
     transition: all ease var(--transition-fast);
-  }
-
-  .gatsby-image-wrapper:hover:before {
-    ${props =>
-      props.hasHover &&
-      css`
-        bottom: -13px;
-        right: -13px;
-      `}
   }
 `;

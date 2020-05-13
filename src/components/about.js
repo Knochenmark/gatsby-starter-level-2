@@ -4,7 +4,7 @@ import React from 'react';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
-import { StyledImageContainer } from './_shared/styled-image-container';
+import { StyledStaticImageContainer } from './_shared/styled-image-container';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledAboutContainer = styled.article`
@@ -33,9 +33,9 @@ const About = ({ data }) => {
       <StyledH1>About Me</StyledH1>
       <StyledAboutContainer>
         {image && (
-          <StyledImageContainer>
+          <StyledStaticImageContainer>
             <Img fluid={image} objectFit="contain" />
-          </StyledImageContainer>
+          </StyledStaticImageContainer>
         )}
         <div>
           <StyledH2>{title}</StyledH2>
