@@ -2,8 +2,11 @@ module.exports = {
   pathPrefix: '/gatsby-starter-level-2',
   siteMetadata: {
     title: 'Level 2',
+    titleTemplate: '%s · The One and Only',
+    image: '/images/logo.png',
     author: 'Max Mustermann',
     description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
+    url: 'https://knochenmark.github.io',
     paginationPageSize: 4, // Amount of posts displayed per listing page.
     // Config for the hero section
     hero: {
