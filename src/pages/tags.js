@@ -75,7 +75,7 @@ const TagsPage = ({
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title="Tags" />
       <StyledFullHeightSection>
         <StyledTagsH1>Tags ({tagCount})</StyledTagsH1>
         <StyledSeparator />
