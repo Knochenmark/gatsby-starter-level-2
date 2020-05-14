@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
+import SEO from '../components/seo';
 import { flexCenter } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
@@ -33,7 +34,7 @@ const StyledPaginationContainer = styled.div`
 const Blog = ({ data }) => {
   let [currentPage, setCurrentPage] = React.useState(1);
 
-  const onPaginationChange = page => {
+  const onPaginationChange = (page) => {
     setCurrentPage(page);
   };
 
@@ -43,15 +44,8 @@ const Blog = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Blog" />
       <StyledFullHeightSection>
-        <StyledPaginationContainer>
-          <Pagination
-            pageSize={paginationSize}
-            current={currentPage}
-            onChange={onPaginationChange}
-            total={data.allMarkdownRemark.edges.length}
-          />
-        </StyledPaginationContainer>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
           return node.frontmatter.published ? (
@@ -66,6 +60,14 @@ const Blog = ({ data }) => {
             />
           ) : null;
         })}
+        <StyledPaginationContainer>
+          <Pagination
+            pageSize={paginationSize}
+            current={currentPage}
+            onChange={onPaginationChange}
+            total={data.allMarkdownRemark.edges.length}
+          />
+        </StyledPaginationContainer>
       </StyledFullHeightSection>
     </Layout>
   );

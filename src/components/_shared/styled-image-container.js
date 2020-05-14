@@ -5,9 +5,12 @@ export const StyledImageContainer = styled.div`
   min-height: 200px;
   position: relative;
 
+  & .gatsby-image-wrapper * {
+    transition: transform var(--transition-fast) ease-in-out !important;
+  }
+
   &:hover .gatsby-image-wrapper * {
-    transition: all var(--transition-fast) ease-in-out 0s;
-    transform: scale(1.025);
+    transform: scale(1.1);
   }
 `;
 
