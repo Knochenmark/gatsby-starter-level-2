@@ -5,8 +5,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   //called when node created/updated
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    //var extension = path.extname(fileNode.relativePath) //or slice etc, or just ".md"
-    //console.log("pathname? ", path.basename(fileNode.relativePath, ".md")) //or use path.basename like this
     const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       //adds slug to pages graphql query -> allMarkdownRemark { edges { node { fields { slug }}}}
@@ -55,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const tags = result.data.tagsGroup.group;
   const tagTemplate = path.resolve('src/templates/tags.js');
 
-  tags.forEach(tag => {
+  tags.forEach((tag) => {
     createPage({
       path: `/tags/${tag.fieldValue}/`,
       component: tagTemplate,

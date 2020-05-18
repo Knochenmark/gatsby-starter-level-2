@@ -27,7 +27,7 @@ const StyledTagline = styled.h2`
   color: var(--primary-color);
   word-break: break-word;
 `;
-const StyledDescription = styled.p`
+const StyledDescription = styled.div`
   margin-top: 25px;
   margin-left: 3px;
   width: 50%;
@@ -42,7 +42,7 @@ const Hero = ({ data }) => {
       <StyledIntroduction>{introduction}</StyledIntroduction>
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
-      <StyledDescription>{description}</StyledDescription>
+      <StyledDescription dangerouslySetInnerHTML={{ __html: description }} />
       <ButtonLink label={ctaLabel} link={ctaLink} />
       <ScrollIndicator />
     </StyledHeroSection>

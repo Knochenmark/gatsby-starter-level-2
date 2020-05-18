@@ -60,13 +60,16 @@ const StyledContacts = styled.div`
 `;
 
 const Contact = ({ data }) => {
-  const { phone, email, address, text } = data.siteMetadata.contact;
+  const {
+    frontmatter: { phone, email, address },
+    html,
+  } = data;
 
   return (
     <React.Fragment>
       <StyledContactSection id="contact">
         <StyledH1>Contact Details</StyledH1>
-        {text && <StyledText>{text}</StyledText>}
+        {html && <StyledText dangerouslySetInnerHTML={{ __html: html }} />}
         <StyledSeparator />
         <StyledContacts>
           {address && (
