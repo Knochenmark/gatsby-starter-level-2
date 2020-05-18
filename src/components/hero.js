@@ -11,25 +11,25 @@ const StyledHeroSection = styled(StyledSection)`
 `;
 const StyledIntroduction = styled.div`
   color: var(--primary-color);
-  margin-left: 3px;
   font-weight: normal;
 `;
 const StyledAuthor = styled.h1`
+  margin-left: -4px !important;
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
   word-break: break-word;
 `;
 const StyledTagline = styled.h2`
+  margin-left: -4px !important;
   font-size: 80px;
   line-height: 1.1;
   margin: 0;
   color: var(--primary-color);
   word-break: break-word;
 `;
-const StyledDescription = styled.p`
+const StyledDescription = styled.div`
   margin-top: 25px;
-  margin-left: 3px;
   width: 50%;
   max-width: 500px;
 `;
@@ -42,7 +42,7 @@ const Hero = ({ data }) => {
       <StyledIntroduction>{introduction}</StyledIntroduction>
       <StyledAuthor>{author}</StyledAuthor>
       <StyledTagline>{tagline}</StyledTagline>
-      <StyledDescription>{description}</StyledDescription>
+      <StyledDescription dangerouslySetInnerHTML={{ __html: description }} />
       <ButtonLink label={ctaLabel} link={ctaLink} />
       <ScrollIndicator />
     </StyledHeroSection>

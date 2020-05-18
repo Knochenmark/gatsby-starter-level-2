@@ -11,12 +11,12 @@ import SEO from '../components/seo';
 
 const Index = ({ data }) => {
   const heroData = {
-    author: data.hero.siteMetadata.author,
-    tagline: data.hero.siteMetadata.hero.tagline,
-    description: data.hero.siteMetadata.hero.description,
-    introduction: data.hero.siteMetadata.hero.introduction,
-    ctaLabel: data.hero.siteMetadata.hero.ctaLabel,
-    ctaLink: data.hero.siteMetadata.hero.ctaLink,
+    author: data.site.siteMetadata.author,
+    tagline: data.hero.frontmatter.tagline,
+    description: data.hero.html,
+    introduction: data.hero.frontmatter.introduction,
+    ctaLabel: data.hero.frontmatter.cta_label,
+    ctaLink: data.hero.frontmatter.cta_link,
   };
 
   return (
@@ -39,28 +39,35 @@ export default Index;
 
 export const query = graphql`
   {
-    hero: site {
+    site {
       siteMetadata {
         author
-        hero {
-          tagline
-          description
-          introduction
-          ctaLabel
-          ctaLink
-        }
       }
     }
 
-    contact: site {
-      siteMetadata {
-        contact {
-          phone
-          email
-          address
-          text
+    hero: markdownRemark(fileAbsolutePath: { regex: "/content/sections/hero/" }) {
+      frontmatter {
+        introduction
+        tagline
+        cta_label
+        cta_link
+      }
+      html
+    }
+
+    about: markdownRemark(fileAbsolutePath: { regex: "/content/sections/about/" }) {
+      frontmatter {
+        title
+        techs
+        about_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
+      html
     }
 
     featuredProjects: allMarkdownRemark(
@@ -104,21 +111,6 @@ export const query = graphql`
       }
     }
 
-    about: markdownRemark(fileAbsolutePath: { regex: "/content/about/" }) {
-      frontmatter {
-        title
-        techs
-        about_image {
-          childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-      rawMarkdownBody
-    }
-
     blog: allMarkdownRemark(
       sort: { order: DESC, fields: frontmatter___date }
       limit: 4
@@ -146,6 +138,15 @@ export const query = graphql`
           }
         }
       }
+    }
+
+    contact: markdownRemark(fileAbsolutePath: { regex: "/content/sections/contact/" }) {
+      frontmatter {
+        phone
+        email
+        address
+      }
+      html
     }
   }
 `;

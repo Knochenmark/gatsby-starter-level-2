@@ -23,7 +23,7 @@ const StyledTextSection = styled.section`
 const About = ({ data }) => {
   const {
     frontmatter: { title, techs, about_image },
-    rawMarkdownBody,
+    html,
   } = data;
 
   const image = about_image ? about_image.childImageSharp.fluid : null;
@@ -39,7 +39,7 @@ const About = ({ data }) => {
         )}
         <div>
           <StyledH2>{title}</StyledH2>
-          <StyledTextSection dangerouslySetInnerHTML={{ __html: rawMarkdownBody }} />
+          <StyledTextSection dangerouslySetInnerHTML={{ __html: html }} />
           <TechList techs={techs} />
         </div>
       </StyledAboutContainer>
