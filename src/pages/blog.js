@@ -6,6 +6,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import PostCard from '../components/post-card';
 import SEO from '../components/seo';
+import { blogMenuLinks } from '../components/_config/menu-links';
 import { flexCenter } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
 
@@ -43,7 +44,7 @@ const Blog = ({ data }) => {
   let rightCursor = leftCursor + paginationSize;
 
   return (
-    <Layout>
+    <Layout menuLinks={blogMenuLinks}>
       <SEO title="Blog" />
       <StyledFullHeightSection>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {

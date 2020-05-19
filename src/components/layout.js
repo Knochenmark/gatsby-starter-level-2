@@ -11,26 +11,21 @@ if (typeof window !== 'undefined') {
   require('smooth-scroll')('a[href*="#"]');
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ children, menuLinks }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
           author
-          menuLinks {
-            name
-            link
-          }
         }
       }
     }
   `);
 
-  const { menuLinks, title, author } = data.site.siteMetadata;
+  const { author } = data.site.siteMetadata;
   return (
     <React.Fragment>
-      <Header menuLinks={menuLinks} siteTitle={title} />
+      <Header menuLinks={menuLinks} />
       <main>{children}</main>
       <Footer author={author} />
       <NavigationBar menuLinks={menuLinks} />

@@ -8,6 +8,7 @@ import Hero from '../components/hero';
 import Layout from '../components/layout';
 import RecentPosts from '../components/recent-posts';
 import SEO from '../components/seo';
+import { indexMenuLinks } from '../components/_config/menu-links';
 
 const Index = ({ data }) => {
   const heroData = {
@@ -20,7 +21,7 @@ const Index = ({ data }) => {
   };
 
   return (
-    <Layout>
+    <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
       <About data={data.about} />
