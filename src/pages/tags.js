@@ -5,6 +5,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import TextLink from '../components/links/text-link';
 import SEO from '../components/seo';
+import { blogMenuLinks } from '../components/_config/menu-links';
 import { StyledH1 } from '../components/_shared/styled-headings';
 import { flexWrap } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
@@ -62,7 +63,7 @@ const TagsPage = ({
         <StyledTagLinkContainer>
           {data.tags.map((tag, i) => {
             return (
-              <StyledTagLink to={`/tags/${tag}/`}>
+              <StyledTagLink key={tag + i} to={`/tags/${tag}/`}>
                 {tag}
                 {'\u00a0'}({data.count[i]})
               </StyledTagLink>
@@ -74,7 +75,7 @@ const TagsPage = ({
   });
 
   return (
-    <Layout>
+    <Layout menuLinks={blogMenuLinks}>
       <SEO title="Tags" />
       <StyledFullHeightSection>
         <StyledTagsH1>Tags ({tagCount})</StyledTagsH1>

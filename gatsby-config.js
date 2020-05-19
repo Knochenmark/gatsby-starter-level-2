@@ -8,29 +8,6 @@ module.exports = {
     description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
     url: 'https://knochenmark.github.io',
     paginationPageSize: 4, // Amount of posts displayed per listing page.
-    menuLinks: [
-      {
-        name: 'About',
-        link: '/#about',
-      },
-      {
-        name: 'Projects',
-        link: '/#projects',
-      },
-      {
-        name: 'Blog',
-        link: '/#blog',
-      },
-      {
-        name: 'Contact',
-        link: '/#contact',
-      },
-      // Uncomment for development purposes
-      // {
-      //   name: 'Tags',
-      //   link: '/tags',
-      // },
-    ],
   },
   plugins: [
     `gatsby-plugin-stylus`,

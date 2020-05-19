@@ -14,4 +14,5 @@ export const StyledSection = styled.section`
 
 export const StyledFullHeightSection = styled(StyledSection)`
   min-height: calc(100vh - var(--header-height));
+  justify-content: start;
 `;

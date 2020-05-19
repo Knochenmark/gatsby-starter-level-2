@@ -95,6 +95,8 @@ const Header = ({ menuLinks }) => (
   </StyledHeader>
 );
 
+export default Header;
+
 const menuLinksPropTypeShape = PropTypes.shape({
   name: PropTypes.string,
   link: PropTypes.string,
@@ -102,11 +104,4 @@ const menuLinksPropTypeShape = PropTypes.shape({
 
 Header.propTypes = {
   menuLinks: PropTypes.arrayOf(menuLinksPropTypeShape).isRequired,
-  siteTitle: PropTypes.string,
 };
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
-
-export default Header;

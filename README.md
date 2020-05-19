@@ -61,7 +61,7 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
 
 - Responsive Layout
 - High configurability
-- Configurable Sections
+- Configurable Sections via Markdown
   - Hero
   - About
   - Featured Projects
@@ -84,24 +84,12 @@ All you have to do is change the relevant values. For reference you can find an 
 ```js
 siteMetadata: {
   title: 'Level 2',
+  titleTemplate: '%s · Level 2',
+  image: '/images/logo.png',
   author: 'Max Mustermann',
   description: 'Gatsby starter to quickly setup your portfolio and boost it to the next level.',
+  url: 'https://knochenmark.github.io',
   paginationPageSize: 4, // Amount of posts displayed per listing page.
-  // Config for the navigation links
-  menuLinks: [
-    {
-      name: 'About',
-      link: '/#about',
-    },
-    {
-      name: 'Projects',
-      link: '/#projects',
-    },
-    {
-      name: 'Contact',
-      link: '/#contact',
-    },
-  ],
 },
 ```
 
