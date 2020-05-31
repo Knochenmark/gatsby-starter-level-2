@@ -26,9 +26,13 @@ const StyledPaginationContainer = styled.div`
     }
     & > li.ant-pagination-item {
       font-size: 1.5rem;
+      padding: 0 0.25rem;
     }
     & > li.ant-pagination-disabled > a {
       color: var(--disabled-color);
+    }
+    & > li.ant-pagination-item-active > a {
+      text-decoration: underline;
     }
   }
 `;
