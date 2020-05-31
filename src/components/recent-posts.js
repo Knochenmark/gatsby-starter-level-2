@@ -27,6 +27,10 @@ const StyledPostContainer = styled.article`
   display: flex;
   flex-direction: column;
   border-radius: var(--radius);
+
+  & .gatsby-image-wrapper {
+    max-height: 300px;
+  }
 `;
 const StyledDateOverlay = styled.div`
   pointer-events: none;

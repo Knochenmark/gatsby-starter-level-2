@@ -9,6 +9,7 @@ export const StyledTextSection = styled.section`
   max-height: 180px;
   position: relative;
   padding: 10px;
+  margin: 0;
 
   > p {
     height: 100%;
