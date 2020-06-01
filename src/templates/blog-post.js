@@ -39,7 +39,7 @@ const BlogPost = ({ data }) => {
   const readingTime = data.markdownRemark.fields.readingTime.text;
   const post = data.markdownRemark;
   const coverImage = post.frontmatter.cover_image ? post.frontmatter.cover_image.childImageSharp.fluid : null;
-  const { tags, title, date } = post.frontmatter;
+  const { tags = [], title, date } = post.frontmatter;
 
   return (
     <Layout menuLinks={blogMenuLinks}>
