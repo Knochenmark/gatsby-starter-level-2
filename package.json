@@ -27,6 +27,7 @@
     "gatsby-plugin-sharp": "^2.6.3",
     "gatsby-plugin-stylus": "^2.3.1",
     "gatsby-remark-images": "^3.3.3",
+    "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-transformer-remark": "^2.8.8",
     "gatsby-transformer-sharp": "^2.5.2",

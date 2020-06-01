@@ -48,6 +48,14 @@ const StyledInfoContainer = styled.section`
   flex-direction: column;
   position: relative;
 `;
+const StyledProjectText = styled(StyledTextSection)`
+  > p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+`;
 const StyledArchiveContainer = styled.div`
   ${flexCenter};
   width: 100%;
@@ -55,7 +63,7 @@ const StyledArchiveContainer = styled.div`
 `;
 
 const ProjectList = ({ projects }) => {
-  const projectItems = projects.map(project => {
+  const projectItems = projects.map((project) => {
     const title = project.frontmatter.title;
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
@@ -82,7 +90,7 @@ const ProjectList = ({ projects }) => {
           </StyledLinkContainer>
         </StyledHeader>
         <StyledInfoContainer>
-          <StyledTextSection dangerouslySetInnerHTML={{ __html: project.html }} />
+          <StyledProjectText dangerouslySetInnerHTML={{ __html: project.html }} />
           <TechList techs={project.frontmatter.techs} />
         </StyledInfoContainer>
       </StyledProject>
