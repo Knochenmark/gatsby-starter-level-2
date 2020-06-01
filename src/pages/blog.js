@@ -53,7 +53,7 @@ const Blog = ({ data }) => {
       <StyledFullHeightSection>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
           const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
-          return node.frontmatter.published ? (
+          return (
             <PostCard
               key={node.frontmatter.title}
               coverImage={coverImage}
@@ -63,7 +63,7 @@ const Blog = ({ data }) => {
               link={`/blog${node.fields.slug}`}
               tags={node.frontmatter.tags}
             />
-          ) : null;
+          );
         })}
         <StyledPaginationContainer>
           <Pagination
@@ -96,7 +96,6 @@ export const query = graphql`
             title
             tags
             date(formatString: "D MMMM, YYYY")
-            published
             description
             cover_image {
               childImageSharp {

@@ -123,7 +123,6 @@ export const query = graphql`
             title
             tags
             date(formatString: "D MMMM, YYYY")
-            published
             description
             cover_image {
               childImageSharp {
