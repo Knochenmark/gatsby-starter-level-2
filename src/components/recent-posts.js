@@ -81,7 +81,7 @@ const RecentPosts = ({ data }) => {
           <span>{month}</span>
           <span>{day}</span>
         </StyledDateOverlay>
-        <Link to={link}>
+        <Link to={link} aria-label={`recent post ${title}`}>
           <StyledImageContainer>{coverImage && <Img fluid={coverImage} />}</StyledImageContainer>
         </Link>
         <TagList tags={tags} />
