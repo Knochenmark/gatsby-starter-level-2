@@ -9,15 +9,10 @@ import { blogMenuLinks } from '../components/_config/menu-links';
 import { StyledH1 } from '../components/_shared/styled-headings';
 import { flexWrap } from '../components/_shared/styled-mixins';
 import { StyledFullHeightSection } from '../components/_shared/styled-section';
+import { StyledSeparator } from '../components/_shared/styled-separator';
 
 const StyledTagsH1 = styled(StyledH1)`
   margin-top: 3rem;
-`;
-const StyledSeparator = styled.div`
-  height: 1px;
-  width: 100%;
-  margin-top: 3rem;
-  background-color: var(--body-color);
 `;
 const StyledTagLinkContainer = styled.div`
   ${flexWrap};
@@ -29,9 +24,6 @@ const StyledTagLink = styled(Link)`
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
   },
 }) => {
   const [alphabet] = React.useState('abcdefghijklmnopqrstuvwxyz'.split(''));
@@ -109,12 +101,7 @@ export default TagsPage;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(limit: 2000) {
+    allMarkdownRemark(filter: { frontmatter: { published: { eq: true } } }) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount
