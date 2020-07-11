@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
-import ProjectList from './project-list';
+import TextLink from './links/text-link';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
 import { StyledContentLink } from './_shared/styled-content-link';
 import { StyledH1, StyledH2 } from './_shared/styled-headings';
 import { StyledImageContainer } from './_shared/styled-image-container';
-import { contentBox, flexEnd } from './_shared/styled-mixins';
+import { contentBox, flexCenter, flexEnd } from './_shared/styled-mixins';
 import { StyledSection } from './_shared/styled-section';
 
 const StyledFeaturedProject = styled.article`
@@ -67,8 +67,13 @@ const StyledLinkContainer = styled.section`
     margin: 0 0.5rem;
   }
 `;
+const StyledArchiveContainer = styled.div`
+  ${flexCenter};
+  width: 100%;
+  margin-top: 2.5rem;
+`;
 
-const FeaturedProjects = ({ featured, unfeatured }) => {
+const FeaturedProjects = ({ featured }) => {
   const featuredProjects = featured.map((project, index) => {
     const coverImage = project.frontmatter.cover_image ? project.frontmatter.cover_image.childImageSharp.fluid : null;
 
@@ -119,14 +124,15 @@ const FeaturedProjects = ({ featured, unfeatured }) => {
     <StyledSection id="projects">
       <StyledH1>Featured Projects</StyledH1>
       {featuredProjects}
-      <ProjectList projects={unfeatured} />
+      <StyledArchiveContainer>
+        <TextLink label="View More Projects" link="/projects" />
+      </StyledArchiveContainer>
     </StyledSection>
   );
 };
 
 FeaturedProjects.propTypes = {
   featured: PropTypes.array.isRequired,
-  unfeatured: PropTypes.array.isRequired,
 };
 
 export default FeaturedProjects;

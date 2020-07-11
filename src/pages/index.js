@@ -25,7 +25,7 @@ const Index = ({ data }) => {
       <SEO title="Home" />
       <Hero data={heroData} />
       <About data={data.about} />
-      <FeaturedProjects featured={data.featuredProjects.nodes} unfeatured={data.projects.nodes} />
+      <FeaturedProjects featured={data.featuredProjects.nodes} />
       <RecentPosts data={data.blog.edges} />
       <Contact data={data.contact} />
     </Layout>
@@ -90,23 +90,6 @@ export const query = graphql`
               }
             }
           }
-        }
-        html
-      }
-    }
-
-    projects: allMarkdownRemark(
-      limit: 3
-      sort: { order: DESC, fields: frontmatter___date }
-      filter: { fileAbsolutePath: { regex: "/content/projects/" }, frontmatter: { featured: { eq: false } } }
-    ) {
-      nodes {
-        frontmatter {
-          date(formatString: "D MMMM, YYYY")
-          title
-          repo_link
-          demo_link
-          techs
         }
         html
       }
