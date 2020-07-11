@@ -3,17 +3,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import External from '../assets/external.svg';
 import Github from '../assets/github.svg';
-import TextLink from './links/text-link';
 import TechList from './tech-list';
 import { StyledContentLink } from './_shared/styled-content-link';
-import { StyledH1, StyledH2 } from './_shared/styled-headings';
-import { flexCenter, flexEnd } from './_shared/styled-mixins';
+import { StyledH2 } from './_shared/styled-headings';
+import { flexEnd } from './_shared/styled-mixins';
 import { StyledTextSection } from './_shared/styled-text-section';
 
-const StyledContainer = styled.section`
-  width: 100%;
-  margin-top: 2.5rem;
-`;
 const StyledProject = styled.article`
   display: flex;
   flex-direction: column;
@@ -56,14 +51,9 @@ const StyledProjectText = styled(StyledTextSection)`
     overflow: hidden;
   }
 `;
-const StyledArchiveContainer = styled.div`
-  ${flexCenter};
-  width: 100%;
-  margin-top: 2.5rem;
-`;
 
 const ProjectList = ({ projects }) => {
-  const projectItems = projects.map((project) => {
+  return projects.map((project) => {
     const title = project.frontmatter.title;
     const demoLink = project.frontmatter.demo_link;
     const repoLink = project.frontmatter.repo_link;
@@ -96,18 +86,6 @@ const ProjectList = ({ projects }) => {
       </StyledProject>
     );
   });
-
-  return (
-    <StyledContainer>
-      <StyledHeader>
-        <StyledH1>Other Noteworthy Projects</StyledH1>
-      </StyledHeader>
-      {projectItems}
-      <StyledArchiveContainer>
-        <TextLink label="View All Projects" link="/projects" />
-      </StyledArchiveContainer>
-    </StyledContainer>
-  );
 };
 
 ProjectList.propTypes = {
