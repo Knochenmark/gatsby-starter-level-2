@@ -101,7 +101,9 @@ export default TagsPage;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { published: { eq: true } } }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { published: { eq: true } } }
+    ) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

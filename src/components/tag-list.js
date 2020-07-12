@@ -27,8 +27,7 @@ const StyledTagLink = styled(Link)`
 const TagList = ({ tags }) => {
   return (
     <StyledTagContainer>
-      {/* FIXME: Fix the tags being null issue, probably due to a GraphQl Query */}
-      {(tags || []).map((tag) => (
+      {tags.map((tag) => (
         <StyledTag key={tag}>
           <StyledTagLink to={`/tags/${tag}/`}>#{tag}</StyledTagLink>
         </StyledTag>
