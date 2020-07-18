@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Icon from './icon';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -18,20 +19,20 @@ const StyledSocialIcons = styled.div`
 
     & > svg {
       margin: 0.5rem;
-      fill: var(--title-color);
+      color: var(--title-color);
     }
 
     &:hover > svg {
-      fill: var(--primary-color);
+      color: var(--primary-color);
     }
   }
 `;
 
 const SocialIcons = ({ icons }) => {
-  const socialIcons = icons.map(({ icon, link }) => {
+  const socialIcons = icons.map(({ link, name, prefix }) => {
     return (
       <a href={link} key={link} target="_blank" rel="noopener" aria-label={`social link to ${link}`}>
-        {icon}
+        <Icon icon={name} prefix={prefix} />
       </a>
     );
   });

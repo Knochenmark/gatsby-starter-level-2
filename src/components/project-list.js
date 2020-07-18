@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
-import External from '../assets/external.svg';
-import Github from '../assets/github.svg';
+import Icon from './icon';
 import TechList from './tech-list';
 import { StyledContentLink } from './_shared/styled-content-link';
 import { StyledH2 } from './_shared/styled-headings';
@@ -69,12 +68,12 @@ const ProjectList = ({ projects }) => {
           <StyledLinkContainer>
             {repoLink && (
               <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>
-                <Github />
+                <Icon icon="github" prefix="fab" />
               </a>
             )}
             {demoLink && (
               <a href={demoLink} target="_blank" rel="noopener" title="Demo Link" aria-label={demoLinkLabel}>
-                <External />
+                <Icon icon="external-link-alt" />
               </a>
             )}
           </StyledLinkContainer>

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import External from '../../assets/external.svg';
+import Icon from '../icon';
 import { flexCenter } from './../_shared/styled-mixins';
 
 export const StyledButtonLink = styled.a`
@@ -54,7 +54,7 @@ const ButtonLink = ({ label, link }) => {
       {label && link && (
         <StyledButtonLink href={link ? link : '#'} target="_blank" rel="noopener">
           {label}
-          <External />
+          <Icon icon="arrow-right" />
         </StyledButtonLink>
       )}
     </React.Fragment>
