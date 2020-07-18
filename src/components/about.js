@@ -20,6 +20,7 @@ const StyledAboutContainer = styled.article`
 const StyledTextSection = styled.section`
   white-space: pre-line;
 `;
+
 const About = ({ data }) => {
   const {
     frontmatter: { title, techs, about_image },

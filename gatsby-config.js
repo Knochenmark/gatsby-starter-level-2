@@ -50,6 +50,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: 'cards',
+        path: `${__dirname}/content/sections/cards`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: 'contact',
         path: `${__dirname}/content/sections/contact`,
       },
