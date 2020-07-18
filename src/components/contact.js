@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import Address from '../assets/address.svg';
-import Email from '../assets/email.svg';
-import Phone from '../assets/phone.svg';
+import Icon from './icon';
 import { mq } from './_shared/media';
 import { StyledH1 } from './_shared/styled-headings';
 import { StyledSection } from './_shared/styled-section';
@@ -16,9 +14,7 @@ const StyledContainer = styled.section`
   align-items: center;
 
   & > svg {
-    width: 2rem;
-    height: 2rem;
-    fill: var(--body-color);
+    font-size: 2rem;
     margin-right: 0.75rem;
   }
 `;
@@ -74,7 +70,7 @@ const Contact = ({ data }) => {
         <StyledContacts>
           {address && (
             <StyledContainer>
-              <Address />
+              <Icon icon="building" />
               <StyledFormContainer>
                 <StyledForm>Office Location</StyledForm>
                 <span>{address}</span>
@@ -83,7 +79,7 @@ const Contact = ({ data }) => {
           )}
           {email && (
             <StyledContainer>
-              <Email />
+              <Icon icon="paper-plane" />
               <StyledFormContainer>
                 <StyledForm>My E-Mail</StyledForm>
                 <span>{email}</span>
@@ -92,7 +88,7 @@ const Contact = ({ data }) => {
           )}
           {phone && (
             <StyledContainer>
-              <Phone />
+              <Icon icon="mobile-alt" />
               <StyledFormContainer>
                 <StyledForm>Phone Number</StyledForm>
                 <span>{phone}</span>

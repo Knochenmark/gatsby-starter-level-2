@@ -1,21 +1,17 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import ScrollUpButton from 'react-scroll-up-button';
-import Arrow from '../assets/arrow.svg';
+import Icon from './icon';
 import { flexCenter } from './_shared/styled-mixins';
 
 const StyledContainer = styled.div`
   ${flexCenter};
   padding: 0.5rem;
   cursor: pointer;
+  color: var(--title-color);
 
-  & svg {
-    transform: rotate(-90deg);
-    fill: var(--title-color);
-  }
-
-  &:hover svg {
-    fill: var(--primary-color);
+  &:hover {
+    color: var(--primary-color);
   }
 `;
 
@@ -28,7 +24,7 @@ const ScrollToTop = () => {
       AnimationDuration={200}
     >
       <StyledContainer title="Scroll to top">
-        <Arrow />
+        <Icon icon="arrow-up" />
       </StyledContainer>
     </ScrollUpButton>
   );

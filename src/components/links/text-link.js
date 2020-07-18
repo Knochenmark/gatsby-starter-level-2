@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import React from 'react';
-import ArrowRight from '../../assets/arrow-right.svg';
+import Icon from '../icon';
 import { flexCenter } from './../_shared/styled-mixins';
 
 export const StyledTextLink = styled(Link)`
@@ -36,7 +36,7 @@ const TextLink = ({ label, link }) => {
       {label && link && (
         <StyledTextLink to={link ? link : '#'}>
           {label}
-          <ArrowRight />
+          <Icon icon="arrow-right" />
         </StyledTextLink>
       )}
     </React.Fragment>

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { getMenuIcon } from './_config/get-menu-icon';
+import Icon from './icon';
 import { mq } from './_shared/media';
 import { StyledIndexNumber } from './_shared/styled-index-number';
 import { flexCenter } from './_shared/styled-mixins';
@@ -64,7 +64,7 @@ const NavigationBar = ({ menuLinks }) => {
     <StyledNav>
       {menuLinks.map((link, index) => (
         <StyledNavLink key={link.name} to={link.link} activeClassName="active">
-          {getMenuIcon(link.name)}
+          <Icon icon={link.icon} />
           <div>
             <StyledIndexNumber>{`${String(index + 1).padStart(2, '0')}.`}</StyledIndexNumber>
             {link.name}

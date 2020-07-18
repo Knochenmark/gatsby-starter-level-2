@@ -2,8 +2,7 @@ import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import React from 'react';
-import External from '../assets/external.svg';
-import Github from '../assets/github.svg';
+import Icon from './icon';
 import TextLink from './links/text-link';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
@@ -63,7 +62,6 @@ const StyledLinkContainer = styled.section`
   }
 
   & svg {
-    fill: currentColor;
     margin: 0 0.5rem;
   }
 `;
@@ -106,12 +104,12 @@ const FeaturedProjects = ({ featured }) => {
           <StyledLinkContainer>
             {repoLink && (
               <a href={repoLink} target="_blank" rel="noopener" title="Repository Link" aria-label={repoLinkLabel}>
-                <Github />
+                <Icon icon="github" prefix="fab" />
               </a>
             )}
             {demoLink && (
               <a href={demoLink} target="_blank" rel="noopener" title="Demo Link" aria-label={demoLinkLabel}>
-                <External />
+                <Icon icon="external-link-alt" />
               </a>
             )}
           </StyledLinkContainer>

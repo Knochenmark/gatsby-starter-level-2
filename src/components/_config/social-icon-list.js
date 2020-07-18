@@ -1,20 +1,19 @@
-import React from 'react';
-import Codepen from '../../assets/codepen.svg';
-import Github from '../../assets/github.svg';
-import Twitter from '../../assets/twitter.svg';
-
 export const socialIconList = [
   {
-    icon: <Twitter />,
+    name: 'twitter',
+    prefix: 'fab', // fab prefix for brands, fas for solid icons
     link: 'https://twitter.com/',
   },
   {
-    icon: <Github />,
+    name: 'github',
+    prefix: 'fab',
     link: 'https://github.com/knochenmark/gatsby-starter-level-2',
   },
   {
-    icon: <Codepen />,
+    name: 'codepen',
+    prefix: 'fab',
     link: 'https://codepen.io/',
   },
   // Add further social links with the icon of choice and link here
+  // check https://fontawesome.com/icons?d=gallery&s=brands for other brand icons
 ];
