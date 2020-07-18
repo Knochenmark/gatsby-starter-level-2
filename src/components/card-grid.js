@@ -34,6 +34,8 @@ const StyledFeatureCard = styled.article`
   padding: 1rem;
 
   & svg {
+    height: 2rem;
+    width: 2rem;
     font-size: 2rem;
   }
 `;
