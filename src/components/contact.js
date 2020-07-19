@@ -29,7 +29,7 @@ const StyledForm = styled.div`
 
   font-weight: normal;
 `;
-const StyledText = styled.p`
+const StyledText = styled.section`
   margin-top: 25px;
   margin-left: 3px;
   width: 50%;
