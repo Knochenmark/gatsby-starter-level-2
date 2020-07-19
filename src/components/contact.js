@@ -28,7 +28,8 @@ const StyledForm = styled.div`
 
   font-weight: normal;
 `;
-const StyledText = styled.section`
+const StyledTextSection = styled.section`
+  white-space: pre-line;
   width: 100%;
   max-width: 500px;
   margin-left: 3px;
@@ -63,7 +64,7 @@ const Contact = ({ data }) => {
     <React.Fragment>
       <StyledContactSection id="contact">
         <StyledH1>Contact Details</StyledH1>
-        {html && <StyledText dangerouslySetInnerHTML={{ __html: html }} />}
+        <StyledTextSection dangerouslySetInnerHTML={{ __html: html }} />
         <StyledSeparator />
         <StyledContacts>
           {address && (
