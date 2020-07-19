@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { scroll } from './_shared/animation';
+import { mq } from './_shared/media';
 import { flexCenter } from './_shared/styled-mixins';
 
 const StyledContainer = styled.div`
@@ -11,6 +12,12 @@ const StyledContainer = styled.div`
   width: 100%;
   ${flexCenter};
   flex-direction: column;
+
+  display: none;
+
+  ${mq.gt.xs} {
+    display: flex;
+  }
 `;
 const StyledMouse = styled.div`
   width: 20px;
