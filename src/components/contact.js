@@ -9,7 +9,6 @@ const StyledContactSection = styled(StyledSection)`
   margin-bottom: 70px;
 `;
 const StyledContainer = styled.section`
-  margin-top: 2rem;
   display: flex;
   align-items: center;
 
@@ -29,15 +28,14 @@ const StyledForm = styled.div`
 
   font-weight: normal;
 `;
-const StyledText = styled.p`
-  margin-top: 25px;
-  margin-left: 3px;
-  width: 50%;
+const StyledText = styled.section`
+  width: 100%;
   max-width: 500px;
+  margin-left: 3px;
 `;
 const StyledSeparator = styled.div`
   height: 1px;
-  width: 60%;
+  width: 50%;
   background-color: var(--body-color);
 `;
 const StyledContacts = styled.div`
