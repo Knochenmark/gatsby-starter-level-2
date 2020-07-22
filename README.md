@@ -28,6 +28,10 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
     - [Navigation](#navigation)
     - [Social](#social)
 - [Content Creation](#content-creation)
+  - [Creating Blog Posts](#creating-blog-posts)
+    - [Frontmatter for blog posts](#frontmatter-for-blog-posts)
+  - [Creating Projects](#creating-projects)
+    - [Frontmatter for projects](#frontmatter-for-projects)
 
 # Quick start
 
@@ -99,10 +103,7 @@ Under `src/components/_config` you will find further files that allow for config
 
 ### Navigation
 
-In `src/components/_config/get-menu-icon.js` you have to adjust the map in case you've added further navigation links, when
-you want to use different icons or to change the default icon being used.
-
-If you just want to change the icons being used, you could just replace the svgs under `src/assets` but retain the naming.
+To change or add further menu links you can adjust the maps in `src/components/_config/menu-links.js`. If you want to change the icons that are being used you just have to change the `icon` property to another solid icon from font-awesome. Please refer to [Font Awsome Solid Icons](https://fontawesome.com/icons?d=gallery&s=solid&m=free) for available icons.
 
 ### Social
 
@@ -138,4 +139,58 @@ body
 
 # Content Creation
 
-To be added...
+All content files and the information for the sections on the index page can be found in the `content` folder.
+
+The folder contains subfolders for:
+
+- blog posts
+- projects
+- sections
+
+## Creating Blog Posts
+
+In order to create a blog post you just have to add a markdown file under `content/posts` and move images that are used in your blog post into `content/posts/images`.
+
+### Frontmatter for blog posts
+
+The frontmatter information for each blog post is structured as following:
+
+| Field         | Type     | Description             | Example               |
+| ------------- | -------- | ----------------------- | --------------------- |
+| date          | Date     | Publishing Date         | 2020-05-31            |
+| title         | String   | Post Title              | 'Some title'          |
+| tags          | String[] | List of Tags            | ['foo', 'bar']        |
+| published     | Boolean  | Is Published Flag       | true                  |
+| cover_image   | String   | Path of the Cover Image | ./images/my-image.jpg |
+| canonical_url | Boolean  | is Canonical Link Flag  | false                 |
+| description   | String   | Post short description  | 'Some Description'    |
+
+---
+
+Followed by the actual Blog content written in Markdown.
+
+## Creating Projects
+
+In order to create a project you create a markdown file under `content/projects` and move images that are used for your project into `content/projects/images`.
+
+### Frontmatter for projects
+
+The frontmatter information for each blog post is structured as following:
+
+| Field       | Type     | Description             | Example                             |
+| ----------- | -------- | ----------------------- | ----------------------------------- |
+| date        | Date     | Publishing Date         | 2020-05-31                          |
+| title       | String   | Project Title           | 'Gatsby Portfolio'                  |
+| techs       | String[] | List of Tags            | ['React', 'Gatsby']                 |
+| featured    | Boolean  | Is Featured Flag        | true                                |
+| cover_image | String?  | Path of the Cover Image | ./images/my-image.jpg               |
+| repo_link   | String?  | URL to the repository   | 'https://github.com/facebook/react' |
+| demo_link   | String?  | Post short description  | 'https://reactjs.org/'              |
+
+---
+
+Followed by the actual Project description in Markdown.
+
+## Editing Section information
+
+To be added
