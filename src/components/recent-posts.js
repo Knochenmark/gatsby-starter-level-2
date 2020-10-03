@@ -62,6 +62,14 @@ const StyledBlogLinkContainer = styled.div`
   width: 100%;
   margin-top: 2.5rem;
 `;
+const StyledPostText = styled(StyledTextSection)`
+  > p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+`;
 
 const RecentPosts = ({ data }) => {
   const recentPosts = data.map((post) => {
@@ -88,9 +96,9 @@ const RecentPosts = ({ data }) => {
         <StyledTitleLink to={link}>
           <StyledH2>{title}</StyledH2>
         </StyledTitleLink>
-        <StyledTextSection>
+        <StyledPostText>
           <p>{description}</p>
-        </StyledTextSection>
+        </StyledPostText>
       </StyledPostContainer>
     );
   });
