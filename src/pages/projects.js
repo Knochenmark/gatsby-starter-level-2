@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
 import ProjectList from '../components/project-list';
