@@ -32,6 +32,8 @@ That's why we like to call our starter **Level 2** or short **LvL2**. The starte
     - [Frontmatter for blog posts](#frontmatter-for-blog-posts)
   - [Creating Projects](#creating-projects)
     - [Frontmatter for projects](#frontmatter-for-projects)
+- [Editing Sections](#editing-sections)
+  - [Example by the Cards Section](#example-by-the-cards-section)
 
 # Quick start
 
@@ -191,6 +193,35 @@ The frontmatter information for each blog post is structured as following:
 
 Followed by the actual Project description in Markdown.
 
-## Editing Section information
+## Editing Sections
 
-To be added
+Currently you can edit the following sections via Markdown files `Hero`, `About`, `Cards` & `Contact`.
+Those markdown files can be found in the following folder `content/sections`.
+
+Each Markdown file contains frontmatter variables that can be edited.
+
+**Hint**: The markdown content in those files can contain also external links if required.
+
+### Example by the Cards Section
+
+The Card Section in our example portfolio is used to display features of the gatsby starter, but it can also be used to
+display any other arbitrary group of informations. Examples could be a card-grid of your most used technologies in your stack, your contributers or maybe a list of your customers. Go ahead and adjust the component to your own needs.
+
+To edit the Cards Section you would only have to edit the markdown file. The frontmatter of the Cards component consists of a collection of card objects that looks as following:
+
+```yaml
+cards:
+  - label: Markdown
+    icon: markdown
+    prefix: fab
+    description: All posts, projects and sections are editable via Markdown files.
+```
+
+The `label` and `description` are just Strings that you can change to your needs.
+The `icon` and `prefix` are specifics of fontawesome and have to be mapped accordingly. Also keep in mind that you have to make sure you've imported the used styles (for example `fas` and `fab`) in your library (see `components/layout.js`).
+
+The possible font-awesome styles consist of:
+`fas` = Solid
+`far` = Regular
+`fa.` = Light
+`fab` = Brands
