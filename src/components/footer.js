@@ -13,12 +13,14 @@ const marginMediaQuery = css`
   }
 `;
 const StyledFooter = styled.footer`
-  ${flexCenter};
-  flex-direction: column;
   background-color: var(--bg-content-color);
-  padding: calc((var(--space) / 2));
   text-align: center;
   font-size: 0.8rem;
+`;
+const StyledFooterContainer = styled.section`
+  ${flexCenter};
+  flex-direction: column;
+  padding: calc((var(--space) / 2));
 
   ${mq.gt.xs} {
     flex-direction: row-reverse;
@@ -67,18 +69,20 @@ const StyledRotator = styled.div`
 const Footer = ({ author }) => {
   return (
     <StyledFooter>
-      <StyledSocialContainer>
-        <StyledCopyright>
-          © {new Date().getFullYear()} {author}
-        </StyledCopyright>
-        <SocialIcons icons={socialIconList} />
-      </StyledSocialContainer>
-      <StyledRotator>
-        Made with
-        <span role="img" aria-label="heart emoji">
-          💖
-        </span>
-      </StyledRotator>
+      <StyledFooterContainer>
+        <StyledSocialContainer>
+          <StyledCopyright>
+            © {new Date().getFullYear()} {author}
+          </StyledCopyright>
+          <SocialIcons icons={socialIconList} />
+        </StyledSocialContainer>
+        <StyledRotator>
+          Made with
+          <span role="img" aria-label="heart emoji">
+            💖
+          </span>
+        </StyledRotator>
+      </StyledFooterContainer>
     </StyledFooter>
   );
 };
