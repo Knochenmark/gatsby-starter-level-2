@@ -13,7 +13,7 @@ const StyledSkewedSection = styled.section`
     margin: 0 auto;
     padding: 1.5em;
     position: relative;
-    
+
     /* uncomment for debuggind purposes */
     /* border: 2px dashed #fff8; */
   }
@@ -37,8 +37,6 @@ const StyledSkewedSection = styled.section`
 // x = tan(α) * a / 2
 
 const SkewedSection = (props) => {
-  console.log('angle', props.angle);
-
   return (
     <StyledSkewedSection>
       <div className="content">{props.children}</div>
