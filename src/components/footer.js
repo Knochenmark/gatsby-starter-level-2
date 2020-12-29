@@ -2,6 +2,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Rotator from './rotator';
 import SocialIcons from './social-icons';
 import { socialIconList } from './_config/social-icon-list';
 import { mq } from './_shared/media';
@@ -52,14 +53,10 @@ const StyledCopyright = styled.span`
     margin-bottom: 0;
   }
 `;
-const StyledRotator = styled.div`
+const StyledRotatorContainer = styled.div`
   ${flexCenter};
   margin: 0.8rem 0;
   font-size: 0.8rem;
-
-  & > span {
-    margin-left: 0.25rem;
-  }
 
   ${mq.gt.xs} {
     margin: 0;
@@ -76,12 +73,10 @@ const Footer = ({ author }) => {
           </StyledCopyright>
           <SocialIcons icons={socialIconList} />
         </StyledSocialContainer>
-        <StyledRotator>
+        <StyledRotatorContainer>
           Made with
-          <span role="img" aria-label="heart emoji">
-            💖
-          </span>
-        </StyledRotator>
+          <Rotator emojis={['☕', '🍕', '🍺', '🍜', '💖']} />
+        </StyledRotatorContainer>
       </StyledFooterContainer>
     </StyledFooter>
   );
