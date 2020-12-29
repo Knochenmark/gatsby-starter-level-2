@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/Movies/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/movie-night/"},"frontmatter":{"title":"Best movies of 2019"}}}]}},"pageContext":{"tag":"Movies"}},"staticQueryHashes":["1734433022"]}
