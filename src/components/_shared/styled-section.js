@@ -6,7 +6,7 @@ export const StyledSection = styled.section`
   align-items: flex-start;
   flex-direction: column;
   margin: 0 auto;
-  width: 95%;
+  width: 90%;
   padding: 30px 0;
   max-width: 1000px;
   margin-bottom: 60px;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const StyledImageContainer = styled.div`
-  min-width: 300px;
+  min-width: 290px;
   min-height: 200px;
   position: relative;
 
@@ -15,7 +15,7 @@ export const StyledImageContainer = styled.div`
 `;
 
 export const StyledStaticImageContainer = styled.div`
-  min-width: 300px;
+  min-width: 290px;
   min-height: 200px;
   position: relative;
 
