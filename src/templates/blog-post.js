@@ -72,7 +72,7 @@ export const query = graphql`
         date(formatString: "D. MMMM YYYY")
         cover_image {
           childImageSharp {
-            gatsbyImageData(width: 800, layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
