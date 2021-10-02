@@ -17,6 +17,8 @@
 
 That's why we like to call our starter **Level 2** or short **LvL2**. The starter comes with several prepared info sections for your portfolio that can be easily configured with the main Gatsby configuration files. For content creation we are using **Markdown** files with Frontmatter attributes that can be easily edited or created.
 
+<h4>Now updated to Gatsby 3!</h4>
+
 # Table of Contents
 
 - [Quick Start](#quick-start)
