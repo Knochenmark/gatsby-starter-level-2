@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: '/gatsby-starter-level-2',
   siteMetadata: {
     title: 'Level 2',
     titleTemplate: '%s · Level 2',
@@ -61,8 +60,9 @@ module.exports = {
         path: `${__dirname}/content/sections/contact`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
