@@ -52,7 +52,9 @@ const Blog = ({ data }) => {
       <SEO title="Blog" />
       <StyledFullHeightSection>
         {data.allMarkdownRemark.edges.slice(leftCursor, rightCursor).map(({ node }) => {
-          const coverImage = node.frontmatter.cover_image ? node.frontmatter.cover_image.childImageSharp.fluid : null;
+          const coverImage = node.frontmatter.cover_image
+            ? node.frontmatter.cover_image.childImageSharp.gatsbyImageData
+            : null;
           return (
             <PostCard
               key={node.frontmatter.title}
@@ -99,9 +101,7 @@ export const query = graphql`
             description
             cover_image {
               childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 800, layout: FULL_WIDTH)
               }
             }
           }

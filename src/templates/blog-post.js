@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Layout from '../components/layout';
@@ -38,7 +38,7 @@ const StyledBlogText = styled.div`
 const BlogPost = ({ data }) => {
   const readingTime = data.markdownRemark.fields.readingTime.text;
   const post = data.markdownRemark;
-  const coverImage = post.frontmatter.cover_image ? post.frontmatter.cover_image.childImageSharp.fluid : null;
+  const coverImage = post.frontmatter.cover_image ? post.frontmatter.cover_image.childImageSharp.gatsbyImageData : null;
   const { tags = [], title, date } = post.frontmatter;
 
   return (
@@ -49,7 +49,7 @@ const BlogPost = ({ data }) => {
           Posted {date}. <span>{readingTime}.</span>
         </StyledDate>
         <TagList tags={tags} />
-        {coverImage && <Img fluid={coverImage} />}
+        {coverImage && <GatsbyImage image={coverImage} alt={title} />}
         <StyledBlogText dangerouslySetInnerHTML={{ __html: post.html }} />
       </StyledBlogSection>
     </Layout>
@@ -72,9 +72,7 @@ export const query = graphql`
         date(formatString: "D. MMMM YYYY")
         cover_image {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 800, layout: FULL_WIDTH)
           }
         }
       }

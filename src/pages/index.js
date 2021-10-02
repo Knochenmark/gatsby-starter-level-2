@@ -4,9 +4,9 @@ import React from 'react';
 import About from '../components/about';
 import CardGrid from '../components/card-grid';
 import Contact from '../components/contact';
+import Facts from '../components/facts';
 import FeaturedProjects from '../components/featured-projects';
 import Hero from '../components/hero';
-import Facts from '../components/facts';
 import Layout from '../components/layout';
 import RecentPosts from '../components/recent-posts';
 import SEO from '../components/seo';
@@ -26,7 +26,7 @@ const Index = ({ data }) => {
     <Layout menuLinks={indexMenuLinks}>
       <SEO title="Home" />
       <Hero data={heroData} />
-      <Facts/>
+      <Facts />
       <About data={data.about} />
       <CardGrid cards={data.cards.frontmatter.cards} description={data.cards.html} title="Our Features" id="features" />
       <FeaturedProjects featured={data.featuredProjects.nodes} />
@@ -66,9 +66,7 @@ export const query = graphql`
         techs
         about_image {
           childImageSharp {
-            fluid(maxWidth: 800) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 800, layout: FULL_WIDTH)
           }
         }
       }
@@ -101,9 +99,7 @@ export const query = graphql`
           techs
           cover_image {
             childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 800, layout: FULL_WIDTH)
             }
           }
         }
@@ -125,9 +121,7 @@ export const query = graphql`
             description
             cover_image {
               childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 800, layout: FULL_WIDTH)
               }
             }
           }

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import TechList from './tech-list';
 import { mq } from './_shared/media';
@@ -27,7 +27,7 @@ const About = ({ data }) => {
     html,
   } = data;
 
-  const image = about_image ? about_image.childImageSharp.fluid : null;
+  const image = about_image ? about_image.childImageSharp.gatsbyImageData : null;
 
   return (
     <StyledSection id="about">
@@ -35,7 +35,7 @@ const About = ({ data }) => {
       <StyledAboutContainer>
         {image && (
           <StyledStaticImageContainer>
-            <Img fluid={image} objectFit="contain" />
+            <GatsbyImage image={image} alt="image of myself" objectFit="contain" />
           </StyledStaticImageContainer>
         )}
         <div>
