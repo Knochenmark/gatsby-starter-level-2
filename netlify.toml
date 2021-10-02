@@ -1,0 +1,6 @@
+[build]
+  command = "npm run deploy"
+  publish = "public/"
+  functions = "functions/"
+[build.environment]
+  NODE_VERSION  = "14"
