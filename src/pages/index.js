@@ -66,7 +66,7 @@ export const query = graphql`
         techs
         about_image {
           childImageSharp {
-            gatsbyImageData(width: 800, layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -99,7 +99,7 @@ export const query = graphql`
           techs
           cover_image {
             childImageSharp {
-              gatsbyImageData(width: 800, layout: FULL_WIDTH)
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
@@ -121,7 +121,7 @@ export const query = graphql`
             description
             cover_image {
               childImageSharp {
-                gatsbyImageData(width: 800, layout: FULL_WIDTH)
+                gatsbyImageData(layout: FULL_WIDTH)
               }
             }
           }

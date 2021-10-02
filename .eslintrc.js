@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', '@emotion'],
   extends: ['eslint:recommended', 'plugin:react/recommended'],
-  rules: {},
+  rules: { '@emotion/pkg-renaming': 'error' },
 };
