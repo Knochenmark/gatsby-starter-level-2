@@ -1,5 +1,5 @@
 ---
-featured: true
+featured: false
 date: '2019-12-26'
 title: 'Recipebox'
 cover_image: './images/notebook.jpg'

@@ -1,5 +1,5 @@
 ---
-featured: true
+featured: false
 date: '2019-12-15'
 title: 'Pomodoro'
 cover_image: './images/ocean.jpg'
