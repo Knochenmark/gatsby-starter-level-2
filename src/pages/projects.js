@@ -68,6 +68,7 @@ const Projects = ({ data }) => {
               demoLink={node.frontmatter.demo_link}
               repoLink={node.frontmatter.repo_link}
               techs={node.frontmatter.techs}
+              html= {node.html}
             />
           );
         })}
@@ -101,6 +102,7 @@ export const pageQuery = graphql`
             demo_link
             techs
           }
+          html
           excerpt
           fields {
             slug

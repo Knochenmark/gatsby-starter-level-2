@@ -51,7 +51,7 @@ const StyledProjectText = styled(StyledTextSection)`
   }
 `;
 
-const ProjectCard = ({ title, demoLink, repoLink, techs }) => {
+const ProjectCard = ({ title, demoLink, repoLink, techs, html }) => {
   const demoLinkLabel = `featured project ${title} demo`;
   const repoLinkLabel = `featured project ${title} repo`;
   return (
@@ -74,7 +74,7 @@ const ProjectCard = ({ title, demoLink, repoLink, techs }) => {
           </StyledLinkContainer>
         </StyledHeader>
         <StyledInfoContainer>
-          {/* <StyledProjectText dangerouslySetInnerHTML={{ __html: html }} /> */}
+          <StyledProjectText dangerouslySetInnerHTML={{ __html: html }} />
           <TechList techs={techs} />
         </StyledInfoContainer>
       </StyledProject>
@@ -83,8 +83,6 @@ const ProjectCard = ({ title, demoLink, repoLink, techs }) => {
 
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
-  demoLink: PropTypes.string.isRequired,
-  repoLink: PropTypes.string.isRequired,
   techs: PropTypes.array.isRequired,
 };
 
