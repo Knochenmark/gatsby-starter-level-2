@@ -3,7 +3,6 @@ import { Pagination } from 'antd';
 import { graphql } from 'gatsby';
 import React from 'react';
 import Layout from '../components/layout';
-import ProjectList from '../components/project-list';
 import SEO from '../components/seo';
 import { blogMenuLinks } from '../components/_config/menu-links';
 import { StyledH1 } from '../components/_shared/styled-headings';
