@@ -51,16 +51,11 @@ const StyledProjectText = styled(StyledTextSection)`
   }
 `;
 
-const ProjectList = ({ projects }) => {
-  return projects.map((project) => {
-    const title = project.frontmatter.title;
-    const demoLink = project.frontmatter.demo_link;
-    const repoLink = project.frontmatter.repo_link;
-    const demoLinkLabel = `featured project ${title} demo`;
-    const repoLinkLabel = `featured project ${title} repo`;
-
-    return (
-      <StyledProject key={title}>
+const ProjectCard = ({ title, demoLink, repoLink, techs, html }) => {
+  const demoLinkLabel = `featured project ${title} demo`;
+  const repoLinkLabel = `featured project ${title} repo`;
+  return (
+    <StyledProject>
         <StyledHeader>
           <StyledContentLink href={demoLink ? demoLink : repoLink ? repoLink : '#'} target="_blank" rel="noopener">
             <StyledH2>{title}</StyledH2>
@@ -79,16 +74,16 @@ const ProjectList = ({ projects }) => {
           </StyledLinkContainer>
         </StyledHeader>
         <StyledInfoContainer>
-          <StyledProjectText dangerouslySetInnerHTML={{ __html: project.html }} />
-          <TechList techs={project.frontmatter.techs} />
+          <StyledProjectText dangerouslySetInnerHTML={{ __html: html }} />
+          <TechList techs={techs} />
         </StyledInfoContainer>
       </StyledProject>
-    );
-  });
+  );
 };
 
-ProjectList.propTypes = {
-  projects: PropTypes.array.isRequired,
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  techs: PropTypes.array.isRequired,
 };
 
-export default ProjectList;
+export default ProjectCard;
