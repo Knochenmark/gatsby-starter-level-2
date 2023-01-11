@@ -32,7 +32,7 @@
     "gatsby-remark-images": "^5.11.0",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^3.14.0",
-    "gatsby-transformer-remark": "^4.11.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^3.14.0",
     "postcss": "^8.3.8",
     "prop-types": "^15.7.2",
